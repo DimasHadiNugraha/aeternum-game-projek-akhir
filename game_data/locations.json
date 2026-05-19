@@ -1,0 +1,8 @@
+{
+    "locations": {
+        "Ruang Kelas": ["Koridor"],
+        "Koridor": ["Ruang Kelas", "Ruang Guru", "Rumah"],
+        "Ruang Guru": ["Koridor"],
+        "Rumah": ["Koridor"]
+    }
+}

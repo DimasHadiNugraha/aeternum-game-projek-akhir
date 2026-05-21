@@ -1,0 +1,63 @@
+{
+    "start": {
+        "type": "dialogue",
+        "speaker": "Unknown",
+        "text": "jangan lupakan aku..."
+    },
+
+    "node_1": {
+        "type": "dialogue",
+        "speaker": "Unknown",
+        "text": "hei ******"
+    },
+
+    "node_2": {
+        "type": "narration",
+        "text": "suara lirih menyapa telingamu. Pelan, tapi tajam. ia terus memanggil namamu, memaksamu untuk bangun. suaranya terdengar familiar, mungkin seseorang yang kamu kenal?"
+    },
+
+    "node_3": {
+        "type": "dialogue",
+        "speaker": "Unknown",
+        "text": "jangan pergi dari sini, {player_name}"
+    },
+
+    "node_4": {
+        "type": "Player",
+        "text": "Suara ini lagi... aku sedang bermimpi, ya?"
+    },
+
+    "node_5": {
+        "type": "dialogue",
+        "speaker": "Unknown",
+        "text": "Buka matamu."
+    },
+
+    "node_6": {
+        "type": "dialogue",
+        "speaker": "Unknown",
+        "text": "BUKA MATAMU!!!!"
+    },
+
+    "node_7": {
+        "type": "narration",
+        "text": "suara pelan itu kini menjadi pekikan tajam. Apa yang akan kamu lakukan?",
+        "choices": [
+         {
+            "text": "Diam saja",
+            "next": "node_9",
+            "anxiety_change": 0,
+            "fragment_reward": 5
+         },
+
+         {
+            "text": "Buka mata",
+            "next": "node 8",
+            "anxiety_change": 5,
+            "fragment_reward": 0
+         }
+
+        ]
+    }
+}
+

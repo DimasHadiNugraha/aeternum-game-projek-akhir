@@ -16,3 +16,4 @@ class MemoryFragment(Fragment):
         super().__init__(fragment_id, title, description)
 
         self.memory_piece = memory_piece
+

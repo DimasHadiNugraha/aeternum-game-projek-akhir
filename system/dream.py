@@ -7,7 +7,7 @@ class MesinMimpi:
         self.level_mimpi = 0
 
     def mulai_mimpi(self):
-        self.level_mimpi += 1
+        self.level_mimpi += 1 #ini jangan di awal fungsi ya, karena kalau input salah levelnya tetep
 
         print("\n======================")
         print(f"LAPISAN MIMPI KE-{self.level_mimpi}")
@@ -42,7 +42,7 @@ class MesinMimpi:
 
         self.lokasi_sekarang = tujuan
 
-        if self.level_mimpi >= 5:
+        if self.level_mimpi >= 5: #tambahin exit condition selain ini, misalnya  player quit, dream over atau ending tercapai
 
             print("\nMC terlalu dalam masuk ke alam bawah sadar...")
             print("Lapisan mimpi telah stabil.")
@@ -50,3 +50,10 @@ class MesinMimpi:
             return
 
         self.mulai_mimpi()
+
+        """
+        revisi lainnya:
+        -tambahin validasi lokasi sebelum akses
+        -jangan akses attribute graph langsung 
+        -tambahin komentar dibagian yang penting
+        """

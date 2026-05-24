@@ -51,7 +51,7 @@ class MemoryStack:
         """Cek apakah stack kosong."""
         return len(self.stack) == 0
 
-    def display(self):
+    def display(self): 
         """Tampilkan semua ingatan dari yang terbaru ke terlama."""
         if not self.stack:
             print("\n[Tidak ada ingatan tersimpan]\n")
@@ -62,13 +62,18 @@ class MemoryStack:
         print("=" * 40)
         for i, mem in enumerate(reversed(self.stack)):
             label = " <- (terbaru)" if i == 0 else ""
-            print(f"  {len(self.stack) - i}. {mem}{label}")
+            print(f"  {len(self.stack) - i}. {mem}{label}") #ini revisi
         print("=" * 40 + "\n")
 
     def to_list(self):
         """Konversi stack ke list Python untuk save/load."""
         return list(self.stack)
 
-    def load_from_list(self, data):
+    def load_from_list(self, data): #tambahin validasi ukuran
         """Load stack dari list saat load_game dipanggil."""
         self.stack = list(data)
+
+"""
+catatan:
+tambahin komentar pakai bahasa sendiri 
+"""

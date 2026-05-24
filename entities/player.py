@@ -44,3 +44,4 @@ class Player:
     def reset_dream_state(self):
         self.anxiety_level = 0
         self.dream_over = False
+        

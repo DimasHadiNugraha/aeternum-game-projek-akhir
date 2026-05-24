@@ -4,7 +4,7 @@ class PetaGame:
     def __init__(self):
         self.tempat = {}
 
-    def tambah_jalan(self, tempat1, tempat2):
+    def tambah_jalan(self, tempat1, tempat2): 
         if tempat1 not in self.tempat:
             self.tempat[tempat1] = []
         if tempat2 not in self.tempat:
@@ -27,6 +27,7 @@ class PetaGame:
         if awal == tujuan:
             return sudah_dikunjungi
         
+        #disini tambahin validasi node
         for tempat_tujuan in self.tempat[awal]:
             if tempat_tujuan not in sudah_dikunjungi:
                 hasil = self.cari_jalan(
@@ -51,3 +52,9 @@ def load_world():
             peta_game.tambah_jalan(tempat, tujuan)
 
     return peta_game
+
+"""
+revisi tambahan:
+-tambahin method getter daripada diakses langsung (self.peta.tempat)
+-tambahin komentar dibagian penting ya
+"""

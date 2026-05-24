@@ -663,3 +663,9 @@ if __name__ == "__main__":
     memory.push("Ada suara isak tangis dari balik pintu.")
     memory.push("Ruangan itu mulai berputar.")  # Ini akan menghapus ingatan tertua
     memory.display()
+
+"""
+revisi:
+-ada isi class yang duplicated sama journal.py, memory_stack.py dan nightmare_loop.py
+-import library diletakkin dipaling atas sebelum class.
+"""

@@ -18,6 +18,28 @@ class PetaGame:
         for tempat in self.tempat:
             print(f"{tempat} -> {self.tempat[tempat]}")
 
+    def cari_jalan(self, awal, tujuan, sudah_dikunjungi=None):
+        if sudah_dikunjungi is None:
+            sudah_dikunjungi = []
+
+        sudah_dikunjungi.append(awal)
+
+        if awal == tujuan:
+            return sudah_dikunjungi
+        
+        for tempat_tujuan in self.tempat[awal]:
+            if tempat_tujuan not in sudah_dikunjungi:
+                hasil = self.cari_jalan(
+                    tempat_tujuan,
+                    tujuan,
+                    sudah_dikunjungi.copy()
+                )
+
+                if hasil:
+                    return hasil
+
+        return None
+
 def load_world():
     with open("game_data/locations.json", "r") as file:
         data = json.load(file)

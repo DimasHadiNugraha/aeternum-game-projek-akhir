@@ -4,8 +4,14 @@ class MesinMimpi:
     def __init__(self):
         self.peta = load_world()
         self.lokasi_sekarang = "Ruang Kelas"
+        self.level_mimpi = 0
 
     def mulai_mimpi(self):
+        self.level_mimpi += 1
+
+        print("\n======================")
+        print(f"LAPISAN MIMPI KE-{self.level_mimpi}")
+        print("======================")
 
         print(f"\nMC berada di: {self.lokasi_sekarang}")
 
@@ -19,7 +25,7 @@ class MesinMimpi:
         pilihan = input("\nPilih tujuan: ")
 
         if not pilihan.isdigit():
-            print("Input harus angka!")
+            print("Input harus berupa angka!")
             self.mulai_mimpi()
             return
 
@@ -32,8 +38,15 @@ class MesinMimpi:
 
         tujuan = lokasi_tujuan[pilihan - 1]
 
-        print(f"\nMC berpindah ke {tujuan}")
+        print(f"\nMC berpindah ke {tujuan}...")
 
         self.lokasi_sekarang = tujuan
+
+        if self.level_mimpi >= 5:
+
+            print("\nMC terlalu dalam masuk ke alam bawah sadar...")
+            print("Lapisan mimpi telah stabil.")
+
+            return
 
         self.mulai_mimpi()

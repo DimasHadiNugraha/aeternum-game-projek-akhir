@@ -1,0 +1,15 @@
+"""
+prolog ini menceritakan MC yang mengalami mimpi buruk yang berulang-ulang. kemudian pada loop ke-72, ada yang berubah
+dari mimpinya dan ia dipertemukan dengan Lumiere. Dari sana dia memperoleh lucid key dan terbangun dari mimpinya.
+"""
+loop #71 -> bangun di kamar -> detail aneh dirumah: jam awalnya ga gerak, pas dilihat lagi tiba-tiba muter cepet. 
+channel tv keganti-ganti dan isinya berita tentang kecelakaan semua sampe akhirnya tvnya kayak rusak gitu dan muncul tulisan
+"do you forget me?" -> ke kamar mandi, lalu pantulan mc dicermin gaada dan malah ada sosok dengan wajah seram. -> ke ruang tamu
+-> denger suara ambulans -> buka pintu -> tiba-tiba sampe dirumah sakit -> ngikutin keranda pasien ->nyoba lihat wajahnya
+->semua npc berhenti gerak dan noleh ke mc dengan ekspresi marah -> ada yang ngomong "it's your fault" -> mc lari keluar
+rumah sakit -> nyampe disekolah -> lorong sekolah penuh coretan yang berubah-ubah -> papan pengumuman ada wajah mc
+yang dicoret -> speaker sekolah bunyi -> entity muncul -> loop selesai
+loop #72 -> semua tetap sama lalu skip ke scene sekolah -> ada yang beda -> mc masuk ke ruang kelas, ada lumiere duduk
+dekat jendela -> lumiere kasih lucid key -> mc bangun -> lucid key ada diatas meja
+
+dream 1-3 nanti ditambahin

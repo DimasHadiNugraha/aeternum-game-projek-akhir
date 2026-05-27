@@ -1,0 +1,1737 @@
+{
+  "dream_1": {
+    "title": "Echoes of Betrayal",
+
+    "start_node": "dream1_001",
+
+    "nodes": {
+
+      "dream1_001": {
+        "node_id": "dream1_001",
+
+        "speaker": null,
+
+        "text": [
+          "Suara keyboard terdengar samar di kejauhan.",
+
+          "Pelan.",
+          "Berulang.",
+
+          "Kesadaranmu perlahan kembali saat cahaya monitor menyilaukan matamu.",
+
+          "Saat membuka mata, kamu sudah berada di dalam laboratorium komputer sekolah."
+        ],
+
+        "auto_next": "dream1_002",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_002": {
+        "node_id": "dream1_002",
+
+        "speaker": null,
+
+        "text": [
+          "Puluhan komputer menyala sendiri.",
+
+          "Barisan kode bergerak tanpa henti di layar monitor.",
+
+          "Namun perlahan seluruh kode itu berubah menjadi kalimat yang sama.",
+
+          "\"WHO IS THE REAL CREATOR?\""
+        ],
+
+        "auto_next": "dream1_003",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_003": {
+        "node_id": "dream1_003",
+
+        "speaker": "player",
+
+        "text": [
+          "...lagi."
+        ],
+
+        "auto_next": "dream1_004",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_004": {
+        "node_id": "dream1_004",
+
+        "speaker": null,
+
+        "text": [
+          "Sebuah notifikasi muncul di monitor paling depan.",
+
+          "\"MEMORY RECONSTRUCTION STARTED.\""
+        ],
+
+        "auto_next": "dream1_005",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_005": {
+        "node_id": "dream1_005",
+
+        "speaker": null,
+
+        "text": [
+          "Ruangan mendadak berubah terang.",
+
+          "Suara murid-murid memenuhi telingamu.",
+
+          "Laboratorium itu kembali terlihat normal."
+        ],
+
+        "auto_next": "dream1_006",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_006": {
+        "node_id": "dream1_006",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Hei, {player_name}.",
+
+          "Kamu ketiduran lagi di lab?"
+        ],
+
+        "auto_next": "dream1_007",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_007": {
+        "node_id": "dream1_007",
+
+        "speaker": null,
+
+        "text": [
+          "Seorang gadis berdiri di depanmu sambil tersenyum kecil.",
+
+          "Wajahnya terasa familiar.",
+
+          "Namun ada sesuatu yang membuat dadamu terasa berat."
+        ],
+
+        "auto_next": "dream1_008",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_008": {
+        "node_id": "dream1_008",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Jangan bilang kamu lupa kalau deadline lomba tinggal seminggu lagi."
+        ],
+
+        "choices": [
+          {
+            "text": "Menjawab santai.",
+            "next_node": "dream1_009",
+            "anxiety_change": 0,
+            "fragment_reward": null
+          },
+
+          {
+            "text": "Mengabaikannya.",
+            "next_node": "dream1_010",
+            "anxiety_change": 1,
+            "fragment_reward": null
+          }
+        ],
+
+        "ending": false
+      },
+
+      "dream1_009": {
+        "node_id": "dream1_009",
+
+        "speaker": "player",
+
+        "text": [
+          "Aku masih punya waktu."
+        ],
+
+        "auto_next": "dream1_011",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_010": {
+        "node_id": "dream1_010",
+
+        "speaker": null,
+
+        "text": [
+          "Kamu memalingkan wajah tanpa menjawab.",
+
+          "Serena hanya tertawa kecil."
+        ],
+
+        "auto_next": "dream1_011",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_011": {
+        "node_id": "dream1_011",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Ngomong-ngomong...",
+
+          "Game yang kamu bikin itu keren banget, ya."
+        ],
+
+        "auto_next": "dream1_012",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_012": {
+        "node_id": "dream1_012",
+
+        "speaker": null,
+
+        "text": [
+          "Serena berjalan mendekati komputer milikmu.",
+
+          "Tatapannya terpaku lama pada layar monitor."
+        ],
+
+        "auto_next": "dream1_013",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_013": {
+        "node_id": "dream1_013",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Kamu bikin semua ini sendirian?"
+        ],
+
+        "choices": [
+          {
+            "text": "Menjelaskan konsep game.",
+            "next_node": "dream1_014",
+            "anxiety_change": 0,
+            "fragment_reward": "fragment_d1_001"
+          },
+
+          {
+            "text": "Menutup laptop.",
+            "next_node": "dream1_015",
+            "anxiety_change": 1,
+            "fragment_reward": null
+          }
+        ],
+
+        "ending": false
+      },
+
+      "dream1_014": {
+        "node_id": "dream1_014",
+
+        "speaker": "player",
+
+        "text": [
+          "Cuma game endless run biasa kok, tapi pakai konsep rpg."
+        ],
+
+        "auto_next": "dream1_016",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_015": {
+        "node_id": "dream1_015",
+
+        "speaker": null,
+
+        "text": [
+          "Kamu buru-buru mematikan layar laptop.",
+
+          "Serena tersenyum tipis melihat reaksimu."
+        ],
+
+        "auto_next": "dream1_016",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_016": {
+        "node_id": "dream1_016",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Kadang aku iri sama kamu."
+        ],
+
+        "auto_next": "dream1_017",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_017": {
+        "node_id": "dream1_017",
+
+        "speaker": "player",
+
+        "text": [
+          "Iri?"
+        ],
+
+        "auto_next": "dream1_018",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_018": {
+        "node_id": "dream1_018",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Kamu punya bakat.",
+
+          "Dan selalu ada orang yang milih kamu duluan."
+        ],
+
+        "auto_next": "dream1_019",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_019": {
+        "node_id": "dream1_019",
+
+        "speaker": null,
+
+        "text": [
+          "Pintu laboratorium terbuka pelan.",
+
+          "Seseorang masuk sambil membawa dua kaleng minuman.",
+
+          "Wajahnya tertutup bayangan abu-abu."
+        ],
+
+        "auto_next": "dream1_020",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_020": {
+        "node_id": "dream1_020",
+
+        "speaker": "???",
+
+        "text": [
+          "Kalian masih di sini?"
+        ],
+
+        "auto_next": "dream1_021",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_021": {
+        "node_id": "dream1_021",
+
+        "speaker": null,
+
+        "text": [
+          "Ada rasa hangat aneh memenuhi dadamu saat mendengar suara itu."
+        ],
+
+        "auto_next": "dream1_022",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_022": {
+        "node_id": "dream1_022",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Tumben nyamperin dia terus."
+        ],
+
+        "auto_next": "dream1_023",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_023": {
+        "node_id": "dream1_023",
+
+        "speaker": "???",
+
+        "text": [
+          "Kan dia sahabatku."
+        ],
+
+        "auto_next": "dream1_024",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": "fragment_d1_002",
+
+        "ending": false
+      },
+
+      "dream1_024": {
+        "node_id": "dream1_024",
+
+        "speaker": null,
+
+        "text": [
+          "Suasana laboratorium mendadak terasa dingin.",
+
+          "Saat menoleh ke arah Serena, senyumnya telah menghilang."
+        ],
+
+        "auto_next": "dream1_025",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_025": {
+        "node_id": "dream1_025",
+
+        "speaker": null,
+
+        "text": [
+          "Monitor komputer berkedip bersamaan.",
+
+          "Tulisan merah muncul memenuhi layar.",
+
+          "\"STOLEN.\""
+        ],
+
+        "auto_next": "dream1_026",
+
+        "anxiety_change": 2,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_026": {
+        "node_id": "dream1_026",
+
+        "speaker": "player",
+
+        "text": [
+          "...hah?"
+        ],
+
+        "auto_next": "dream1_027",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_027": {
+        "node_id": "dream1_027",
+
+        "speaker": null,
+
+        "text": [
+          "Suara keyboard memenuhi ruangan.",
+
+          "Semakin lama semakin keras."
+        ],
+
+        "auto_next": "dream1_028",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_028": {
+        "node_id": "dream1_028",
+
+        "speaker": null,
+
+        "text": [
+          "\"NIGHTMARE CORRUPTION DETECTED.\""
+        ],
+
+        "auto_next": "dream1_029",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+      
+      "dream1_029": {
+        "node_id": "dream1_029",
+
+        "speaker": null,
+
+        "text": [
+          "Kesadaranmu kembali perlahan.",
+
+          "Kini kamu berdiri di koridor sekolah.",
+
+          "Langit di luar jendela terlihat merah kusam seperti senja yang membusuk."
+        ],
+
+        "auto_next": "dream1_030",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_030": {
+        "node_id": "dream1_030",
+
+        "speaker": null,
+
+        "text": [
+          "Bisikan samar terdengar di sekelilingmu.",
+
+          "\"Pencuri.\"",
+          "\"Peniru.\"",
+          "\"Pembohong.\""
+        ],
+
+        "auto_next": "dream1_031",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_031": {
+        "node_id": "dream1_031",
+
+        "speaker": "player",
+
+        "text": [
+          "Bukan aku..."
+        ],
+
+        "auto_next": "dream1_032",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_032": {
+        "node_id": "dream1_032",
+
+        "speaker": null,
+
+        "text": [
+          "Beberapa siswa berdiri di ujung lorong.",
+
+          "Wajah mereka rusak seperti layar glitch."
+        ],
+
+        "auto_next": "dream1_033",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_033": {
+        "node_id": "dream1_033",
+
+        "speaker": "Zyan",
+
+        "text": [
+          "Jadi rumor itu bener?"
+        ],
+
+        "auto_next": "dream1_034",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_034": {
+        "node_id": "dream1_034",
+
+        "speaker": "Chery",
+
+        "text": [
+          "Aku gak nyangka dia bakal nyuri project Serena."
+        ],
+
+        "auto_next": "dream1_035",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_035": {
+        "node_id": "dream1_035",
+
+        "speaker": "Yuna",
+
+        "text": [
+          "Padahal Serena percaya banget sama dia."
+        ],
+
+        "auto_next": "dream1_036",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_036": {
+        "node_id": "dream1_036",
+
+        "speaker": null,
+
+        "text": [
+          "Langkahmu terasa berat.",
+
+          "Pemandangan ini terlalu familiar."
+        ],
+
+        "choices": [
+          {
+            "text": "Tetap berjalan.",
+            "next_node": "dream1_037",
+            "anxiety_change": 0,
+            "fragment_reward": null
+          },
+
+          {
+            "text": "Kabur dari lorong.",
+            "next_node": "dream1_bad_001",
+            "anxiety_change": 2,
+            "fragment_reward": null
+          }
+        ],
+
+        "ending": false
+      },
+
+      "dream1_bad_001": {
+        "node_id": "dream1_bad_001",
+
+        "speaker": null,
+
+        "text": [
+          "Kamu berlari tanpa arah.",
+
+          "Namun suara langkah kaki terus mengejarmu.",
+
+          "\"PENCURI.\""
+        ],
+
+        "auto_next": "dream1_bad_002",
+
+        "anxiety_change": 2,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_bad_002": {
+        "node_id": "dream1_bad_002",
+
+        "speaker": null,
+
+        "text": [
+          "Lorong sekolah berubah semakin panjang.",
+
+          "\"NIGHTMARE LOOP RESTARTED.\""
+        ],
+
+        "ending": true
+      },
+
+      "dream1_037": {
+        "node_id": "dream1_037",
+
+        "speaker": null,
+
+        "text": [
+          "Kamu memaksa kakimu terus berjalan.",
+
+          "Di ujung lorong, pintu laboratorium komputer terbuka sedikit."
+        ],
+
+        "auto_next": "dream1_038",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_038": {
+        "node_id": "dream1_038",
+
+        "speaker": null,
+
+        "text": [
+          "Ruangan itu dipenuhi monitor yang menampilkan source code milikmu."
+        ],
+
+        "auto_next": "dream1_039",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": "fragment_d1_003",
+
+        "ending": false
+      },
+
+      "dream1_039": {
+        "node_id": "dream1_039",
+
+        "speaker": "player",
+
+        "text": [
+          "Ini project-ku..."
+        ],
+
+        "auto_next": "dream1_040",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_040": {
+        "node_id": "dream1_040",
+
+        "speaker": null,
+
+        "text": [
+          "Satu monitor terlihat berbeda.",
+
+          "Di sana ada folder bernama:",
+
+          "\"ORIGINAL_PROJECT\""
+        ],
+
+        "choices": [
+          {
+            "text": "Membuka folder.",
+            "next_node": "dream1_041",
+            "anxiety_change": 0,
+            "fragment_reward": null
+          }
+        ],
+
+        "ending": false
+      },
+
+      "dream1_041": {
+        "node_id": "dream1_041",
+
+        "speaker": null,
+
+        "text": [
+          "\"PASSWORD REQUIRED.\""
+        ],
+
+        "auto_next": "dream1_042",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_042": {
+        "node_id": "dream1_042",
+
+        "speaker": null,
+
+        "text": [
+          "\"Tanggal saat semuanya dimulai.\""
+        ],
+
+        "choices": [
+          {
+            "text": "Masukkan: CODEFEST22",
+            "next_node": "dream1_043",
+            "anxiety_change": 0,
+            "fragment_reward": "fragment_d1_004"
+          },
+
+          {
+            "text": "Masukkan password lain.",
+            "next_node": "dream1_042_wrong",
+            "anxiety_change": 1,
+            "fragment_reward": null
+          }
+        ],
+
+        "ending": false
+      },
+
+      "dream1_042_wrong": {
+        "node_id": "dream1_042_wrong",
+
+        "speaker": null,
+
+        "text": [
+          "\"ACCESS DENIED.\"",
+
+          "Monitor mulai berkedip liar.",
+
+          "Suara tawa terdengar dari belakangmu."
+        ],
+
+        "auto_next": "dream1_042",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_043": {
+        "node_id": "dream1_043",
+
+        "speaker": null,
+
+        "text": [
+          "\"ACCESS GRANTED.\""
+        ],
+
+        "auto_next": "dream1_044",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_044": {
+        "node_id": "dream1_044",
+
+        "speaker": null,
+
+        "text": [
+          "Timestamp project asli menunjukkan namamu sebagai pembuat pertama."
+        ],
+
+        "auto_next": "dream1_045",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": "fragment_d1_005",
+
+        "ending": false
+      },
+
+      "dream1_045": {
+        "node_id": "dream1_045",
+
+        "speaker": null,
+
+        "text": [
+          "Suara langkah kaki terdengar dari belakang."
+        ],
+
+        "auto_next": "dream1_046",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_046": {
+        "node_id": "dream1_046",
+
+        "speaker": "Serena",
+
+        "text": [
+          "...jadi kamu nemuin itu juga."
+        ],
+
+        "auto_next": "dream1_047",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_047": {
+        "node_id": "dream1_047",
+
+        "speaker": "player",
+
+        "text": [
+          "Kenapa?"
+        ],
+
+        "auto_next": "dream1_048",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_048": {
+        "node_id": "dream1_048",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Capek tau, kalah terus."
+        ],
+
+        "auto_next": "dream1_049",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_049": {
+        "node_id": "dream1_049",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Kamu punya semuanya.",
+
+          "Bakat.",
+          "Teman.",
+          "Keluarga."
+        ],
+
+        "auto_next": "dream1_050",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_050": {
+        "node_id": "dream1_050",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Bahkan dia selalu milih kamu duluan."
+        ],
+
+        "auto_next": "dream1_051",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_051": {
+        "node_id": "dream1_051",
+
+        "speaker": "player",
+
+        "text": [
+          "...Dia?"
+        ],
+
+        "auto_next": "dream1_052",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_052": {
+        "node_id": "dream1_052",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Aku benci cara dia selalu melihatmu."
+        ],
+
+        "auto_next": "dream1_053",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_053": {
+        "node_id": "dream1_053",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Makanya aku pengen lihat kamu jatuh."
+        ],
+
+        "auto_next": "dream1_054",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_054": {
+        "node_id": "dream1_054",
+
+        "speaker": "Serena",
+
+        "text": [
+          "Dan lucunya...",
+
+          "kamu percaya semua kebohonganku."
+        ],
+
+        "auto_next": "dream1_055",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_055": {
+        "node_id": "dream1_055",
+
+        "speaker": null,
+
+        "text": [
+          "Monitor di sekelilingmu mulai retak.",
+
+          "\"TRUST ERROR DETECTED.\""
+        ],
+
+        "auto_next": "dream1_056",
+
+        "anxiety_change": 1,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "dream1_056": {
+        "node_id": "dream1_056",
+
+        "speaker": null,
+
+        "text": [
+          "Namun kali ini...",
+
+          "kamu tidak ingin lari."
+        ],
+
+        "choices": [
+          {
+            "text": "Menghadapi Serena.",
+            "next_node": "dream1_true_001",
+            "anxiety_change": 0,
+            "fragment_reward": null
+          },
+
+          {
+            "text": "Tetap diam.",
+            "next_node": "dream1_neutral_001",
+            "anxiety_change": 1,
+            "fragment_reward": null
+          }
+        ],
+
+        "ending": false
+      },
+
+      "dream1_057": {
+       "node_id": "dream1_057",
+
+       "speaker": null,
+
+      "text": [
+       "Ruangan laboratorium mulai bergetar pelan.",
+
+       "Retakan hitam menjalar di dinding seperti pecahan layar.",
+
+       "Namun kali ini, kamu tidak memalingkan wajah."
+      ],
+
+     "auto_next": "dream1_058",
+
+     "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_058": {
+    "node_id": "dream1_058",
+
+    "speaker": "player",
+
+    "text": [
+      "Aku capek terus nyalahin diri sendiri."
+    ],
+
+    "auto_next": "dream1_059",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_059": {
+    "node_id": "dream1_059",
+
+    "speaker": "Serena",
+
+    "text": [
+      "...jadi sekarang kamu mau nyalahin aku?"
+    ],
+
+    "auto_next": "dream1_060",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_060": {
+    "node_id": "dream1_060",
+
+    "speaker": "player",
+
+    "text": [
+      "Memangnya bukan?"
+    ],
+
+    "auto_next": "dream1_061",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_061": {
+    "node_id": "dream1_061",
+
+    "speaker": null,
+
+    "text": [
+      "Monitor terbesar di tengah ruangan tiba-tiba menyala.",
+
+      "Sebuah rekaman lama mulai diputar."
+    ],
+
+    "auto_next": "dream1_062",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_062": {
+    "node_id": "dream1_062",
+
+    "speaker": null,
+
+    "text": [
+      "Itu rekaman ruang lab beberapa minggu sebelum lomba.",
+
+      "Terlihat dirimu sedang menjelaskan konsep game pada Serena."
+    ],
+
+    "auto_next": "dream1_063",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": "fragment_d1_006",
+
+    "ending": false
+  },
+
+  "dream1_063": {
+    "node_id": "dream1_063",
+
+    "speaker": "Past_Player",
+
+    "text": [
+      "Jadi sistem ranking ini bakal bikin user makin tertantang untuk berada di puncak."
+    ],
+
+    "auto_next": "dream1_064",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_064": {
+    "node_id": "dream1_064",
+
+    "speaker": "Past_Serena",
+
+    "text": [
+      "Keren banget..."
+    ],
+
+    "auto_next": "dream1_065",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_065": {
+    "node_id": "dream1_065",
+
+    "speaker": null,
+
+    "text": [
+      "Rekaman berhenti mendadak.",
+
+      "Lalu muncul file lain dengan nama:",
+      "\"FINAL_SUBMISSION_SERENA\""
+    ],
+
+    "auto_next": "dream1_066",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_066": {
+    "node_id": "dream1_066",
+
+    "speaker": null,
+
+    "text": [
+      "Timestamp file itu lebih baru beberapa hari.",
+
+      "Namun isi source code-nya hampir identik dengan milikmu."
+    ],
+
+    "auto_next": "dream1_067",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": "fragment_d1_007",
+
+    "ending": false
+  },
+
+  "dream1_067": {
+    "node_id": "dream1_067",
+
+    "speaker": "Serena",
+
+    "text": [
+      "...cukup."
+    ],
+
+    "auto_next": "dream1_068",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_068": {
+    "node_id": "dream1_068",
+
+    "speaker": null,
+
+    "text": [
+      "Suara Serena terdengar kecil untuk pertama kalinya.",
+
+      "Tidak ada lagi nada manipulatif dalam ucapannya."
+    ],
+
+    "auto_next": "dream1_069",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_069": {
+    "node_id": "dream1_069",
+
+    "speaker": "Serena",
+
+    "text": [
+      "Aku tahu aku salah."
+    ],
+
+    "auto_next": "dream1_070",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_070": {
+    "node_id": "dream1_070",
+
+    "speaker": "Serena",
+
+    "text": [
+      "Tapi aku...",
+      "cuma gak mau kalah lagi."
+    ],
+
+    "auto_next": "dream1_071",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_071": {
+    "node_id": "dream1_071",
+
+    "speaker": null,
+
+    "text": [
+      "Dinding laboratorium mulai berubah menjadi data glitch.",
+
+      "Potongan kode beterbangan di udara seperti serpihan kaca."
+    ],
+
+    "auto_next": "dream1_072",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_072": {
+    "node_id": "dream1_072",
+
+    "speaker": "player",
+
+    "text": [
+      "Aku gak bisa ngubah apa yang udah terjadi.",
+
+      "Tapi aku juga gak mau terus hidup di mimpi ini."
+    ],
+
+    "auto_next": "dream1_073",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_073": {
+    "node_id": "dream1_073",
+
+    "speaker": null,
+
+    "text": [
+      "Untuk sesaat, Serena hanya diam menatapmu.",
+
+      "Lalu ia tertawa pelan."
+    ],
+
+    "auto_next": "dream1_074",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_074": {
+    "node_id": "dream1_074",
+
+    "speaker": "Serena",
+
+    "text": [
+      "Kamu berubah ya."
+    ],
+
+    "auto_next": "dream1_075",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_075": {
+    "node_id": "dream1_075",
+
+    "speaker": null,
+
+    "text": [
+      "Monitor terakhir perlahan mati.",
+
+      "Ruangan mulai dipenuhi cahaya putih redup."
+    ],
+
+    "auto_next": "dream1_076",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_076": {
+    "node_id": "dream1_076",
+
+    "speaker": null,
+
+    "text": [
+      "\"MEMORY RECOVERED — 12%\""
+    ],
+
+    "auto_next": "dream1_077",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": "memory_fragment_001",
+
+    "ending": false
+  },
+
+  "dream1_077": {
+    "node_id": "dream1_077",
+
+    "speaker": "???",
+
+    "text": [
+      "Kerja bagus."
+    ],
+
+    "auto_next": "dream1_078",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_078": {
+    "node_id": "dream1_078",
+
+    "speaker": null,
+
+    "text": [
+      "Sosok abu-abu itu kembali muncul di dekat pintu lab.",
+
+      "Kali ini suaranya terdengar lebih jelas."
+    ],
+
+    "auto_next": "dream1_079",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_079": {
+    "node_id": "dream1_079",
+
+    "speaker": "???",
+
+    "text": [
+      "Kali ini kamu ga memilih diam."
+    ],
+
+    "auto_next": "dream1_080",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_080": {
+    "node_id": "dream1_080",
+
+    "speaker": "player",
+
+    "text": [
+      "Kamu..."
+    ],
+
+    "auto_next": "dream1_081",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_081": {
+    "node_id": "dream1_081",
+
+    "speaker": null,
+
+    "text": [
+      "Sosok itu hanya diam melihat reaksimu.",
+
+      "Sebelum menghilang, ia menunjuk ke arah layar monitor."
+    ],
+
+    "auto_next": "dream1_082",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_082": {
+    "node_id": "dream1_082",
+
+    "speaker": null,
+
+    "text": [
+      "Sebuah pesan baru muncul perlahan.",
+
+      "\"NEXT MEMORY AVAILABLE.\""
+    ],
+
+    "auto_next": "dream1_083",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_083": {
+    "node_id": "dream1_083",
+
+    "speaker": null,
+
+    "text": [
+      "Kesadaranmu mulai terasa ringan.",
+
+      "Dunia di sekelilingmu perlahan hancur menjadi serpihan cahaya."
+    ],
+
+    "auto_next": "dream1_084",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "dream1_084": {
+    "node_id": "dream1_084",
+
+    "speaker": null,
+
+    "text": [
+      "Sebelum semuanya gelap, satu suara terdengar samar di telingamu.",
+
+      "\"Masih ada dua mimpi lagi.\""
+    ],
+
+    "ending": true
+    }
+  }  
+ } 
+}
+

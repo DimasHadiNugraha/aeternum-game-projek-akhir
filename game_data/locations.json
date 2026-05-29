@@ -1,9 +1,11 @@
 {
     "locations": {
         "Ruang Kelas": ["Koridor"],
-        "Koridor": ["Ruang Kelas", "Ruang Guru", "Rumah"],
+        "Koridor": ["Ruang Kelas", "Ruang Guru", "Rumah", "Lab Komputer", "Taman"],
         "Ruang Guru": ["Koridor"],
-        "Rumah": ["Koridor"]
+        "Rumah": ["Koridor", "Rumah Sakit"],
+        "Lab Komputer": ["Koridor"],
+        "Taman": ["Koridor", "Rumah Sakit"],
+        "Rumah Sakit": ["Rumah", "Taman"]
     }
 }
-

@@ -1,4 +1,9 @@
 from system.dream import MesinMimpi
 
-mesin = MesinMimpi()
-mesin.mulai_mimpi()
+def main():
+
+    mesin_mimpi = MesinMimpi()
+    mesin_mimpi.mulai_mimpi()
+
+if __name__ == "__main__":
+    main()

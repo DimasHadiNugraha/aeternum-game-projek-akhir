@@ -1,0 +1,741 @@
+{
+  "dream_2": {
+    "title": "Requiem of Silence",
+
+    "start_node": "dream2_001",
+
+    "nodes": {
+
+      "dream2_001": {
+        "node_id": "dream2_001",
+        "speaker": null,
+        "text": [
+          "Nada piano terdengar lembut di kejauhan.",
+          "Hangat.",
+          "Tenang.",
+          "Untuk pertama kalinya setelah sekian lama... dadamu tidak terasa sesak."
+        ],
+        "auto_next": "dream2_002",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_002": {
+        "node_id": "dream2_002",
+        "speaker": null,
+        "text": [
+          "Cahaya sore masuk melalui jendela ruang musik kecil.",
+          "Debu beterbangan pelan di udara.",
+          "Di depan piano tua itu, Lumi kecil duduk sambil tersenyum ke arahmu."
+        ],
+        "auto_next": "dream2_003",
+        "anxiety_change": -1,
+        "fragment_reward": "fragment_d2_001",
+        "ending": false
+      },
+
+      "dream2_003": {
+        "node_id": "dream2_003",
+        "speaker": "Lumiere",
+        "text": [
+          "Kamu salah lagi.",
+          "Nada terakhirnya kepencet terlalu keras."
+        ],
+        "auto_next": "dream2_004",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_004": {
+        "node_id": "dream2_004",
+        "speaker": "player",
+        "text": [
+          "Kamu juga tadi salah tempo."
+        ],
+        "auto_next": "dream2_005",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_005": {
+        "node_id": "dream2_005",
+        "speaker": null,
+        "text": [
+          "Lumi tertawa kecil.",
+          "Suara tawanya terasa sangat familiar.",
+          "Dan menyakitkan."
+        ],
+        "auto_next": "dream2_006",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_006": {
+        "node_id": "dream2_006",
+        "speaker": "player",
+        "text": [
+          "...mimpi lagi ya?"
+        ],
+        "auto_next": "dream2_007",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_007": {
+        "node_id": "dream2_007",
+        "speaker": "Lumiere",
+        "text": [
+          "Iya.",
+          "Tapi kali ini jangan cuma diam."
+        ],
+        "auto_next": "dream2_008",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_008": {
+        "node_id": "dream2_008",
+        "speaker": null,
+        "text": [
+          "Sebuah nada piano terdengar fals.",
+          "Ruangan perlahan berubah gelap.",
+          "Kenangan lain mulai muncul satu per satu."
+        ],
+        "auto_next": "dream2_009",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_009": {
+        "node_id": "dream2_009",
+        "speaker": null,
+        "text": [
+          "Rumah besar.",
+          "Dinding putih.",
+          "Foto keluarga sempurna.",
+          "Dan suara pertengkaran dari lantai bawah."
+        ],
+        "auto_next": "dream2_010",
+        "anxiety_change": 1,
+        "fragment_reward": "fragment_d2_002",
+        "ending": false
+      },
+
+      "dream2_010": {
+        "node_id": "dream2_010",
+        "speaker": null,
+        "text": [
+          "Setiap kali tamu datang, rumah itu terasa hangat.",
+          "Setelah mereka pergi...",
+          "yang tersisa hanya suara benda pecah dan tangisan tertahan."
+        ],
+        "auto_next": "dream2_011",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_011": {
+        "node_id": "dream2_011",
+        "speaker": null,
+        "text": [
+          "Namun selalu ada satu tempat yang terasa aman.",
+          "Ruang piano milik pamanmu."
+        ],
+        "auto_next": "dream2_012",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_012": {
+        "node_id": "dream2_012",
+        "speaker": "Paman",
+        "text": [
+          "Musik itu lucu.",
+          "Dia lebih jujur daripada manusia."
+        ],
+        "auto_next": "dream2_013",
+        "anxiety_change": 0,
+        "fragment_reward": "fragment_d2_003",
+        "ending": false
+      },
+
+      "dream2_013": {
+        "node_id": "dream2_013",
+        "speaker": null,
+        "text": [
+          "Jemari paman bergerak pelan di atas tuts piano.",
+          "Nada hangat memenuhi ruangan.",
+          "Dan untuk sesaat... dunia terasa baik-baik saja."
+        ],
+        "auto_next": "dream2_014",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_014": {
+        "node_id": "dream2_014",
+        "speaker": null,
+        "text": [
+          "Mimpi berpindah lagi.",
+          "Kini kamu mengenakan seragam SMP.",
+          "Hari konser piano sekolah akhirnya tiba."
+        ],
+        "auto_next": "dream2_015",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_015": {
+        "node_id": "dream2_015",
+        "speaker": "Lumiere",
+        "text": [
+          "Kamu pasti bisa.",
+          "Pamanmu juga bakal datang kan?"
+        ],
+        "choices": [
+          {
+            "text": "Mengangguk pelan.",
+            "next_node": "dream2_016",
+            "anxiety_change": 0,
+            "fragment_reward": null
+          },
+          {
+            "text": "Berusaha terlihat tenang.",
+            "next_node": "dream2_016",
+            "anxiety_change": 1,
+            "fragment_reward": null
+          }
+        ],
+        "ending": false
+      },
+
+      "dream2_016": {
+        "node_id": "dream2_016",
+        "speaker": null,
+        "text": [
+          "Kursi penonton mulai penuh.",
+          "Lampu panggung menyala terang.",
+          "Namun satu kursi masih kosong."
+        ],
+        "auto_next": "dream2_017",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_017": {
+        "node_id": "dream2_017",
+        "speaker": null,
+        "text": [
+          "Waktu terus berjalan.",
+          "Tapi pamanmu tidak datang."
+        ],
+        "auto_next": "dream2_018",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_018": {
+        "node_id": "dream2_018",
+        "speaker": null,
+        "text": [
+          "Suara tepuk tangan mulai terdengar aneh.",
+          "Berubah menjadi suara hujan.",
+          "Lalu suara rem mobil yang memekakkan telinga."
+        ],
+        "auto_next": "dream2_019",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_019": {
+        "node_id": "dream2_019",
+        "speaker": null,
+        "text": [
+          "Lampu panggung berkedip liar.",
+          "Nada piano mulai rusak.",
+          "Dan dunia di sekitarmu retak seperti layar glitch."
+        ],
+        "auto_next": "dream2_020",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_020": {
+        "node_id": "dream2_020",
+        "speaker": null,
+        "text": [
+          "Jalan raya kosong membentang di hadapanmu.",
+          "Sebuah mobil hancur di tengah hujan.",
+          "Not balok beterbangan di udara seperti pecahan kaca."
+        ],
+        "auto_next": "dream2_021",
+        "anxiety_change": 2,
+        "fragment_reward": "fragment_d2_004",
+        "ending": false
+      },
+
+      "dream2_021": {
+        "node_id": "dream2_021",
+        "speaker": null,
+        "text": [
+          "Di dekat bangkai mobil itu...",
+          "kamu melihat lembar partitur milik pamanmu berlumuran darah."
+        ],
+        "auto_next": "dream2_022",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_022": {
+        "node_id": "dream2_022",
+        "speaker": null,
+        "text": [
+          "Mimpi berubah lagi.",
+          "Kini rumahmu terasa lebih dingin dari sebelumnya."
+        ],
+        "auto_next": "dream2_023",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_023": {
+        "node_id": "dream2_023",
+        "speaker": "Ibu",
+        "text": [
+          "Kamu gak akan nyentuh piano lagi."
+        ],
+        "auto_next": "dream2_024",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_024": {
+        "node_id": "dream2_024",
+        "speaker": null,
+        "text": [
+          "Sejak hari itu, rumah terasa semakin sunyi.",
+          "Tidak ada lagi musik.",
+          "Tidak ada lagi tawa pamanmu."
+        ],
+        "auto_next": "dream2_025",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_025": {
+        "node_id": "dream2_025",
+        "speaker": null,
+        "text": [
+          "Namun diam-diam...",
+          "kamu masih pergi ke rumah Lumiere untuk bermain piano bersama."
+        ],
+        "auto_next": "dream2_026",
+        "anxiety_change": 0,
+        "fragment_reward": "fragment_d2_005",
+        "ending": false
+      },
+
+      "dream2_026": {
+        "node_id": "dream2_026",
+        "speaker": "Lumiere",
+        "text": [
+          "Walau dunia terasa sunyi...",
+          "Selama kita masih bisa mendengar suara piano, kita akan tetap hidup."
+        ],
+        "auto_next": "dream2_027",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_027": {
+        "node_id": "dream2_027",
+        "speaker": null,
+        "text": [
+          "Nada piano kalian menyatu perlahan.",
+          "Untuk sesaat, rasa sakit itu menghilang."
+        ],
+        "auto_next": "dream2_028",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_028": {
+        "node_id": "dream2_028",
+        "speaker": null,
+        "text": [
+          "Namun suara pintu dibanting keras tiba-tiba memecah semuanya."
+        ],
+        "auto_next": "dream2_029",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_029": {
+        "node_id": "dream2_029",
+        "speaker": "Ibu",
+        "text": [
+          "Jadi selama ini kamu bohong sama mama?"
+        ],
+        "auto_next": "dream2_030",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_030": {
+        "node_id": "dream2_030",
+        "speaker": null,
+        "text": [
+          "Tatapan ibumu dipenuhi kemarahan dan kesedihan.",
+          "Dan untuk pertama kalinya... kamu melihat ketakutan dalam matanya."
+        ],
+        "auto_next": "dream2_031",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_031": {
+        "node_id": "dream2_031",
+        "speaker": null,
+        "text": [
+          "Tiba-tiba kilasan memori memenuhi kepalamu.",
+          "Tanganmu patah.",
+          "Suara dokter.",
+          "Dan piano yang terbakar habis."
+        ],
+        "auto_next": "dream2_032",
+        "anxiety_change": 3,
+        "fragment_reward": "fragment_d2_006",
+        "ending": false
+      },
+
+      "dream2_032": {
+        "node_id": "dream2_032",
+        "speaker": null,
+        "text": [
+          "Tidak.",
+          "Ini belum terjadi.",
+          "Atau mungkin... ini hasil kalau kamu tetap diam."
+        ],
+        "choices": [
+          {
+            "text": "Tetap diam.",
+            "next_node": "dream2_bad_001",
+            "anxiety_change": 2,
+            "fragment_reward": null
+          },
+          {
+            "text": "Hadapi ibumu.",
+            "next_node": "dream2_033",
+            "anxiety_change": -1,
+            "fragment_reward": null
+          }
+        ],
+        "ending": false
+      },
+
+      "dream2_bad_001": {
+        "node_id": "dream2_bad_001",
+        "speaker": null,
+        "text": [
+          "Kamu hanya diam.",
+          "Seperti biasanya."
+        ],
+        "auto_next": "dream2_bad_002",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_bad_002": {
+        "node_id": "dream2_bad_002",
+        "speaker": null,
+        "text": [
+          "Api mulai membakar piano peninggalan pamanmu.",
+          "Nada terakhirnya terdengar seperti jeritan."
+        ],
+        "auto_next": "dream2_bad_003",
+        "anxiety_change": 3,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_bad_003": {
+        "node_id": "dream2_bad_003",
+        "speaker": null,
+        "text": [
+          "Suara retakan tulang memenuhi ruangan.",
+          "Dan dunia mendadak sunyi total."
+        ],
+        "auto_next": "dream2_bad_004",
+        "anxiety_change": 3,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_bad_004": {
+        "node_id": "dream2_bad_004",
+        "speaker": "Dokter",
+        "text": [
+          "Maaf.",
+          "Kemungkinan besar dia tidak akan bisa bermain piano lagi."
+        ],
+        "ending": true
+      },
+
+      "dream2_033": {
+        "node_id": "dream2_033",
+        "speaker": "player",
+        "text": [
+          "Mama pikir aku masih hidup normal di rumah itu?"
+        ],
+        "auto_next": "dream2_034",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_034": {
+        "node_id": "dream2_034",
+        "speaker": "player",
+        "text": [
+          "Aku bahkan gak inget terakhir kali rumah ini terasa seperti rumah."
+        ],
+        "auto_next": "dream2_035",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_035": {
+        "node_id": "dream2_035",
+        "speaker": "player",
+        "text": [
+          "Paman...",
+          "piano...",
+          "dan Lumiere...",
+          "mereka satu-satunya alasan aku masih mau bangun tiap hari."
+        ],
+        "auto_next": "dream2_036",
+        "anxiety_change": -1,
+        "fragment_reward": "fragment_d2_007",
+        "ending": false
+      },
+
+      "dream2_036": {
+        "node_id": "dream2_036",
+        "speaker": null,
+        "text": [
+          "Ruangan mendadak sunyi.",
+          "Untuk pertama kalinya, ibumu terlihat kehilangan kata-kata."
+        ],
+        "auto_next": "dream2_037",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_037": {
+        "node_id": "dream2_037",
+        "speaker": null,
+        "text": [
+          "Tangannya gemetar pelan.",
+          "Seolah baru sadar betapa hancurnya dirimu selama ini."
+        ],
+        "auto_next": "dream2_038",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_038": {
+        "node_id": "dream2_038",
+        "speaker": "Ibu",
+        "text": [
+          "...mama gak tahu kalau kamu sesakit itu."
+        ],
+        "auto_next": "dream2_039",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_039": {
+        "node_id": "dream2_039",
+        "speaker": null,
+        "text": [
+          "Namun dunia mimpi tetap retak.",
+          "Dan rasa sakit itu masih tidak bisa sepenuhnya dihindari."
+        ],
+        "auto_next": "dream2_040",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_040": {
+        "node_id": "dream2_040",
+        "speaker": null,
+        "text": [
+          "Sebuah benda jatuh mengenai tanganmu.",
+          "Rasa nyeri menjalar sampai ke ujung jemari."
+        ],
+        "auto_next": "dream2_041",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_041": {
+        "node_id": "dream2_041",
+        "speaker": null,
+        "text": [
+          "Namun kali ini...",
+          "tanganmu tidak hancur sepenuhnya."
+        ],
+        "auto_next": "dream2_042",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_042": {
+        "node_id": "dream2_042",
+        "speaker": "Dokter",
+        "text": [
+          "Masih bisa sembuh.",
+          "Tapi dia harus istirahat cukup lama."
+        ],
+        "auto_next": "dream2_043",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_043": {
+        "node_id": "dream2_043",
+        "speaker": null,
+        "text": [
+          "Mimpi mulai memudar perlahan.",
+          "Kini kamu duduk sendiri di depan piano tua itu lagi.",
+          "Tanganmu diperban rapi."
+        ],
+        "auto_next": "dream2_044",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_044": {
+        "node_id": "dream2_044",
+        "speaker": null,
+        "text": [
+          "Kamu tidak berani menyentuh tuts piano.",
+          "Takut kalau semuanya benar-benar sudah berakhir."
+        ],
+        "auto_next": "dream2_045",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_045": {
+        "node_id": "dream2_045",
+        "speaker": "Ibu",
+        "text": [
+          "Kalau memang itu yang bikin kamu bertahan hidup..."
+        ],
+        "auto_next": "dream2_046",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_046": {
+        "node_id": "dream2_046",
+        "speaker": "Ibu",
+        "text": [
+          "...mainkan lagi."
+        ],
+        "auto_next": "dream2_047",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_047": {
+        "node_id": "dream2_047",
+        "speaker": null,
+        "text": [
+          "Dengan tangan gemetar, kamu menekan satu tuts piano."
+        ],
+        "auto_next": "dream2_048",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_048": {
+        "node_id": "dream2_048",
+        "speaker": null,
+        "text": [
+          "Nada itu terdengar pelan.",
+          "Tidak sempurna.",
+          "Namun masih hidup."
+        ],
+        "auto_next": "dream2_049",
+        "anxiety_change": -1,
+        "fragment_reward": "memory_fragment_002",
+        "ending": false
+      },
+
+      "dream2_049": {
+        "node_id": "dream2_049",
+        "speaker": "Lumiere",
+        "text": [
+          "Aku masih bisa denger musikmu."
+        ],
+        "auto_next": "dream2_050",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream2_050": {
+        "node_id": "dream2_050",
+        "speaker": null,
+        "text": [
+          "Dunia perlahan berubah menjadi serpihan cahaya.",
+          "Namun kali ini...",
+          "hatimu tidak terasa seberat sebelumnya."
+        ],
+        "ending": true
+      }
+
+    }
+  }
+}
+

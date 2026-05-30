@@ -1,0 +1,801 @@
+
+{
+  "dream_3": {
+    "title": "Heartbeat Requiem",
+
+    "start_node": "dream3_001",
+
+    "nodes": {
+
+      "dream3_001": {
+        "node_id": "dream3_001",
+        "speaker": null,
+        "text": [
+          "Suara detak jam terdengar pelan di kejauhan.",
+          "Tik.",
+          "Tik.",
+          "Tik.",
+          "Lalu perlahan berubah menjadi detak jantung."
+        ],
+        "auto_next": "dream3_002",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_002": {
+        "node_id": "dream3_002",
+        "speaker": null,
+        "text": [
+          "Kesadaranmu kembali di ruang kelas yang sepi.",
+          "Langit sore terlihat pucat dari balik jendela.",
+          "Tumpukan buku dan latihan ujian memenuhi mejamu."
+        ],
+        "auto_next": "dream3_003",
+        "anxiety_change": 1,
+        "fragment_reward": "fragment_d3_001",
+        "ending": false
+      },
+
+      "dream3_003": {
+        "node_id": "dream3_003",
+        "speaker": null,
+        "text": [
+          "Tanganmu masih terasa nyeri setiap kali menggenggam pensil.",
+          "Namun kamu terus memaksa dirimu belajar."
+        ],
+        "auto_next": "dream3_004",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_004": {
+        "node_id": "dream3_004",
+        "speaker": "player",
+        "text": [
+          "...mimpi berikutnya ya."
+        ],
+        "auto_next": "dream3_005",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_005": {
+        "node_id": "dream3_005",
+        "speaker": null,
+        "text": [
+          "Namun kali ini terasa berbeda.",
+          "Tidak ada glitch.",
+          "Tidak ada monster.",
+          "Hanya rasa lelah yang menyesakkan."
+        ],
+        "auto_next": "dream3_006",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_006": {
+        "node_id": "dream3_006",
+        "speaker": null,
+        "text": [
+          "Pintu kelas terbuka pelan.",
+          "Lumiere masuk sambil membawa dua kaleng kopi dingin."
+        ],
+        "auto_next": "dream3_007",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_007": {
+        "node_id": "dream3_007",
+        "speaker": "Lumiere",
+        "text": [
+          "Belajar lagi?",
+          "Kamu udah kayak zombie."
+        ],
+        "auto_next": "dream3_008",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_008": {
+        "node_id": "dream3_008",
+        "speaker": "Lumiere",
+        "text": [
+          "Emangnya ujian masuk perguruan tinggi sesusah itu sampai wajahmu kusam begitu?"
+        ],
+        "choices": [
+          {
+            "text": "Menahan emosi.",
+            "next_node": "dream3_009",
+            "anxiety_change": 1,
+            "fragment_reward": null
+          },
+          {
+            "text": "Meluapkan kekesalan.",
+            "next_node": "dream3_010",
+            "anxiety_change": 2,
+            "fragment_reward": null
+          }
+        ],
+        "ending": false
+      },
+
+      "dream3_009": {
+        "node_id": "dream3_009",
+        "speaker": "player",
+        "text": [
+          "...kamu gak bakal ngerti."
+        ],
+        "auto_next": "dream3_011",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_010": {
+        "node_id": "dream3_010",
+        "speaker": "player",
+        "text": [
+          "Ya jelas gak susah bagimu.",
+          "Kamu kan udah dapet golden ticket bahkan sebelum ujian dimulai."
+        ],
+        "auto_next": "dream3_011",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_011": {
+        "node_id": "dream3_011",
+        "speaker": null,
+        "text": [
+          "Lumiere terdiam.",
+          "Senyumnya perlahan menghilang."
+        ],
+        "auto_next": "dream3_012",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_012": {
+        "node_id": "dream3_012",
+        "speaker": "player",
+        "text": [
+          "Kalau aku gagal...",
+          "aku bakal kehilangan semuanya."
+        ],
+        "auto_next": "dream3_013",
+        "anxiety_change": 2,
+        "fragment_reward": "fragment_d3_002",
+        "ending": false
+      },
+
+      "dream3_013": {
+        "node_id": "dream3_013",
+        "speaker": null,
+        "text": [
+          "Ruangan mendadak terasa sangat sunyi.",
+          "Dan sejak hari itu... kalian mulai menjaga jarak."
+        ],
+        "auto_next": "dream3_014",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_014": {
+        "node_id": "dream3_014",
+        "speaker": null,
+        "text": [
+          "Hari-hari berlalu dalam keheningan.",
+          "Chat tidak dibalas.",
+          "Ruang piano terasa kosong.",
+          "Dan kursi di sebelahmu selalu kosong saat makan siang."
+        ],
+        "auto_next": "dream3_015",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_015": {
+        "node_id": "dream3_015",
+        "speaker": null,
+        "text": [
+          "Namun jauh di dalam hati...",
+          "Lumiere tahu kamu sebenarnya sedang merasa frustasi."
+        ],
+        "auto_next": "dream3_016",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_016": {
+        "node_id": "dream3_016",
+        "speaker": null,
+        "text": [
+          "Hari ujian masuk universitas akhirnya tiba.",
+          "Jemari tanganmu gemetar di atas piano ujian."
+        ],
+        "auto_next": "dream3_017",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_017": {
+        "node_id": "dream3_017",
+        "speaker": null,
+        "text": [
+          "Setiap nada terasa seperti pertaruhan hidup dan mati."
+        ],
+        "auto_next": "dream3_018",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_018": {
+        "node_id": "dream3_018",
+        "speaker": null,
+        "text": [
+          "Setelah ujian selesai, kamu keluar gedung dengan tubuh lemas.",
+          "Dan menemukan Lumiere menunggumu di depan gerbang."
+        ],
+        "auto_next": "dream3_019",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_019": {
+        "node_id": "dream3_019",
+        "speaker": "Lumiere",
+        "text": [
+          "Mau jalan-jalan bentar?"
+        ],
+        "choices": [
+          {
+            "text": "Mengiyakan.",
+            "next_node": "dream3_020",
+            "anxiety_change": -1,
+            "fragment_reward": null
+          },
+          {
+            "text": "Diam beberapa saat lalu mengangguk.",
+            "next_node": "dream3_020",
+            "anxiety_change": 0,
+            "fragment_reward": null
+          }
+        ],
+        "ending": false
+      },
+
+      "dream3_020": {
+        "node_id": "dream3_020",
+        "speaker": null,
+        "text": [
+          "Lampu kota mulai menyala satu per satu.",
+          "Kalian berjalan tanpa tujuan sambil berbagi makanan minimarket murahan."
+        ],
+        "auto_next": "dream3_021",
+        "anxiety_change": -1,
+        "fragment_reward": "fragment_d3_003",
+        "ending": false
+      },
+
+      "dream3_021": {
+        "node_id": "dream3_021",
+        "speaker": "player",
+        "text": [
+          "Aku takut gagal."
+        ],
+        "auto_next": "dream3_022",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_022": {
+        "node_id": "dream3_022",
+        "speaker": "player",
+        "text": [
+          "Sekarang aku cuma punya satu mimpi.",
+          "Masuk universitas musik itu.",
+          "Kalau itu hilang...",
+          "aku gak tahu harus hidup buat apa lagi."
+        ],
+        "auto_next": "dream3_023",
+        "anxiety_change": 1,
+        "fragment_reward": "fragment_d3_004",
+        "ending": false
+      },
+
+      "dream3_023": {
+        "node_id": "dream3_023",
+        "speaker": "Lumiere",
+        "text": [
+          "Kalau begitu...",
+          "aku bakal temenin kamu sampai berhasil."
+        ],
+        "auto_next": "dream3_024",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_024": {
+        "node_id": "dream3_024",
+        "speaker": null,
+        "text": [
+          "Untuk pertama kalinya setelah sekian lama...",
+          "kalian kembali tertawa bersama."
+        ],
+        "auto_next": "dream3_025",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_025": {
+        "node_id": "dream3_025",
+        "speaker": null,
+        "text": [
+          "Namun saat perjalanan pulang...",
+          "dadamu mendadak terasa sangat sakit."
+        ],
+        "auto_next": "dream3_026",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_026": {
+        "node_id": "dream3_026",
+        "speaker": null,
+        "text": [
+          "Napasmu memburu.",
+          "Pandanganmu kabur.",
+          "Dan tubuhmu ambruk ke jalanan."
+        ],
+        "auto_next": "dream3_027",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_027": {
+        "node_id": "dream3_027",
+        "speaker": null,
+        "text": [
+          "Suara monitor rumah sakit berbunyi pelan.",
+          "Namun di telingamu...",
+          "bunyi itu terdengar seperti metronome piano."
+        ],
+        "auto_next": "dream3_028",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_028": {
+        "node_id": "dream3_028",
+        "speaker": "Dokter",
+        "text": [
+          "Kondisi jantungmu memburuk lebih cepat dari perkiraan.",
+          "Tanpa donor... waktumu mungkin tinggal beberapa bulan."
+        ],
+        "auto_next": "dream3_029",
+        "anxiety_change": 3,
+        "fragment_reward": "fragment_d3_005",
+        "ending": false
+      },
+
+      "dream3_029": {
+        "node_id": "dream3_029",
+        "speaker": null,
+        "text": [
+          "Hari demi hari berlalu.",
+          "Namun donor yang cocok tidak pernah ditemukan."
+        ],
+        "auto_next": "dream3_030",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_030": {
+        "node_id": "dream3_030",
+        "speaker": null,
+        "text": [
+          "Tujuh minggu kemudian...",
+          "surat penerimaan universitas akhirnya datang."
+        ],
+        "auto_next": "dream3_031",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_031": {
+        "node_id": "dream3_031",
+        "speaker": null,
+        "text": [
+          "Kamu lolos.",
+          "Universitas musik terbaik akhirnya menerimamu."
+        ],
+        "auto_next": "dream3_032",
+        "anxiety_change": 0,
+        "fragment_reward": "fragment_d3_006",
+        "ending": false
+      },
+
+      "dream3_032": {
+        "node_id": "dream3_032",
+        "speaker": "player",
+        "text": [
+          "...akhirnya berhasil.",
+          "Tapi untuk apa?"
+        ],
+        "auto_next": "dream3_033",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_033": {
+        "node_id": "dream3_033",
+        "speaker": null,
+        "text": [
+          "Air matamu jatuh di atas surat penerimaan itu.",
+          "Dan untuk pertama kalinya...",
+          "mimpimu terasa menyakitkan."
+        ],
+        "auto_next": "dream3_034",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_034": {
+        "node_id": "dream3_034",
+        "speaker": null,
+        "text": [
+          "Kamu menyerah menunggu donor.",
+          "Dan meminta satu hal terakhir pada Lumiere."
+        ],
+        "auto_next": "dream3_035",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_035": {
+        "node_id": "dream3_035",
+        "speaker": "player",
+        "text": [
+          "Temenin aku jalan-jalan sekali lagi ya."
+        ],
+        "auto_next": "dream3_036",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_036": {
+        "node_id": "dream3_036",
+        "speaker": null,
+        "text": [
+          "Taman kota malam itu dipenuhi lampu kecil dan suara jangkrik.",
+          "Lumiere terus tersenyum sepanjang perjalanan.",
+          "Namun matanya terlihat merah seperti habis menangis."
+        ],
+        "auto_next": "dream3_037",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_037": {
+        "node_id": "dream3_037",
+        "speaker": "Lumiere",
+        "text": [
+          "Kamu pasti bakal dapet donor.",
+          "Jadi jangan ngomong kalo ini terakhir kali ya."
+        ],
+        "auto_next": "dream3_038",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_038": {
+        "node_id": "dream3_038",
+        "speaker": null,
+        "text": [
+          "Walau terus tersenyum...",
+          "air mata Lumiere tidak pernah benar-benar berhenti."
+        ],
+        "auto_next": "dream3_039",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_039": {
+        "node_id": "dream3_039",
+        "speaker": "player",
+        "text": [
+          "Aku pengen es krim."
+        ],
+        "auto_next": "dream3_040",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_040": {
+        "node_id": "dream3_040",
+        "speaker": "Lumiere",
+        "text": [
+          "Tunggu di sini.",
+          "Aku beli bentar."
+        ],
+        "auto_next": "dream3_041",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_041": {
+        "node_id": "dream3_041",
+        "speaker": null,
+        "text": [
+          "Lumiere berlari kecil menyeberang jalan.",
+          "Lampu kendaraan memantul di genangan air hujan."
+        ],
+        "auto_next": "dream3_042",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_042": {
+        "node_id": "dream3_042",
+        "speaker": null,
+        "text": [
+          "Kemudian semuanya terjadi terlalu cepat.",
+          "Suara klakson.",
+          "Rem mendecit.",
+          "Dan tubuh Lumiere terpental ke aspal."
+        ],
+        "auto_next": "dream3_043",
+        "anxiety_change": 4,
+        "fragment_reward": "fragment_d3_007",
+        "ending": false
+      },
+
+      "dream3_043": {
+        "node_id": "dream3_043",
+        "speaker": null,
+        "text": [
+          "Es krim yang dibawanya jatuh dan perlahan meleleh di jalanan."
+        ],
+        "auto_next": "dream3_044",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_044": {
+        "node_id": "dream3_044",
+        "speaker": null,
+        "text": [
+          "Ambulans.",
+          "Lampu merah biru.",
+          "Suara tangisan.",
+          "Dan tangan Lumiere yang perlahan kehilangan hangatnya."
+        ],
+        "auto_next": "dream3_045",
+        "anxiety_change": 3,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_045": {
+        "node_id": "dream3_045",
+        "speaker": null,
+        "text": [
+          "Namun Lumiere masih hidup.",
+          "Masih berusaha membuka matanya untuk melihatmu."
+        ],
+        "auto_next": "dream3_046",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_046": {
+        "node_id": "dream3_046",
+        "speaker": "Lumiere",
+        "text": [
+          "Maaf...",
+          "gak bisa nemenin kamu sampai jadi pianis terkenal."
+        ],
+        "auto_next": "dream3_047",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_047": {
+        "node_id": "dream3_047",
+        "speaker": "Lumiere",
+        "text": [
+          "Tapi aku harap...",
+          "jantungku akan selalu berdetak untuk menggantikan kehadiranku di hidupmu."
+        ],
+        "auto_next": "dream3_048",
+        "anxiety_change": 3,
+        "fragment_reward": "memory_fragment_003",
+        "ending": false
+      },
+
+      "dream3_048": {
+        "node_id": "dream3_048",
+        "speaker": null,
+        "text": [
+          "Monitor detak jantung berbunyi panjang.",
+          "Dan dunia mimpi mulai runtuh di sekelilingmu."
+        ],
+        "auto_next": "dream3_049",
+        "anxiety_change": 4,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_049": {
+        "node_id": "dream3_049",
+        "speaker": null,
+        "text": [
+          "Potongan memori dari semua mimpi mulai muncul satu per satu.",
+          "Laboratorium sekolah.",
+          "Piano terbakar.",
+          "Tangan yang gemetar.",
+          "Dan senyum Lumiere."
+        ],
+        "auto_next": "dream3_050",
+        "anxiety_change": 2,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_050": {
+        "node_id": "dream3_050",
+        "speaker": null,
+        "text": [
+          "Seluruh fragment memori dan emosi mulai menyatu.",
+          "Dan akhirnya...",
+          "kamu mengingat semuanya."
+        ],
+        "auto_next": "dream3_051",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_051": {
+        "node_id": "dream3_051",
+        "speaker": null,
+        "text": [
+          "Nightmare itu bukan sekadar mimpi buruk.",
+          "Melainkan caramu mempertahankan keberadaan Lumiere di dalam hidupmu."
+        ],
+        "auto_next": "dream3_052",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_052": {
+        "node_id": "dream3_052",
+        "speaker": null,
+        "text": [
+          "Karena jika kamu melupakan semua rasa sakit ini...",
+          "maka pengorbanan Lumiere benar-benar akan hilang."
+        ],
+        "auto_next": "dream3_053",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_053": {
+        "node_id": "dream3_053",
+        "speaker": null,
+        "text": [
+          "Kesadaranmu perlahan kembali di sebuah auditorium konser yang kosong.",
+          "Hanya ada satu piano di tengah ruangan."
+        ],
+        "auto_next": "dream3_054",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_054": {
+        "node_id": "dream3_054",
+        "speaker": null,
+        "text": [
+          "Kamu duduk perlahan di depan piano.",
+          "Untuk pertama kalinya...",
+          "tanpa Lumiere di sampingmu."
+        ],
+        "auto_next": "dream3_055",
+        "anxiety_change": 1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_055": {
+        "node_id": "dream3_055",
+        "speaker": null,
+        "text": [
+          "Dengan tangan gemetar, kamu mulai memainkan lagu terakhir yang dulu sering kalian mainkan bersama."
+        ],
+        "auto_next": "dream3_056",
+        "anxiety_change": 0,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_056": {
+        "node_id": "dream3_056",
+        "speaker": null,
+        "text": [
+          "Di tengah lagu itu...",
+          "detak jantungmu mulai sinkron dengan nada piano."
+        ],
+        "auto_next": "dream3_057",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_057": {
+        "node_id": "dream3_057",
+        "speaker": null,
+        "text": [
+          "Dum.",
+          "Dum.",
+          "Dum.",
+          "Seolah Lumiere masih ada di sana mendengarkan permainanmu."
+        ],
+        "auto_next": "dream3_058",
+        "anxiety_change": -1,
+        "fragment_reward": null,
+        "ending": false
+      },
+
+      "dream3_058": {
+        "node_id": "dream3_058",
+        "speaker": null,
+        "text": [
+          "Lampu auditorium perlahan padam satu per satu.",
+          "Dan sebuah pesan muncul di hadapanmu.",
+          "\"EPILOGUE UNLOCKED.\""
+        ],
+        "ending": true
+      }
+
+    }
+  }
+}

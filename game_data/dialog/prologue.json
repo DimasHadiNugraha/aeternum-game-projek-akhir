@@ -1,63 +1,948 @@
 {
-    "start": {
-        "type": "dialogue",
-        "speaker": "Unknown",
-        "text": "jangan lupakan aku..."
-    },
+  "prologue": {
+    "start_node": "intro_001",
 
-    "node_1": {
-        "type": "dialogue",
-        "speaker": "Unknown",
-        "text": "hei ******"
-    },
+    "nodes": {
 
-    "node_2": {
-        "type": "narration",
-        "text": "suara lirih menyapa telingamu. Pelan, tapi tajam. ia terus memanggil namamu, memaksamu untuk bangun. suaranya terdengar familiar, mungkin seseorang yang kamu kenal?"
-    },
+      "intro_001": {
+        "node_id": "intro_001",
 
-    "node_3": {
-        "type": "dialogue",
-        "speaker": "Unknown",
-        "text": "jangan pergi dari sini, {player_name}"
-    },
+        "speaker": null,
 
-    "node_4": {
-        "type": "Player",
-        "text": "Suara ini lagi... aku sedang bermimpi, ya?"
-    },
+        "text": [
+          "#LOOP KE-71",
 
-    "node_5": {
-        "type": "dialogue",
-        "speaker": "Unknown",
-        "text": "Buka matamu."
-    },
+          "Kesadaranmu muncul perlahan.",
 
-    "node_6": {
-        "type": "dialogue",
-        "speaker": "Unknown",
-        "text": "BUKA MATAMU!!!!"
-    },
+          "Hal pertama yang menyambut pandanganmu adalah langit-langit kamar bercorak bintang.",
+          "Terlihat sama seperti sebelumnya.",
 
-    "node_7": {
-        "type": "narration",
-        "text": "suara pelan itu kini menjadi pekikan tajam. Apa yang akan kamu lakukan?",
+          "Tatapanmu bergeser ke arah jendela.",
+
+          "Tidak ada pagi. Tidak ada malam.",
+
+          "Hanya langit merah yang menggantung sunyi di luar sana."
+        ],
+
+        "auto_next": "intro_002",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "intro_002": {
+        "node_id": "intro_002",
+
+        "speaker": "player",
+
+        "text": [
+          "...lagi."
+        ],
+
+        "auto_next": "intro_003",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "intro_003": {
+        "node_id": "intro_003",
+
+        "speaker": null,
+
+        "text": [
+          "Napasmu terdengar terlalu jelas di ruangan itu.",
+
+          "Matamu mengamati sekitar sebelum berhenti pada jam dinding di atas pintu.",
+
+          "Jarumnya diam.",
+
+          "Lalu perlahan bergerak mundur.",
+
+          "tik.",
+          "tik tik tik tik—",
+
+          "Dalam sekejap, seluruh jarumnya berputar liar ke arah berlawanan."
+        ],
+
+        "auto_next": "intro_004",
+
+        "anxiety_change": 2,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "intro_004": {
+        "node_id": "intro_004",
+
+        "speaker": null,
+
+        "text": [
+          "Apa yang akan kamu lakukan?"
+        ],
+
         "choices": [
-         {
-            "text": "Diam saja",
-            "next": "node_9",
-            "anxiety_change": 0,
-            "fragment_reward": 5
-         },
+          {
+            "text": "Keluar dari kamar.",
+            "next_node": "intro_005",
+            "anxiety_change": 2,
+            "fragment_reward": null
+          },
 
-         {
-            "text": "Buka mata",
-            "next": "node 8",
+          {
+            "text": "Menunduk.",
+            "next_node": "other_001",
+            "anxiety_change": 2,
+            "fragment_reward": "fragment_001"
+          }
+        ],
+
+        "ending": false
+      },
+
+      "other_001": {
+        "node_id": "other_001",
+
+        "speaker": null,
+
+        "text": [
+          "Pandanganmu jatuh ke lantai.",
+
+          "Puluhan botol obat berserakan di bawah ranjang.",
+
+          "Beberapa di antaranya kosong.",
+
+          "Lalu suara itu kembali terdengar.",
+
+          "\"Jangan lupakan aku.\""
+        ],
+
+        "auto_next": "intro_005",
+
+        "ending": false
+      },
+
+      "intro_005": {
+        "node_id": "intro_005",
+
+        "speaker": null,
+
+        "text": [
+          "Kamu menarik napas panjang dan mencoba mengabaikan semuanya.",
+
+          "Dengan langkah pelan, kamu meninggalkan kamar itu."
+        ],
+
+        "auto_next": "intro_006",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "intro_006": {
+        "node_id": "intro_006",
+
+        "speaker": null,
+
+        "text": [
+          "Ruang keluarga tampak normal.",
+
+          "Terlalu normal.",
+
+          "Sampai suara televisi memecah keheningan.",
+
+          "Layarnya berkedip tanpa henti.",
+          "Channel-nya berpindah sendiri dengan cepat.",
+
+          "Namun apa pun siarannya, hasil akhirnya selalu sama.",
+
+          "\"Kecelakaan tragis kembali memakan korban-\"",
+
+          "\"-seorang pianis muda ditemukan dalam kondisi kritis—\""
+        ],
+
+        "auto_next": "intro_007",
+
+        "anxiety_change": 2,
+
+        "fragment_reward": "fragment_002",
+
+        "ending": false
+      },
+
+      "intro_007": {
+        "node_id": "intro_007",
+
+        "speaker": "player",
+
+        "text": [
+          "Memangnya dia siapa...?",
+
+          "Kenapa aku selalu diperlihatkan hal yang sama?"
+        ],
+
+        "auto_next": "intro_008",
+
+        "anxiety_change": 0,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "intro_008": {
+        "node_id": "intro_008",
+
+        "speaker": null,
+
+        "text": [
+          "Dahimu berkerut saat mencoba mengingat wajah korban di layar televisi.",
+
+          "Namun semakin keras kamu mencoba mengingatnya, kepalamu justru terasa semakin sakit."
+        ],
+
+        "auto_next": "intro_009",
+
+        "anxiety_change": 3,
+
+        "fragment_reward": null,
+
+        "ending": false
+      },
+
+      "intro_009": {
+        "node_id": "intro_009",
+
+        "speaker": null,
+
+        "text": [
+          "Apa yang akan kamu lakukan?"
+        ],
+
+        "choices": [
+          {
+            "text": "Pergi ke dapur.",
+            "next_node": "other_002",
             "anxiety_change": 5,
-            "fragment_reward": 0
-         }
+            "fragment_reward": "fragment_003"
+          },
 
-        ]
-    }
+          {
+            "text": "Pergi ke kamar mandi.",
+            "next_node": "other_003",
+            "anxiety_change": 5,
+            "fragment_reward": null
+          }
+        ],
+
+        "ending": false
+      },
+
+      "other_002": {
+        "node_id": "other_002",
+
+        "speaker": null,
+
+        "text": [
+          "Dengan langkah ragu, kamu berjalan menuju dapur.",
+
+          "Langkahmu langsung terhenti.",
+
+          "Meja makan di depanmu dipenuhi darah.",
+
+          "Sebuah pisau tergeletak begitu saja di atas meja.",
+
+          "Dan entah kenapa-",
+          "pemandangan ini terasa familiar."
+        ],
+
+        "auto_next": "intro_010",
+
+        "ending": false
+      },
+
+      "other_003": {
+        "node_id": "other_003",
+
+        "speaker": null,
+
+        "text": [
+          "Kamu memutuskan pergi ke kamar mandi.",
+
+          "Air dingin menyentuh wajahmu.",
+          "Namun saat mendongak, tubuhmu langsung membeku.",
+
+          "Yang terlihat di cermin bukan dirimu."
+        ],
+
+        "auto_next": "intro_010",
+
+        "ending": false
+      },
+
+      "intro_010": {
+        "node_id": "intro_010",
+
+        "speaker": "player",
+
+        "text": [
+          "Apa-apaan..."
+        ],
+
+        "auto_next": "intro_011",
+
+        "anxiety_change": 2,
+
+        "fragment_reward": null,
+
+        "ending": false
+      }
+
+    },
+
+    
+  "intro_011": {
+    "node_id": "intro_011",
+
+    "speaker": null,
+
+    "text": [
+      "Suara televisi tiba-tiba menghilang.",
+
+      "Rumah itu berubah sunyi.",
+
+      "Terlalu sunyi.",
+
+      "Lalu terdengar suara pintu terbuka dari arah depan rumah."
+    ],
+
+    "auto_next": "intro_012",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_012": {
+    "node_id": "intro_012",
+
+    "speaker": null,
+
+    "text": [
+      "Perlahan, kamu berjalan menuju sumber suara itu.",
+
+      "Pintu rumah terbuka dengan sendirinya.",
+
+      "Namun yang ada di baliknya bukan halaman rumahmu.",
+
+      "Melainkan lorong rumah sakit yang dipenuhi cahaya merah redup."
+    ],
+
+    "auto_next": "intro_013",
+
+    "anxiety_change": 3,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_013": {
+    "node_id": "intro_013",
+
+    "speaker": null,
+
+    "text": [
+      "Orang-orang berlalu lalang dengan wajah panik.",
+
+      "Beberapa tenaga medis mendorong ranjang pasien dengan tergesa-gesa.",
+
+      "Tubuh seseorang terbaring di sana.",
+      "Darah menetes dari sisi ranjang.",
+
+      "Namun wajahnya tidak terlihat."
+    ],
+
+    "auto_next": "intro_014",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": "fragment_004",
+
+    "ending": false
+  },
+
+  "intro_014": {
+    "node_id": "intro_014",
+
+    "speaker": null,
+
+    "text": [
+      "Apa yang akan kamu lakukan?"
+    ],
+
+    "choices": [
+      {
+        "text": "Melihat wajah pasien.",
+        "next_node": "other_004",
+        "anxiety_change": 4,
+        "fragment_reward": null
+      },
+
+      {
+        "text": "Menjauh.",
+        "next_node": "intro_015",
+        "anxiety_change": 2,
+        "fragment_reward": null
+      }
+    ],
+
+    "ending": false
+  },
+
+  "other_004": {
+    "node_id": "other_004",
+
+    "speaker": null,
+
+    "text": [
+      "Kamu mencoba mendekati ranjang itu.",
+
+      "Namun langkah orang-orang di sekitar tiba-tiba berhenti.",
+
+      "Satu per satu kepala mereka menoleh ke arahmu.",
+
+      "Tatapan mereka kosong.",
+
+      "\"Ini salahmu.\""
+    ],
+
+    "auto_next": "intro_015",
+
+    "anxiety_change": 4,
+
+    "fragment_reward": "fragment_005",
+
+    "ending": false
+  },
+
+  "intro_015": {
+    "node_id": "intro_015",
+
+    "speaker": null,
+
+    "text": [
+      "Jantungmu berdetak semakin cepat.",
+
+      "Tanpa pikir panjang, kamu membuka pintu terdekat dan berlari masuk."
+    ],
+
+    "auto_next": "intro_016",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_016": {
+    "node_id": "intro_016",
+
+    "speaker": null,
+
+    "text": [
+      "Saat pintu tertutup di belakangmu, suasana rumah sakit itu menghilang.",
+
+      "Kini kamu berdiri di lorong sekolah yang gelap dan sepi."
+    ],
+
+    "auto_next": "intro_017",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_017": {
+    "node_id": "intro_017",
+
+    "speaker": null,
+
+    "text": [
+      "Dinding lorong dipenuhi tulisan dengan tinta hitam pekat.",
+
+      "\"PEMBOHONG.\"",
+
+      "\"PENGKHIANAT.\"",
+
+      "\"PEMBUNUH.\""
+    ],
+
+    "auto_next": "intro_018",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": "fragment_006",
+
+    "ending": false
+  },
+
+  "intro_018": {
+    "node_id": "intro_018",
+
+    "speaker": "player",
+
+    "text": [
+      "Aku... bahkan tidak mengenal mereka."
+    ],
+
+    "auto_next": "intro_019",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_019": {
+    "node_id": "intro_019",
+
+    "speaker": null,
+
+    "text": [
+      "Langkahmu terhenti saat mendengar suara piano dari ujung lorong.",
+
+      "Pelan.",
+      "Sendu.",
+
+      "Suara itu berasal dari ruang kelas paling ujung."
+    ],
+
+    "auto_next": "intro_020",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_020": {
+    "node_id": "intro_020",
+
+    "speaker": null,
+
+    "text": [
+      "Pintu kelas itu terbuka sedikit.",
+
+      "Seseorang duduk di dekat jendela dengan cahaya senja merah menyinari tubuhnya.",
+
+      "Ia berhenti memainkan piano saat menyadari keberadaanmu."
+    ],
+
+    "auto_next": "intro_021",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_021": {
+    "node_id": "intro_021",
+
+    "speaker": "???",
+
+    "text": [
+      "Lama juga kamu sadar..."
+    ],
+
+    "auto_next": "intro_022",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_022": {
+    "node_id": "intro_022",
+
+    "speaker": "player",
+
+    "text": [
+      "Kamu... mengenalku?"
+    ],
+
+    "auto_next": "intro_023",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_023": {
+    "node_id": "intro_023",
+
+    "speaker": "???",
+
+    "text": [
+      "Seharusnya iya."
+    ],
+
+    "auto_next": "input_player_name",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "input_player_name": {
+    "node_id": "input_player_name",
+
+    "speaker": null,
+
+    "text": [
+      "[ Masukkan namamu ]"
+    ],
+
+    "input_type": "player_name",
+
+    "auto_next": "intro_024",
+
+    "ending": false
+  },
+
+  "intro_024": {
+    "node_id": "intro_024",
+
+    "speaker": "Lumiere",
+
+    "text": [
+      "Apa kamu merindukanku, {player_name}?"
+    ],
+
+    "auto_next": "intro_025",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_025": {
+    "node_id": "intro_025",
+
+    "speaker": "player",
+
+    "text": [
+      "Siapa sebenarnya kamu?"
+    ],
+
+    "auto_next": "intro_026",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_026": {
+    "node_id": "intro_026",
+
+    "speaker": "Lumiere",
+
+    "text": [
+      "Kamu harus cari tahu sendiri."
+    ],
+
+    "auto_next": "intro_027",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_027": {
+    "node_id": "intro_027",
+
+    "speaker": "Lumiere",
+
+    "text": [
+      "Mimpi buruk ini tidak akan berhenti sampai kamu menghadapi semua yang selama ini kamu kubur."
+    ],
+
+    "auto_next": "intro_028",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_028": {
+    "node_id": "intro_028",
+
+    "speaker": "player",
+
+    "text": [
+      "Aku tidak mengerti apa pun yang kamu katakan."
+    ],
+
+    "auto_next": "intro_029",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_029": {
+    "node_id": "intro_029",
+
+    "speaker": "Lumiere",
+
+    "text": [
+      "Tidak apa-apa.",
+
+      "Kamu hanya lupa."
+    ],
+
+    "auto_next": "intro_030",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_030": {
+    "node_id": "intro_030",
+
+    "speaker": null,
+
+    "text": [
+      "Lumiere berdiri perlahan lalu berjalan mendekat.",
+
+      "Ia meletakkan sebuah kunci kecil bercahaya di atas meja piano.",
+
+      "Cahaya lembut berwarna biru keluar dari permukaannya."
+    ],
+
+    "auto_next": "intro_031",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": "lucid_key",
+
+    "ending": false
+  },
+
+  "intro_031": {
+    "node_id": "intro_031",
+
+    "speaker": "Lumiere",
+
+    "text": [
+      "Lucid Key.",
+
+      "Gunakan itu untuk menelusuri mimpi-mimpimu.",
+
+      "Kalau kamu berhasil menghadapi semuanya...",
+      "mimpi buruk ini akan berhenti."
+    ],
+
+    "auto_next": "intro_032",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_032": {
+    "node_id": "intro_032",
+
+    "speaker": "player",
+
+    "text": [
+      "Dan kalau aku gagal?"
+    ],
+
+    "auto_next": "intro_033",
+
+    "anxiety_change": 1,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_033": {
+    "node_id": "intro_033",
+
+    "speaker": "Lumiere",
+
+    "text": [
+      "...maka kamu akan terus terjebak di sini."
+    ],
+
+    "auto_next": "intro_034",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_034": {
+    "node_id": "intro_034",
+
+    "speaker": null,
+
+    "text": [
+      "Ruangan itu mulai bergetar.",
+
+      "Dinding kelas perlahan retak.",
+
+      "Suara jam berdetak kembali memenuhi telingamu."
+    ],
+
+    "auto_next": "intro_035",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_035": {
+    "node_id": "intro_035",
+
+    "speaker": "Lumiere",
+
+    "text": [
+      "Bangunlah, {player_name}."
+    ],
+
+    "auto_next": "intro_036",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_036": {
+    "node_id": "intro_036",
+
+    "speaker": null,
+
+    "text": [
+      "Pandanganmu mendadak gelap.",
+
+      "Tubuhmu terasa jatuh ke dalam kehampaan tanpa dasar."
+    ],
+
+    "auto_next": "intro_037",
+
+    "anxiety_change": 2,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_037": {
+    "node_id": "intro_037",
+
+    "speaker": null,
+
+    "text": [
+      "Saat membuka mata kembali, kamu sudah berada di kamarmu.",
+
+      "Napasmu masih tidak beraturan.",
+
+      "Namun kali ini, ada sesuatu di atas meja belajar."
+    ],
+
+    "auto_next": "intro_038",
+
+    "anxiety_change": 0,
+
+    "fragment_reward": null,
+
+    "ending": false
+  },
+
+  "intro_038": {
+    "node_id": "intro_038",
+
+    "speaker": null,
+
+    "text": [
+      "Sebuah kunci kecil bercahaya redup."
+    ],
+
+    "choices": [
+      {
+        "text": "Mengambil kunci itu.",
+        "next_node": "intro_039",
+        "anxiety_change": 0,
+        "fragment_reward": "lucid_key"
+      }
+    ],
+
+    "ending": false
+  },
+
+  "intro_039": {
+    "node_id": "intro_039",
+
+    "speaker": null,
+
+    "text": [
+      "Saat jarimu menyentuh permukaan kunci itu, suara seseorang kembali terdengar pelan di telingamu.",
+
+      "\"Temukan aku.\""
+    ],
+
+    "ending": true
+  }
+
+  }
 }
-

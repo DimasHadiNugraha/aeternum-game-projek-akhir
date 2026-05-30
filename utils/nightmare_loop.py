@@ -1,9 +1,3 @@
-# =============================================================================
-# utils/nightmare_loop.py
-# AETERNUM – Fragments of The Lucid Mind
-# Circular Linked List — Nightmare Loop / Siklus Lokasi Mimpi
-# =============================================================================
-
 import random
 
 

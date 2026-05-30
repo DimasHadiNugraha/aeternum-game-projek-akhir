@@ -1,12 +1,4 @@
-# =============================================================================
-# utils/journal.py
-# AETERNUM – Fragments of The Lucid Mind
-# Singly Linked List — Dream Journal / Riwayat Ingatan
-# =============================================================================
-
-
 class JournalNode:
-    """Satu entry dalam Dream Journal."""
     def __init__(self, text, dream_number=None):
         self.text = text                  # Isi catatan
         self.dream_number = dream_number  # Dari mimpi ke-berapa
@@ -14,15 +6,6 @@ class JournalNode:
 
 
 class DreamJournal:
-    """
-    Singly Linked List untuk menyimpan riwayat narasi/event dalam game.
-    Dipanggil setiap kali: mimpi selesai, fragment ditemukan, event penting.
-    Sifatnya linear — hanya bisa maju, tidak perlu navigasi bolak-balik.
-
-    Struktur:
-    [Entry 1] -> [Entry 2] -> [Entry 3] -> None
-    """
-
     def __init__(self):
         self.head = None
         self.total_entries = 0

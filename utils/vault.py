@@ -1,22 +1,3 @@
-# =============================================================================
-# utils/vault.py
-# AETERNUM – Fragments of The Lucid Mind
-# Double Linked List — Memory Vault & Dream Vault
-# =============================================================================
-
-# =============================================================================
-# ITEM TYPES:
-#
-# DREAM VAULT:
-#   "emotion_fragment" — potongan emosi dari dialog/event, punya nilai (+5)
-#   "rewind_key"       — item sekali pakai, reset anxiety -10
-#
-# MEMORY VAULT:
-#   "memory_fragment"  — potongan ingatan masa lalu MC, punya nilai (+5/+10)
-#   "memory_key"       — kunci untuk unlock rahasia di hashing.py
-# =============================================================================
-
-
 class VaultNode:
     """Satu item dalam vault."""
     def __init__(self, item_name, item_type, description="", value=0):

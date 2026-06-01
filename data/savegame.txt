@@ -1,0 +1,31 @@
+{
+    "anxiety_level": 8,
+    "fragment_count": 0,
+    "dream_number": 2,
+    "journal": [
+        {
+            "text": "...lagi.",
+            "dream_number": 1
+        },
+        {
+            "text": "Memangnya dia siapa...?",
+            "dream_number": 1
+        },
+        {
+            "text": "Apa-apaan...",
+            "dream_number": 1
+        }
+    ],
+    "dream_vault": [],
+    "memory_vault": [],
+    "memory_stack": [
+        "...lagi.",
+        "Memangnya dia siapa...?",
+        "Apa-apaan..."
+    ],
+    "hash_table": {
+        "Memory Key #3": "Suara tangisan itu bukan dari luar kamar. Itu suaramu sendiri.",
+        "Memory Key #1": "Kamu pernah melihat seseorang jatuh. Kamu diam saja.",
+        "Memory Key #2": "Nama yang selalu kamu hindari tertulis di batu nisan itu."
+    }
+}

@@ -70,6 +70,34 @@ class MemoryVault:
 
         print(f"  [!] '{item_name}' tidak ditemukan di {self.name}.")
         return False
+    
+    def sort_by_value(self):
+        """
+        Mengurutkan item di dalam vault berdasarkan 'value' dari besar ke kecil (Descending).
+        Menggunakan algoritma Bubble Sort yang diadaptasi untuk Double Linked List.
+        """
+        #kalau vault kosong atau cuma ada 1 item, tidak perlu diurutkan
+        if not self.head or not self.head.next:
+            return
+
+        swapped = True
+        while swapped:
+            swapped = False
+            current = self.head
+            
+            while current.next:
+                #jika value node saat ini lebih kecil dari node berikutnya, tukar posisinya
+                if current.value < current.next.value:
+                    #tukar isi datanya
+                    current.item_name, current.next.item_name = current.next.item_name, current.item_name
+                    current.item_type, current.next.item_type = current.next.item_type, current.item_type
+                    current.description, current.next.description = current.next.description, current.description
+                    current.value, current.next.value = current.next.value, current.value
+                    
+                    swapped = True
+                current = current.next
+                
+        print(f"\n  [~] Fragment di {self.name} telah diurutkan berdasarkan nilainya.")
 
     def use_item(self, item_name, player):
         """
@@ -87,7 +115,7 @@ class MemoryVault:
             player.anxiety_level = max(0, player.anxiety_level - 10)
             print(f"\n  ✦ Rewind Key digunakan.")
             print(f"  Anxiety berkurang: {before} -> {player.anxiety_level}")
-            self.remove_item(item_name)  # Sekali pakai langsung hapus
+            self.remove_item(item_name)  #sekali pakai langsung hapus
             return True
 
         elif node.item_type == "emotion_fragment":

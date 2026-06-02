@@ -1,6 +1,6 @@
 {
   "dream_1": {
-    "title": "Echoes of Betrayal",
+    "title": "The Betrayal",
 
     "start_node": "dream1_001",
 
@@ -19,12 +19,12 @@
 
           "Kesadaranmu perlahan kembali saat cahaya monitor menyilaukan matamu.",
 
-          "Saat membuka mata, kamu sudah berada di dalam laboratorium komputer sekolah."
+          "Ketika membuka mata, kamu sudah berada di dalam laboratorium komputer sekolah."
         ],
 
         "auto_next": "dream1_002",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -48,7 +48,7 @@
 
         "auto_next": "dream1_003",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -86,7 +86,7 @@
 
         "auto_next": "dream1_005",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -177,7 +177,7 @@
           {
             "text": "Mengabaikannya.",
             "next_node": "dream1_010",
-            "anxiety_change": 1,
+            "anxiety_change": 0,
             "fragment_reward": null
           }
         ],
@@ -216,7 +216,7 @@
 
         "auto_next": "dream1_011",
 
-        "anxiety_change": 1,
+        "anxiety_change": 3,
 
         "fragment_reward": null,
 
@@ -256,7 +256,7 @@
 
         "auto_next": "dream1_013",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -297,7 +297,7 @@
         "speaker": "player",
 
         "text": [
-          "Cuma game endless run biasa kok, tapi pakai konsep rpg."
+          "Cuma game endless run biasa kok, tapi pakai konsep koleksi avatar dan sistem ranking."
         ],
 
         "auto_next": "dream1_016",
@@ -322,7 +322,7 @@
 
         "auto_next": "dream1_016",
 
-        "anxiety_change": 1,
+        "anxiety_change": 5,
 
         "fragment_reward": null,
 
@@ -340,7 +340,7 @@
 
         "auto_next": "dream1_017",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -373,12 +373,12 @@
         "text": [
           "Kamu punya bakat.",
 
-          "Dan selalu ada orang yang milih kamu duluan."
+          "Dan selalu dikelilingi orang baik."
         ],
 
         "auto_next": "dream1_019",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -454,7 +454,7 @@
 
         "auto_next": "dream1_023",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -492,7 +492,7 @@
 
         "auto_next": "dream1_025",
 
-        "anxiety_change": 1,
+        "anxiety_change": 2,
 
         "fragment_reward": null,
 
@@ -514,7 +514,7 @@
 
         "auto_next": "dream1_026",
 
-        "anxiety_change": 2,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -552,7 +552,7 @@
 
         "auto_next": "dream1_028",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -570,7 +570,7 @@
 
         "auto_next": "dream1_029",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -592,7 +592,7 @@
 
         "auto_next": "dream1_030",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -614,7 +614,7 @@
 
         "auto_next": "dream1_031",
 
-        "anxiety_change": 1,
+        "anxiety_change": 3,
 
         "fragment_reward": null,
 
@@ -652,7 +652,7 @@
 
         "auto_next": "dream1_033",
 
-        "anxiety_change": 1,
+        "anxiety_change": 3,
 
         "fragment_reward": null,
 
@@ -670,7 +670,7 @@
 
         "auto_next": "dream1_034",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -683,12 +683,12 @@
         "speaker": "Chery",
 
         "text": [
-          "Aku gak nyangka dia bakal nyuri project Serena."
+          "Aku gak nyangka dia bakal nyuri projek Serena."
         ],
 
         "auto_next": "dream1_035",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -706,7 +706,7 @@
 
         "auto_next": "dream1_036",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -735,7 +735,7 @@
           {
             "text": "Kabur dari lorong.",
             "next_node": "dream1_bad_001",
-            "anxiety_change": 2,
+            "anxiety_change": 0,
             "fragment_reward": null
           }
         ],
@@ -758,7 +758,7 @@
 
         "auto_next": "dream1_bad_002",
 
-        "anxiety_change": 2,
+        "anxiety_change": 5,
 
         "fragment_reward": null,
 
@@ -810,7 +810,7 @@
 
         "auto_next": "dream1_039",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": "fragment_d1_003",
 
@@ -823,7 +823,7 @@
         "speaker": "player",
 
         "text": [
-          "Ini project-ku..."
+          "Ini projekku..."
         ],
 
         "auto_next": "dream1_040",
@@ -898,7 +898,7 @@
           {
             "text": "Masukkan password lain.",
             "next_node": "dream1_042_wrong",
-            "anxiety_change": 1,
+            "anxiety_change": 0,
             "fragment_reward": null
           }
         ],
@@ -921,7 +921,7 @@
 
         "auto_next": "dream1_042",
 
-        "anxiety_change": 1,
+        "anxiety_change": 4,
 
         "fragment_reward": null,
 
@@ -952,7 +952,7 @@
         "speaker": null,
 
         "text": [
-          "Timestamp project asli menunjukkan namamu sebagai pembuat pertama."
+          "Timestamp projek asli menunjukkan namamu sebagai pembuat pertama."
         ],
 
         "auto_next": "dream1_045",
@@ -988,7 +988,7 @@
         "speaker": "Serena",
 
         "text": [
-          "...jadi kamu nemuin itu juga."
+          "...ketemu, ya?"
         ],
 
         "auto_next": "dream1_047",
@@ -1029,7 +1029,7 @@
 
         "auto_next": "dream1_049",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -1064,12 +1064,12 @@
         "speaker": "Serena",
 
         "text": [
-          "Bahkan dia selalu milih kamu duluan."
+          "Bahkan dia... cuma ngeliat kamu."
         ],
 
         "auto_next": "dream1_051",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -1100,7 +1100,7 @@
         "speaker": "Serena",
 
         "text": [
-          "Aku benci cara dia selalu melihatmu."
+          "Aku benci semua tentang kamu."
         ],
 
         "auto_next": "dream1_053",
@@ -1143,7 +1143,7 @@
 
         "auto_next": "dream1_055",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -1158,12 +1158,12 @@
         "text": [
           "Monitor di sekelilingmu mulai retak.",
 
-          "\"TRUST ERROR DETECTED.\""
+          "\"TRAITOR DETECTED.\""
         ],
 
         "auto_next": "dream1_056",
 
-        "anxiety_change": 1,
+        "anxiety_change": 0,
 
         "fragment_reward": null,
 
@@ -1192,7 +1192,7 @@
           {
             "text": "Tetap diam.",
             "next_node": "dream1_neutral_001",
-            "anxiety_change": 1,
+            "anxiety_change": 0,
             "fragment_reward": null
           }
         ],
@@ -1215,7 +1215,7 @@
 
      "auto_next": "dream1_058",
 
-     "anxiety_change": 1,
+     "anxiety_change": -5,
 
     "fragment_reward": null,
 
@@ -1289,8 +1289,7 @@
 
     "auto_next": "dream1_062",
 
-    "anxiety_change": 1,
-
+    "anxiety_change": 0,
     "fragment_reward": null,
 
     "ending": false
@@ -1340,7 +1339,7 @@
     "speaker": "Past_Serena",
 
     "text": [
-      "Keren banget..."
+      "Keren ya..."
     ],
 
     "auto_next": "dream1_065",
@@ -1366,7 +1365,7 @@
 
     "auto_next": "dream1_066",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -1386,7 +1385,7 @@
 
     "auto_next": "dream1_067",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": "fragment_d1_007",
 
@@ -1404,7 +1403,7 @@
 
     "auto_next": "dream1_068",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -1461,7 +1460,7 @@
 
     "auto_next": "dream1_071",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 

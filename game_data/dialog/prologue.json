@@ -19,7 +19,7 @@
 
           "Tatapanmu bergeser ke arah jendela.",
 
-          "Tidak ada pagi. Tidak ada malam.",
+          "Tidak ada maupun malam.",
 
           "Hanya langit merah yang menggantung sunyi di luar sana."
         ],
@@ -120,7 +120,7 @@
 
           "Beberapa di antaranya kosong.",
 
-          "Lalu suara itu kembali terdengar.",
+          "Kemudian suara itu kembali terdengar.",
 
           "\"Jangan lupakan aku.\""
         ],
@@ -189,7 +189,7 @@
         "text": [
           "Memangnya dia siapa...?",
 
-          "Kenapa aku selalu diperlihatkan hal yang sama?"
+          "Kenapa aku selalu diperlihatkan siaran ini?"
         ],
 
         "auto_next": "intro_008",
@@ -209,12 +209,12 @@
         "text": [
           "Dahimu berkerut saat mencoba mengingat wajah korban di layar televisi.",
 
-          "Namun semakin keras kamu mencoba mengingatnya, kepalamu justru terasa semakin sakit."
+          "Semakin keras kamu mencoba mengingatnya, kepalamu justru terasa semakin sakit."
         ],
 
         "auto_next": "intro_009",
 
-        "anxiety_change": 3,
+        "anxiety_change": 2,
 
         "fragment_reward": null,
 
@@ -234,14 +234,14 @@
           {
             "text": "Pergi ke dapur.",
             "next_node": "other_002",
-            "anxiety_change": 5,
+            "anxiety_change": 3,
             "fragment_reward": "fragment_003"
           },
 
           {
             "text": "Pergi ke kamar mandi.",
             "next_node": "other_003",
-            "anxiety_change": 5,
+            "anxiety_change": 3,
             "fragment_reward": null
           }
         ],
@@ -307,9 +307,7 @@
         "fragment_reward": null,
 
         "ending": false
-      }
-
-    },
+      },
 
     
   "intro_011": {
@@ -353,7 +351,7 @@
 
     "auto_next": "intro_013",
 
-    "anxiety_change": 3,
+    "anxiety_change": 1,
 
     "fragment_reward": null,
 
@@ -371,7 +369,7 @@
       "Beberapa tenaga medis mendorong ranjang pasien dengan tergesa-gesa.",
 
       "Tubuh seseorang terbaring di sana.",
-      "Darah menetes dari sisi ranjang.",
+      "Darah terus menetes dari sisi ranjang.",
 
       "Namun wajahnya tidak terlihat."
     ],
@@ -421,18 +419,18 @@
     "text": [
       "Kamu mencoba mendekati ranjang itu.",
 
-      "Namun langkah orang-orang di sekitar tiba-tiba berhenti.",
+      "Namun langkah orang-orang di sekitar tiba-tiba terhenti.",
 
       "Satu per satu kepala mereka menoleh ke arahmu.",
 
       "Tatapan mereka kosong.",
 
-      "\"Ini salahmu.\""
+      "\"Ini semua salahmu.\""
     ],
 
     "auto_next": "intro_015",
 
-    "anxiety_change": 4,
+    "anxiety_change": 2,
 
     "fragment_reward": "fragment_005",
 
@@ -472,7 +470,7 @@
 
     "auto_next": "intro_017",
 
-    "anxiety_change": 2,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -509,7 +507,7 @@
     "speaker": "player",
 
     "text": [
-      "Aku... bahkan tidak mengenal mereka."
+      "..."
     ],
 
     "auto_next": "intro_019",
@@ -532,12 +530,12 @@
       "Pelan.",
       "Sendu.",
 
-      "Suara itu berasal dari ruang kelas paling ujung."
+      "Suara itu berasal dari ruangan paling ujung."
     ],
 
     "auto_next": "intro_020",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -550,7 +548,7 @@
     "speaker": null,
 
     "text": [
-      "Pintu kelas itu terbuka sedikit.",
+      "Pintu ruangan itu terbuka sedikit.",
 
       "Seseorang duduk di dekat jendela dengan cahaya senja merah menyinari tubuhnya.",
 
@@ -559,7 +557,7 @@
 
     "auto_next": "intro_021",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -572,7 +570,7 @@
     "speaker": "???",
 
     "text": [
-      "Lama juga kamu sadar..."
+      "Lama juga kamu sadarnya..."
     ],
 
     "auto_next": "intro_022",
@@ -642,14 +640,14 @@
     "speaker": "Lumiere",
 
     "text": [
-      "Apa kamu merindukanku, {player_name}?"
+      "Apa kamu merindukan Lumiere-mu ini, {player_name}?"
     ],
 
     "auto_next": "intro_025",
 
     "anxiety_change": 0,
 
-    "fragment_reward": null,
+    "fragment_reward": "fragment_007",
 
     "ending": false
   },
@@ -660,7 +658,7 @@
     "speaker": "player",
 
     "text": [
-      "Siapa sebenarnya kamu?"
+      "Lumiere?"
     ],
 
     "auto_next": "intro_026",
@@ -683,7 +681,7 @@
 
     "auto_next": "intro_027",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -696,12 +694,12 @@
     "speaker": "Lumiere",
 
     "text": [
-      "Mimpi buruk ini tidak akan berhenti sampai kamu menghadapi semua yang selama ini kamu kubur."
+      "Mimpi buruk ini tidak akan berhenti sampai kamu menghadapi semua yang telah kamu kubur."
     ],
 
     "auto_next": "intro_028",
 
-    "anxiety_change": 2,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -714,12 +712,12 @@
     "speaker": "player",
 
     "text": [
-      "Aku tidak mengerti apa pun yang kamu katakan."
+      "Yang... aku kubur?"
     ],
 
     "auto_next": "intro_029",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -732,9 +730,11 @@
     "speaker": "Lumiere",
 
     "text": [
-      "Tidak apa-apa.",
+      "Lari dan melupakan segalanya,",
 
-      "Kamu hanya lupa."
+      "tidak akan bisa menyelesaikan masalah.",
+
+      "Tolong ingat satu hal itu saja."
     ],
 
     "auto_next": "intro_030",
@@ -776,7 +776,7 @@
     "text": [
       "Lucid Key.",
 
-      "Gunakan itu untuk menelusuri mimpi-mimpimu.",
+      "Gunakan itu untuk 'hidup' di dalam mimpi-mimpimu.",
 
       "Kalau kamu berhasil menghadapi semuanya...",
       "mimpi buruk ini akan berhenti."
@@ -802,7 +802,7 @@
 
     "auto_next": "intro_033",
 
-    "anxiety_change": 1,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -820,7 +820,7 @@
 
     "auto_next": "intro_034",
 
-    "anxiety_change": 2,
+    "anxiety_change": 1,
 
     "fragment_reward": null,
 
@@ -842,7 +842,7 @@
 
     "auto_next": "intro_035",
 
-    "anxiety_change": 2,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -880,7 +880,7 @@
 
     "auto_next": "intro_037",
 
-    "anxiety_change": 2,
+    "anxiety_change": 0,
 
     "fragment_reward": null,
 
@@ -943,6 +943,6 @@
 
     "ending": true
   }
-
-  }
+ }
+}
 }

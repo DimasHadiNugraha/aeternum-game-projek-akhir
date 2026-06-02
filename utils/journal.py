@@ -30,8 +30,7 @@ class DreamJournal:
             self.tail = new_node        # ← Update tail pointer
         self.total_entries += 1
 
-    def display(self):
-        """Tampilkan seluruh isi journal secara urut."""
+    def display(self): #fungsi untuk menampilkan seluruh isi journal secara urut
         if not self.head:
             print("\n[Journal kosong. Belum ada ingatan yang tercatat.]\n")
             return
@@ -58,16 +57,7 @@ class DreamJournal:
         """Kembalikan jumlah total entry."""
         return self.total_entries
 
-    def clear(self):
-        """
-        Hapus semua entry dari journal.
-        Dipanggil saat:
-        - Dream over (mimpi dimulai ulang)
-        - Reset game (player mau mulai dari awal)
-        - New game (permainan baru)
-        
-        Juga menghapus file savegame.txt
-        """
+    def clear(self):  #menghapus isi dari savegame.txt dan mengosongkan journal
         self.head = None
         self.tail = None
         self.total_entries = 0
@@ -79,16 +69,6 @@ class DreamJournal:
         print("  [~] Journal dan savegame berhasil dikosongkan.\n")
 
     def save_game(self, player, dream_vault, memory_vault, current_dream, current_node):
-        """
-        Simpan semua data game ke savegame.txt.
-        
-        Parameter:
-        - player: object player dengan nama, anxiety_level, dll
-        - dream_vault: inventory fragment emosi
-        - memory_vault: inventory memory fragment dan key
-        - current_dream: nomor mimpi sekarang (1, 2, atau 3)
-        - current_node: node/dialog ke berapa saat ini
-        """
         data = {
             # Data player
             "player": {
@@ -129,8 +109,6 @@ class DreamJournal:
     def load_game(self, player, dream_vault, memory_vault):
         """
         Load semua data game dari savegame.txt.
-        
-        Return: (current_dream, current_node) atau (None, None) kalau tidak ada file
         """
         if not os.path.exists(SAVEGAME_FILE):
             print("  [!] File save tidak ditemukan. Mulai dari awal.\n")
@@ -207,10 +185,4 @@ class DreamJournal:
         self.tail = None
         self.total_entries = 0
         for entry in data:
-<<<<<<< HEAD
             self.add_entry(entry["text"], entry.get("dream_number"))          
-=======
-            self.add_entry(entry["text"], entry.get("dream_number"))
-
-
->>>>>>> c7a75b45af4e8e8c407d863d581b5f59e00e9d28

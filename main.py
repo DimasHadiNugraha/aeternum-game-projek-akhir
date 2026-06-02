@@ -1,7 +1,7 @@
 """
-main.py ini berfungsi untuk menyatukan semua kode
+main.py ini berfungsi untuk menyatukan semua kode dan desain ui
 """
-#import library eksternal
+#import library internal
 import os
 import sys
 import time
@@ -15,6 +15,7 @@ from utils.journal import DreamJournal
 from utils.vault import MemoryVault
 from utils.memory_stack import MemoryStack
 from utils.hashing import HashTable, init_secrets
+from system.dream import MesinMimpi
 
 #======================
 #1. utility & fungsi ui
@@ -77,55 +78,48 @@ def display_welcome_screen(): #nampilin splash/welcome screen
 #====================
 
 def trigger_notifications(node, player):
-    #mengecek perubahan anxiety dan fragment reward dari dialog
+    """Mengecek perubahan stat atau reward fragment dari pilihan dialog."""
+    # KUNCI PERBAIKAN: Lebar kotak diperbesar jadi 75 agar teks panjang tidak jebol
+    lebar_notif = 75 
+
+    # 1. Logika Perubahan Tingkat Anxiety
     anxiety_change = node.get("anxiety_change", 0)
     if anxiety_change > 0:
-        print(f"""
-╭──────────────────────────────────────╮
-│                                      │
-│              ⚠ NOTIFICATION          │
-│                                      │
-│     Something feels off...           │
-│                                      │
-│     Anxiety (+{anxiety_change})      │
-│                                      │
-╰──────────────────────────────────────╯
-""")
+        print("┌" + "─" * lebar_notif + "┐")
+        print("│ " + "⚠️  NOTIFICATION".center(lebar_notif - 1) + "│")
+        print("│ " + "".ljust(lebar_notif - 1) + "│")
+        print("│ " + "Something feels off...".center(lebar_notif - 1) + "│")
+        print("│ " + f"Anxiety (+{anxiety_change})".center(lebar_notif - 1) + "│")
+        print("└" + "─" * lebar_notif + "┘\n")
         player.increase_anxiety(anxiety_change)
         
     elif anxiety_change < 0:
-        print(f"""
-╭──────────────────────────────────────╮
-│                                      │
-│              ⚠ NOTIFICATION          │
-│                                      │
-│     I feel more relaxed...           │
-│                                      │
-│     Anxiety (-{anxiety_change})      │
-│                                      │
-╰──────────────────────────────────────╯
-""")
+        print("┌" + "─" * lebar_notif + "┐")
+        print("│ " + "✨ NOTIFICATION".center(lebar_notif - 1) + "│")
+        print("│ " + "".ljust(lebar_notif - 1) + "│")
+        print("│ " + "Pikiranmu sedikit tenang...".center(lebar_notif - 1) + "│")
+        print("│ " + f"Anxiety ({anxiety_change})".center(lebar_notif - 1) + "│")
+        print("└" + "─" * lebar_notif + "┘\n")
         player.decrease_anxiety(abs(anxiety_change))
 
-    #notif buat fragment reward
+    # 2. Logika Reward Fragment Baru
     fragment_id = node.get("fragment_reward")
-
-    if fragment_id and fragment_id != "lucid key":
+    if fragment_id and fragment_id != "lucid_key":
         frag_obj = EMOTION_FRAGMENTS.get(fragment_id) or MEMORY_FRAGMENTS.get(fragment_id)
         if frag_obj:
-            player.add_fragment(frag_obj)
-            print(f"""
-╭──────────────────────────────────────╮
-│                                      │
-│           ◈ New fragment! ◈         │
-│                                      │
-│   A forgotten piece returns to you.  │
-│   Name: {frag_obj.name:<43}          │
-│   Type: {frag_obj.fragment_type.upper():<43} │                
-│     {frag_obj.description:<43}       │
-│                                      │
-╰──────────────────────────────────────╯
-""")
+            # Menyimpan item ke vault
+            player.add_fragment(frag_obj) 
+            
+            # Mencetak box notifikasi fragment
+            print("┌" + "─" * lebar_notif + "┐")
+            print("│ " + "◈ New fragment! ◈".center(lebar_notif - 1) + "│")
+            print("│ " + "".ljust(lebar_notif - 1) + "│")
+            print("│ " + "A forgotten piece returns to you.".ljust(lebar_notif - 1) + "│")
+            print("│ " + f"Name: {frag_obj.name}".ljust(lebar_notif - 1) + "│")
+            print("│ " + f"Type: {frag_obj.fragment_type.upper()}".ljust(lebar_notif - 1) + "│")
+            print("│ " + f"Desc: {frag_obj.description}".ljust(lebar_notif - 1) + "│")
+            print("└" + "─" * lebar_notif + "┘\n")
+            time.sleep(1.5)
             
 #================
 #narrative engine
@@ -167,10 +161,12 @@ def execute_narrative_loop(file_path, root_key, player, journal, memory_stack):
             print("NARRATOR")
         print("═══════════✦")
 
-        #efek netik baris teks
+        #efek ngetik baris teks
         for line in node.get("text", []):
             if "{player.name}" in line:
                 line = line.format(player_name=player.name)
+            if "{player_name}" in line:
+                line = line.replace("{player_name}", player.name)
             typewriter(line, speed=0.01)
             time.sleep(0.2)
         print("─" * 60 + "\n")
@@ -207,15 +203,19 @@ def execute_narrative_loop(file_path, root_key, player, journal, memory_stack):
                 else:
                     print("[!] Masukan tidak valid. Pilih angka yang tersedia di menu.")
         else:
-            #jika tidak ada pilihan jawaban, lanjut otomatis memakai auto_next
+            # Jika tidak ada pilihan jawaban
             if node.get("ending") is True:
+                # Jeda khusus agar pemain bisa membaca kalimat terakhir sebelum layar dibersihkan
+                input("\n[ Tekan ENTER untuk mengakhiri memori ini... ]")
                 break
+                
             auto_next = node.get("auto_next")
             if auto_next:
-                input("\n[ Tekan ENTER untuk melanjutkan... ]")
+                input("\n[ Tekan ENTER untuk melanjutkan penelusuran... ]")
                 current_node_id = auto_next
             else:
                 break
+
     return "SCENE_COMPLETED"
 
 # ==========================================
@@ -263,17 +263,50 @@ def main():
     dream_sequence = [
         {"file": "game_data/dialog/prologue.json", "root": "prologue", "label": "Prologue: Awakening"},
         {"file": "game_data/dialog/dream1.json", "root": "dream_1", "label": "Mimpi 1: The Betrayal"},
-        {"file": "game_data/dialog/dream2.json", "root": "dream_2", "label": "Mimpi 2: Requiem of Silence"}
+        {"file": "game_data/dialog/dream2.json", "root": "dream_2", "label": "Mimpi 2: Requiem of Silence"},
+        {"file": "game_data/dialog/dream3.json", "root": "dream_3", "label": "Mimpi 3: His Heartbeat"}
+        
     ]
 
     while player.current_dream <= len(dream_sequence):
         current_idx = player.current_dream - 1
         active_scene = dream_sequence[current_idx]
 
+        # ==========================================
+        # integrasi graph & DFS (eksplorasi lokasi)
+        # ==========================================
+        # panggil map eksplorasi HANYA setelah prolog selesai (Sebelum Mimpi 1 & 2)
+        if active_scene["root"] != "prologue":
+            clear_terminal()
+            print("─" * 60)
+            print(" 🧭  MEMASUKI LABIRIN MEMORI (GRAPH EXPLORATION)  🧭")
+            print("─" * 60)
+            print(" [Narator]: Kamu harus mencari letak ingatan selanjutnya di alam bawah sadar...")
+            time.sleep(2)
+            
+            # Memanggil class MesinMimpi dari dream.py
+            mesin_eksplorasi = MesinMimpi()
+            mesin_eksplorasi.mulai_mimpi() 
+            
+            # 1. CEK JIKA PEMAIN MEMILIH '0' UNTUK KELUAR PAKSA
+            if mesin_eksplorasi.game_selesai and mesin_eksplorasi.level_mimpi < 5:
+                print("\n ⚠️  Eksplorasi dihentikan secara paksa oleh pemain.")
+                print(" Kesadaranmu terputus dari labirin mimpi...")
+                time.sleep(2)
+                break  # Ini akan menghentikan game sepenuhnya dan keluar ke terminal
+
+            # 2. JIKA BERHASIL MENCAPAI LEVEL 5 (SELESAI EKSPLORASI)
+            clear_terminal()
+            print("─" * 60)
+            print(" ✨  JALUR DITEMUKAN MENGGUNAKAN DFS!  ✨")
+            print("─" * 60)
+            time.sleep(2)
+        # ==========================================
+
         print(f"\n[~] Menyelami {active_scene['label']}...")
         time.sleep(1.5)
 
-        # Menjalankan mesin narasi
+        # Menjalankan mesin narasi (Decision Tree)
         result = execute_narrative_loop(
             file_path=active_scene["file"],
             root_key=active_scene["root"],
@@ -281,17 +314,40 @@ def main():
             journal=journal,
             memory_stack=memory_stack
         )
+        
+        # ... (sisa kode di bawahnya tetap sama seperti sebelumnya)
 
         # Mengatasi Kejadian Overwhelmed / Dream Over
+        # Mengatasi Kejadian Overwhelmed / Dream Over
         if result == "DREAM_OVER":
-            print("\n" + "=" * 50)
-            print(" ❌  KESADARAN ANDA HANCUR (DREAM OVER)  ❌")
-            print(" Anxiety Level mencapai batas puncak pertahanan mental.")
-            print(" Jiwamu terlempar kembali ke awal lapisan mimpi ini...")
-            print("=" * 50 + "\n")
-            player.reset_dream_state()
-            input("[ Tekan ENTER untuk menyusun ulang kesadaran... ]")
-            continue  # Mengulang siklus tahapan mimpi yang sama
+            clear_terminal()
+            ascii_art = """
+██████  ██████  ███████  █████  ███    ███      ██████  ██    ██ ███████ ██████  
+██   ██ ██   ██ ██      ██   ██ ████  ████     ██    ██ ██    ██ ██      ██   ██ 
+██   ██ ██████  █████   ███████ ██ ████ ██     ██    ██ ██    ██ █████   ██████  
+██   ██ ██   ██ ██      ██   ██ ██  ██  ██     ██    ██  ██  ██  ██      ██   ██ 
+██████  ██   ██ ███████ ██   ██ ██      ██      ██████    ████   ███████ ██   ██ 
+                                                                                 
+                                                                                 ]
+            """
+           
+            print("\n" * 2)
+            for line in ascii_art.strip().split('\n'):
+                print(line.center(80))
+            
+            print("\n")
+            print("❌ KESADARAN ANDA HANCUR (DREAM OVER) ❌".center(80))
+            print("Anxiety Level mencapai batas puncak pertahanan mental.".center(80))
+            print("Jiwamu terlempar kembali ke awal lapisan mimpi ini...".center(80))
+            print("\n")
+            print("═" * 80)
+            
+            player.reset_dream_state() 
+            
+            # Input untuk lanjut dengan posisi di tengah
+            print("\n")
+            input("[ Tekan ENTER untuk menyusun ulang kesadaran... ]".center(80))
+            continue
 
         # Jika Scene Berhasil Diselesaikan, Simpan Otomatis dan Lanjut Tahap Berikutnya
         if result == "SCENE_COMPLETED":

@@ -72,16 +72,4 @@ class DreamJournal:
         for entry in data:
             self.add_entry(entry["text"], entry.get("dream_number"))
 
-"""
-revisi:
--tambahkan method untuk clear journal, karena nanti bisa kepakai saat:
-dream over
-reset game
-new game
--get_last_entry() sekarang O(n)
-karena traversal sampai akhir:
-while current.next:
 
-Kalau journal nanti panjang bisa lambat, jadi ubah ya.
--komentarnya ubah pakai bahasa sendiri ya
-"""

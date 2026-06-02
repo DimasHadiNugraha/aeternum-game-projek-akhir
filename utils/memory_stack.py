@@ -47,7 +47,4 @@ class MemoryStack:
         """Load stack dari list saat load_game dipanggil."""
         self.stack = list(data)
 
-"""
-catatan:
-tambahin komentar pakai bahasa sendiri 
-"""
+

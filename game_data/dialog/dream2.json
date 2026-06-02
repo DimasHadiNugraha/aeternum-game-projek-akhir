@@ -16,7 +16,7 @@
           "Untuk pertama kalinya setelah sekian lama... dadamu tidak terasa sesak."
         ],
         "auto_next": "dream2_002",
-        "anxiety_change": -1,
+        "anxiety_change": -2,
         "fragment_reward": null,
         "ending": false
       },
@@ -30,7 +30,7 @@
           "Di depan piano tua itu, Lumi kecil duduk sambil tersenyum ke arahmu."
         ],
         "auto_next": "dream2_003",
-        "anxiety_change": -1,
+        "anxiety_change": -2,
         "fragment_reward": "fragment_d2_001",
         "ending": false
       },
@@ -69,7 +69,7 @@
           "Dan menyakitkan."
         ],
         "auto_next": "dream2_006",
-        "anxiety_change": 0,
+        "anxiety_change": -2,
         "fragment_reward": null,
         "ending": false
       },

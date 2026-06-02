@@ -1,7 +1,7 @@
 {
-    "anxiety_level": 8,
+    "anxiety_level": 45,
     "fragment_count": 0,
-    "dream_number": 2,
+    "dream_number": 5,
     "journal": [
         {
             "text": "...lagi.",
@@ -14,14 +14,104 @@
         {
             "text": "Apa-apaan...",
             "dream_number": 1
+        },
+        {
+            "text": "...",
+            "dream_number": 1
+        },
+        {
+            "text": "Kamu... mengenalku?",
+            "dream_number": 1
+        },
+        {
+            "text": "Lumiere?",
+            "dream_number": 1
+        },
+        {
+            "text": "Yang... aku kubur?",
+            "dream_number": 1
+        },
+        {
+            "text": "Dan kalau aku gagal?",
+            "dream_number": 1
+        },
+        {
+            "text": "...lagi.",
+            "dream_number": 2
+        },
+        {
+            "text": "Iri?",
+            "dream_number": 2
+        },
+        {
+            "text": "...hah?",
+            "dream_number": 2
+        },
+        {
+            "text": "Bukan aku...",
+            "dream_number": 2
+        },
+        {
+            "text": "Kamu juga tadi salah tempo.",
+            "dream_number": 3
+        },
+        {
+            "text": "...mimpi lagi ya?",
+            "dream_number": 3
+        },
+        {
+            "text": "Mama pikir aku masih hidup normal di rumah itu?",
+            "dream_number": 3
+        },
+        {
+            "text": "Aku bahkan gak inget terakhir kali rumah ini terasa seperti rumah.",
+            "dream_number": 3
+        },
+        {
+            "text": "Paman...",
+            "dream_number": 3
+        },
+        {
+            "text": "...mimpi berikutnya ya.",
+            "dream_number": 4
+        },
+        {
+            "text": "Ya jelas gak susah bagimu.",
+            "dream_number": 4
+        },
+        {
+            "text": "Kalau aku gagal...",
+            "dream_number": 4
+        },
+        {
+            "text": "Aku takut gagal.",
+            "dream_number": 4
+        },
+        {
+            "text": "Sekarang aku cuma punya satu mimpi.",
+            "dream_number": 4
+        },
+        {
+            "text": "...akhirnya berhasil.",
+            "dream_number": 4
+        },
+        {
+            "text": "Temenin aku jalan-jalan sekali lagi ya.",
+            "dream_number": 4
+        },
+        {
+            "text": "Aku pengen es krim.",
+            "dream_number": 4
         }
     ],
     "dream_vault": [],
     "memory_vault": [],
     "memory_stack": [
-        "...lagi.",
-        "Memangnya dia siapa...?",
-        "Apa-apaan..."
+        "Aku takut gagal.",
+        "Sekarang aku cuma punya satu mimpi.",
+        "...akhirnya berhasil.",
+        "Temenin aku jalan-jalan sekali lagi ya.",
+        "Aku pengen es krim."
     ],
     "hash_table": {
         "Memory Key #3": "Suara tangisan itu bukan dari luar kamar. Itu suaramu sendiri.",

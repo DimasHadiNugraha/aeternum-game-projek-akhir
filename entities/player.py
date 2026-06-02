@@ -10,7 +10,7 @@ class Player:
 
         #kondisi mental
         self.anxiety_level = 0
-        self.max_anxiety = 30
+        self.max_anxiety = 75
 
         #progress game
         self.current_dream = 1

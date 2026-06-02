@@ -1,12 +1,10 @@
 import json
 import os
 
-
-# Path file save game
-SAVE_FILE = "data/savegame.txt"
+SAVE_FILE = "game_data/savegame.txt"
 
 
-def save_game(player, journal, dream_vault, memory_vault, memory_stack, hash_table, dream_number):
+'''def save_game(player, journal, dream_vault, memory_vault, memory_stack, hash_table, dream_number):
     """
     Simpan seluruh progress game ke file savegame.txt dalam format JSON.
     Dipanggil setiap kali mimpi selesai atau player keluar dari game.
@@ -34,10 +32,10 @@ def save_game(player, journal, dream_vault, memory_vault, memory_stack, hash_tab
     with open(SAVE_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
-    print("\n  ✦ Progress berhasil disimpan.\n")
+    print("\n  ✦ Progress berhasil disimpan.\n")'''
 
 
-def load_game(player, journal, dream_vault, memory_vault, memory_stack, hash_table):
+'''def load_game(player, journal, dream_vault, memory_vault, memory_stack, hash_table):
     """
     Load progress game dari file savegame.txt.
     Kembalikan dream_number kalau berhasil, None kalau file tidak ada.
@@ -68,7 +66,7 @@ def load_game(player, journal, dream_vault, memory_vault, memory_stack, hash_tab
     print("\n  ✦ Progress berhasil dimuat.")
     print(f"  Melanjutkan dari Mimpi #{dream_number}.\n")
 
-    return dream_number
+    return dream_number'''
 
 
 def reset_dream(player, nightmare_loop, journal):

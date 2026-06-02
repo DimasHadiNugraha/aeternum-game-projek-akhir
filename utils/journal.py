@@ -1,9 +1,10 @@
+
 import json
 import os
 
-
-# Path file savegame
-SAVEGAME_FILE = "game_data/savegame.txt"
+# Path file savegame (absolute path)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SAVEGAME_FILE = os.path.join(PROJECT_ROOT, "game_data", "savegame.txt")
 
 
 class JournalNode:

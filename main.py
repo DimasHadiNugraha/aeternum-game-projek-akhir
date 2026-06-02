@@ -7,15 +7,15 @@ import sys
 import time
 import json
 
-#import modul-modul game yang udah dibikin
+# Import modul-modul game
 from entities.player import Player
 from entities.fragments import MemoryFragment, EmotionFragment, EMOTION_FRAGMENTS, MEMORY_FRAGMENTS
-from system.state_manager import save_game, load_game, check_dream_over, save_exists
-from utils.journal import DreamJournal
+from utils.journal import DreamJournal           # ← GUNAKAN INI UNTUK SAVE/LOAD
 from utils.vault import MemoryVault
 from utils.memory_stack import MemoryStack
 from utils.hashing import HashTable, init_secrets
 from system.dream import MesinMimpi
+from system.state_manager import check_dream_over  # ← HANYA INI kalau butuh reset
 
 #======================
 #1. utility & fungsi ui
@@ -239,26 +239,46 @@ def main():
     display_welcome_screen()
 
     # Sistem Menu Awal Game (Save / Load Game Handling)
-    if save_exists():
+    # Initialize variabel dulu
+    current_dream = 1
+    current_node = 0
+    
+    # Cek apakah ada save file
+    save_file_path = "game_data/savegame.txt"
+    
+    if os.path.exists(save_file_path):
+        # Ada file save, tanya pemain
         print("  [!] Progress ingatan masa lalu terdeteksi di sistem.")
         print("  1. Lanjutkan Mimpi Jangka Pendek (Load Game)")
         print("  2. Hancurkan Ingatan Lama & Mulai Baru (New Game)")
         print("─" * 68)
+        
         while True:
             pilihan = input("Pilih langkah awalmu (1/2): ")
             if pilihan == "1":
-                # Memuat seluruh struktur data dari file eksternal
-                saved_dream = load_game(player, journal, dream_vault, memory_vault, memory_stack, hash_table)
-                if saved_dream:
-                    player.current_dream = saved_dream
+                # Load game dari file
+                result = journal.load_game(player, dream_vault, memory_vault)
+                if result[0]:  # result = (current_dream, current_node)
+                    current_dream, current_node = result
+                    player.current_dream = current_dream
+                    print(f"  [✓] Game dimuat. Lanjut dari Mimpi #{current_dream}.\n")
                 break
             elif pilihan == "2":
+                # New game - hapus save lama
                 print("\nMengubur trauma lama...")
+                journal.clear()  # Hapus journal dan savegame.txt
                 time.sleep(1)
+                current_dream = 1
+                current_node = 0
                 break
+            else:
+                print("  [!] Pilihan tidak valid, coba lagi.")
+    
     else:
+        # Tidak ada save, mulai baru
         input("  [ Tekan ENTER Untuk Memulai Permainan... ]")
-
+        current_dream = 1
+        current_node = 0
     # Alur Urutan Eksekusi Tahapan Mimpi Game
     dream_sequence = [
         {"file": "game_data/dialog/prologue.json", "root": "prologue", "label": "Prologue: Awakening"},
@@ -363,7 +383,7 @@ def main():
             
             player.current_dream += 1
             # Menyimpan progress real-time ke savegame.txt
-            save_game(player, journal, dream_vault, memory_vault, memory_stack, hash_table, player.current_dream)
+            journal.save_game(player, dream_vault, memory_vault, player.current_dream, current_node)
             
             if player.current_dream <= len(dream_sequence):
                 input("\n[ Tekan ENTER untuk menyelami lapisan mimpi berikutnya... ]")

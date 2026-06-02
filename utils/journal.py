@@ -207,4 +207,10 @@ class DreamJournal:
         self.tail = None
         self.total_entries = 0
         for entry in data:
+<<<<<<< HEAD
             self.add_entry(entry["text"], entry.get("dream_number"))          
+=======
+            self.add_entry(entry["text"], entry.get("dream_number"))
+
+
+>>>>>>> c7a75b45af4e8e8c407d863d581b5f59e00e9d28

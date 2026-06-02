@@ -45,7 +45,12 @@ class MemoryStack:
 
     def load_from_list(self, data): #tambahin validasi ukuran
         self.stack = list(data)
+<<<<<<< HEAD
         if len(self.stack) > self.max_size:
             self.stack = self.stack[-self.max_size:]    
         else:
             self.stack = list(data)
+=======
+
+
+>>>>>>> c7a75b45af4e8e8c407d863d581b5f59e00e9d28

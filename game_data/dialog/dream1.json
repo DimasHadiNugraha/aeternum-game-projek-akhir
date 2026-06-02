@@ -472,7 +472,7 @@
 
         "auto_next": "dream1_024",
 
-        "anxiety_change": 0,
+        "anxiety_change": -5,
 
         "fragment_reward": "fragment_d1_002",
 

@@ -1,7 +1,7 @@
 
 {
   "dream_3": {
-    "title": "Heartbeat Requiem",
+    "title": "His Heartbeat",
 
     "start_node": "dream3_001",
 
@@ -18,7 +18,7 @@
           "Lalu perlahan berubah menjadi detak jantung."
         ],
         "auto_next": "dream3_002",
-        "anxiety_change": 1,
+        "anxiety_change": 0,
         "fragment_reward": null,
         "ending": false
       },
@@ -32,7 +32,7 @@
           "Tumpukan buku dan latihan ujian memenuhi mejamu."
         ],
         "auto_next": "dream3_003",
-        "anxiety_change": 1,
+        "anxiety_change": 0,
         "fragment_reward": "fragment_d3_001",
         "ending": false
       },
@@ -113,13 +113,13 @@
           {
             "text": "Menahan emosi.",
             "next_node": "dream3_009",
-            "anxiety_change": 1,
+            "anxiety_change": 0,
             "fragment_reward": null
           },
           {
             "text": "Meluapkan kekesalan.",
             "next_node": "dream3_010",
-            "anxiety_change": 2,
+            "anxiety_change": 0,
             "fragment_reward": null
           }
         ],
@@ -266,13 +266,13 @@
           {
             "text": "Mengiyakan.",
             "next_node": "dream3_020",
-            "anxiety_change": -1,
+            "anxiety_change": -3,
             "fragment_reward": null
           },
           {
             "text": "Diam beberapa saat lalu mengangguk.",
             "next_node": "dream3_020",
-            "anxiety_change": 0,
+            "anxiety_change": -3,
             "fragment_reward": null
           }
         ],
@@ -287,7 +287,7 @@
           "Kalian berjalan tanpa tujuan sambil berbagi makanan minimarket murahan."
         ],
         "auto_next": "dream3_021",
-        "anxiety_change": -1,
+        "anxiety_change": -7,
         "fragment_reward": "fragment_d3_003",
         "ending": false
       },
@@ -327,7 +327,7 @@
           "aku bakal temenin kamu sampai berhasil."
         ],
         "auto_next": "dream3_024",
-        "anxiety_change": -1,
+        "anxiety_change": -5,
         "fragment_reward": null,
         "ending": false
       },
@@ -340,7 +340,7 @@
           "kalian kembali tertawa bersama."
         ],
         "auto_next": "dream3_025",
-        "anxiety_change": -1,
+        "anxiety_change": -5,
         "fragment_reward": null,
         "ending": false
       },
@@ -433,7 +433,7 @@
           "Universitas musik terbaik akhirnya menerimamu."
         ],
         "auto_next": "dream3_032",
-        "anxiety_change": 0,
+        "anxiety_change": -5,
         "fragment_reward": "fragment_d3_006",
         "ending": false
       },
@@ -446,7 +446,7 @@
           "Tapi untuk apa?"
         ],
         "auto_next": "dream3_033",
-        "anxiety_change": 2,
+        "anxiety_change": 0,
         "fragment_reward": null,
         "ending": false
       },
@@ -485,7 +485,7 @@
           "Temenin aku jalan-jalan sekali lagi ya."
         ],
         "auto_next": "dream3_036",
-        "anxiety_change": 0,
+        "anxiety_change": -2,
         "fragment_reward": null,
         "ending": false
       },
@@ -499,7 +499,7 @@
           "Namun matanya terlihat merah seperti habis menangis."
         ],
         "auto_next": "dream3_037",
-        "anxiety_change": 1,
+        "anxiety_change": -10,
         "fragment_reward": null,
         "ending": false
       },
@@ -512,7 +512,7 @@
           "Jadi jangan ngomong kalo ini terakhir kali ya."
         ],
         "auto_next": "dream3_038",
-        "anxiety_change": 1,
+        "anxiety_change": -5,
         "fragment_reward": null,
         "ending": false
       },
@@ -525,7 +525,7 @@
           "air mata Lumiere tidak pernah benar-benar berhenti."
         ],
         "auto_next": "dream3_039",
-        "anxiety_change": 1,
+        "anxiety_change": -5,
         "fragment_reward": null,
         "ending": false
       },
@@ -605,7 +605,7 @@
           "Dan tangan Lumiere yang perlahan kehilangan hangatnya."
         ],
         "auto_next": "dream3_045",
-        "anxiety_change": 3,
+        "anxiety_change": 2,
         "fragment_reward": null,
         "ending": false
       },
@@ -618,7 +618,7 @@
           "Masih berusaha membuka matanya untuk melihatmu."
         ],
         "auto_next": "dream3_046",
-        "anxiety_change": 2,
+        "anxiety_change": 0,
         "fragment_reward": null,
         "ending": false
       },
@@ -631,7 +631,7 @@
           "gak bisa nemenin kamu sampai jadi pianis terkenal."
         ],
         "auto_next": "dream3_047",
-        "anxiety_change": 2,
+        "anxiety_change": 0,
         "fragment_reward": null,
         "ending": false
       },
@@ -644,7 +644,7 @@
           "jantungku akan selalu berdetak untuk menggantikan kehadiranku di hidupmu."
         ],
         "auto_next": "dream3_048",
-        "anxiety_change": 3,
+        "anxiety_change": -10,
         "fragment_reward": "memory_fragment_003",
         "ending": false
       },

@@ -285,8 +285,9 @@ def main():
             time.sleep(2)
             
             # Memanggil class MesinMimpi dari dream.py
-            mesin_eksplorasi = MesinMimpi()
-            mesin_eksplorasi.mulai_mimpi() 
+            lokasi_awal = "Ruang Kelas"
+            mesin_eksplorasi = MesinMimpi(lokasi_awal)
+            mesin_eksplorasi.mulai_mimpi()
             
             # 1. CEK JIKA PEMAIN MEMILIH '0' UNTUK KELUAR PAKSA
             if mesin_eksplorasi.game_selesai and mesin_eksplorasi.level_mimpi < 5:

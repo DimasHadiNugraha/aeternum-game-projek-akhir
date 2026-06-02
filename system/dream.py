@@ -2,9 +2,9 @@ from system.map import load_world
 
 
 class MesinMimpi:
-    def __init__(self):
+    def __init__(self, lokasi_awal="Ruang Kelas"):
         self.peta = load_world()
-        self.lokasi_sekarang = "Ruang Kelas"
+        self.lokasi_sekarang = lokasi_awal
         self.level_mimpi = 0
         self.game_selesai = False
 
@@ -12,8 +12,9 @@ class MesinMimpi:
         return self.peta.tempat.get(lokasi, [])
 
     def mulai_mimpi(self):
-        lokasi_tujuan = self.ambil_jalur(self.lokasi_sekarang) # Validasi apakah lokasi sekarang ada di peta
+        lokasi_tujuan = self.ambil_jalur(self.lokasi_sekarang)
 
+        # Validasi apakah lokasi sekarang ada di peta
         if not lokasi_tujuan:
             print("\nLokasi tidak valid atau tidak memiliki jalur!")
             return
@@ -55,7 +56,7 @@ class MesinMimpi:
             self.mulai_mimpi()
             return
 
-        # Level mimpi hanya bertambah jika inputan benar
+        # Level mimpi hanya bertambah jika input benar
         self.level_mimpi += 1
 
         tujuan = lokasi_tujuan[pilihan - 1]

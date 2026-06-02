@@ -3,31 +3,28 @@ class JournalNode:
         self.text = text                  # Isi catatan
         self.dream_number = dream_number  # Dari mimpi ke-berapa
         self.next = None                  # Pointer ke entry berikutnya
-
-
+ 
+ 
 class DreamJournal:
     def __init__(self):
-        self.head = None
+        self.head = None  #entry pertama
+        self.tail = None        #entry terakhir, untuk akses O(1) saat tambah entry baru 
         self.total_entries = 0
-
+ 
     def add_entry(self, text, dream_number=None):
-        """Tambah entry baru di akhir journal."""
-        new_node = JournalNode(text, dream_number)
-        if not self.head:
+        new_node = JournalNode(text, dream_number) #buat node baru
+        if not self.head:  #kalau kosong,node baru jadi head dan tail
             self.head = new_node
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = new_node
+            self.tail = new_node
+            self.tail.next = new_node  
+            self.tail = new_node      
         self.total_entries += 1
-
+ 
     def display(self):
-        """Tampilkan seluruh isi journal secara urut."""
         if not self.head:
             print("\n[Journal kosong. Belum ada ingatan yang tercatat.]\n")
             return
-
+ 
         print("\n" + "=" * 40)
         print("       ✦ DREAM JOURNAL ✦")
         print("=" * 40)
@@ -39,22 +36,44 @@ class DreamJournal:
             current = current.next
             index += 1
         print("=" * 40 + "\n")
-
+ 
     def get_last_entry(self):
-        """Ambil entry paling baru."""
-        if not self.head:
+        if not self.tail:
             return None
-        current = self.head
-        while current.next:
-            current = current.next
-        return current.text
-
+        return self.tail.text
+ 
     def count(self):
-        """Kembalikan jumlah total entry."""
         return self.total_entries
-
+ 
+    def clear(self):
+        self.head = None
+        self.tail = None
+        self.total_entries = 0
+        print("  [~] Journal berhasil dikosongkan.\n")
+ 
+    def clear_dream_entries(self, dream_number):
+        # Traverse dan hapus entry dengan dream_number yang sama
+        current = self.head
+        prev = None
+        
+        while current:
+            if current.dream_number == dream_number:
+                if prev:
+                    prev.next = current.next
+                else:
+                    self.head = current.next
+                
+                # Update tail kalau yang dihapus adalah tail
+                if current == self.tail:
+                    self.tail = prev
+                
+                self.total_entries -= 1
+                current = current.next
+            else:
+                prev = current
+                current = current.next
+ 
     def to_list(self):
-        """Konversi semua entry ke list Python untuk keperluan save/load."""
         result = []
         current = self.head
         while current:
@@ -64,24 +83,11 @@ class DreamJournal:
             })
             current = current.next
         return result
-
+ 
     def load_from_list(self, data):
-        """Load journal dari list saat load_game dipanggil."""
         self.head = None
+        self.tail = None
         self.total_entries = 0
         for entry in data:
             self.add_entry(entry["text"], entry.get("dream_number"))
-
-"""
-revisi:
--tambahkan method untuk clear journal, karena nanti bisa kepakai saat:
-dream over
-reset game
-new game
--get_last_entry() sekarang O(n)
-karena traversal sampai akhir:
-while current.next:
-
-Kalau journal nanti panjang bisa lambat, jadi ubah ya.
--komentarnya ubah pakai bahasa sendiri ya
-"""
+             

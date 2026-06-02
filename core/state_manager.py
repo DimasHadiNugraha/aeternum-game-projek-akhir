@@ -71,7 +71,7 @@ def load_game(player, journal, dream_vault, memory_vault, memory_stack, hash_tab
     return dream_number
 
 
-def reset_dream(player, nightmare_loop):
+def reset_dream(player, nightmare_loop, journal):
     """
     Dipanggil saat anxiety_level mencapai 30 (DREAM OVER).
     Hanya mereset anxiety dan nightmare loop — item vault tetap ada.
@@ -80,11 +80,11 @@ def reset_dream(player, nightmare_loop):
     - anxiety_level kembali ke 0
     - Posisi loop kembali ke head
     - Semua node corrupt di loop direset
+    - Journal dikosongkan (mimpi dimulai dari awal)
 
     Yang TIDAK direset:
     - fragment_count
     - Isi dream vault dan memory vault
-    - Isi journal
     - Isi memory stack
     """
     print("\n" + "=" * 40)
@@ -97,16 +97,17 @@ def reset_dream(player, nightmare_loop):
     player.anxiety_level = 0
     nightmare_loop.reset_corruption()
     nightmare_loop.current = nightmare_loop.head
+    journal.clear()  # ← Reset journal saat dream over
 
 
-def check_dream_over(player, nightmare_loop):
+def check_dream_over(player, nightmare_loop, journal):
     """
     Cek apakah anxiety sudah mencapai 30.
     Kalau iya, panggil reset_dream() secara otomatis.
     Kembalikan True kalau dream over, False kalau belum.
     """
     if player.anxiety_level >= 30:
-        reset_dream(player, nightmare_loop)
+        reset_dream(player, nightmare_loop, journal)
         return True
     return False
 
@@ -118,9 +119,9 @@ def delete_save():
     """
     if os.path.exists(SAVE_FILE):
         os.remove(SAVE_FILE)
-        print("\n  Save game dihapus. Memulai dari awal.\n")
+        print("\n  ✦ Save game dihapus. Memulai dari awal.\n")
     else:
-        print("\n Tidak ada file save yang ditemukan.\n")
+        print("\n  [!] Tidak ada file save yang ditemukan.\n")
 
 
 def save_exists():

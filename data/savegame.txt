@@ -1,7 +1,7 @@
 {
-    "anxiety_level": 8,
+    "anxiety_level": 16,
     "fragment_count": 0,
-    "dream_number": 2,
+    "dream_number": 3,
     "journal": [
         {
             "text": "...lagi.",
@@ -14,14 +14,88 @@
         {
             "text": "Apa-apaan...",
             "dream_number": 1
+        },
+        {
+            "text": "...",
+            "dream_number": 1
+        },
+        {
+            "text": "Kamu... mengenalku?",
+            "dream_number": 1
+        },
+        {
+            "text": "Lumiere?",
+            "dream_number": 1
+        },
+        {
+            "text": "Yang... aku kubur?",
+            "dream_number": 1
+        },
+        {
+            "text": "Dan kalau aku gagal?",
+            "dream_number": 1
+        },
+        {
+            "text": "...lagi.",
+            "dream_number": 2
+        },
+        {
+            "text": "Aku masih punya waktu.",
+            "dream_number": 2
+        },
+        {
+            "text": "Iri?",
+            "dream_number": 2
+        },
+        {
+            "text": "...hah?",
+            "dream_number": 2
+        },
+        {
+            "text": "Bukan aku...",
+            "dream_number": 2
+        },
+        {
+            "text": "...lagi.",
+            "dream_number": 2
+        },
+        {
+            "text": "Cuma game endless run biasa kok, tapi pakai konsep koleksi avatar dan sistem ranking.",
+            "dream_number": 2
+        },
+        {
+            "text": "Iri?",
+            "dream_number": 2
+        },
+        {
+            "text": "...hah?",
+            "dream_number": 2
+        },
+        {
+            "text": "Bukan aku...",
+            "dream_number": 2
+        },
+        {
+            "text": "Ini projekku...",
+            "dream_number": 2
+        },
+        {
+            "text": "Kenapa?",
+            "dream_number": 2
+        },
+        {
+            "text": "...Dia?",
+            "dream_number": 2
         }
     ],
     "dream_vault": [],
     "memory_vault": [],
     "memory_stack": [
-        "...lagi.",
-        "Memangnya dia siapa...?",
-        "Apa-apaan..."
+        "...hah?",
+        "Bukan aku...",
+        "Ini projekku...",
+        "Kenapa?",
+        "...Dia?"
     ],
     "hash_table": {
         "Memory Key #3": "Suara tangisan itu bukan dari luar kamar. Itu suaramu sendiri.",

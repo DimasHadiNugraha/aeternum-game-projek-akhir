@@ -444,7 +444,7 @@
           {
             "text": "Tetap diam.",
             "next_node": "dream2_bad_001",
-            "anxiety_change": 2,
+            "anxiety_change": 25,
             "fragment_reward": null
           },
           {

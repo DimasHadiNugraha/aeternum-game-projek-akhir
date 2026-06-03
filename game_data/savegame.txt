@@ -1,7 +1,7 @@
 {
     "player": {
-        "name": "dimas",
-        "anxiety_level": 27,
+        "name": "Aeterie",
+        "anxiety_level": 0,
         "fragment_count": 0
     },
     "dream_vault": {
@@ -13,7 +13,7 @@
         "items": []
     },
     "dream_info": {
-        "current_dream": 3,
+        "current_dream": 2,
         "current_node": 0
     },
     "journal_entries": [
@@ -48,30 +48,6 @@
         {
             "text": "Dan kalau aku gagal?",
             "dream_number": 1
-        },
-        {
-            "text": "...lagi.",
-            "dream_number": 2
-        },
-        {
-            "text": "Aku masih punya waktu.",
-            "dream_number": 2
-        },
-        {
-            "text": "Cuma game endless run biasa kok, tapi pakai konsep koleksi avatar dan sistem ranking.",
-            "dream_number": 2
-        },
-        {
-            "text": "Iri?",
-            "dream_number": 2
-        },
-        {
-            "text": "...hah?",
-            "dream_number": 2
-        },
-        {
-            "text": "Bukan aku...",
-            "dream_number": 2
         }
     ]
 }

@@ -10,7 +10,7 @@ class Player:
 
         #kondisi mental
         self.anxiety_level = 0
-        self.max_anxiety = 75
+        self.max_anxiety = 30
 
         #progress game
         self.current_dream = 1
@@ -29,6 +29,9 @@ class Player:
         #status game
         self.is_awakened = False
         self.dream_over = False
+
+        self.rewind_keys = 1          #jumlah kunci pembalik waktu awal yang dimiliki player
+        self.decision_history = []     #stack LIFO untuk menyimpan jejak node cerita sebelum bercabang
 
     #tambah anxiety
     def increase_anxiety(self, amount):

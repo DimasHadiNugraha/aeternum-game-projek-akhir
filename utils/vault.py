@@ -10,17 +10,6 @@ class VaultNode:
 
 
 class MemoryVault:
-    """
-    Double Linked List untuk menyimpan item player.
-    Mendukung navigasi dua arah — scroll kiri dan kanan di menu inventori.
-
-    Dipakai dua kali:
-        dream_vault  = MemoryVault(name="Dream Vault")
-        memory_vault = MemoryVault(name="Memory Vault")
-
-    Struktur:
-    None <- [Item 1] <-> [Item 2] <-> [Item 3] -> None
-    """
 
     def __init__(self, name="Vault"):
         self.name = name

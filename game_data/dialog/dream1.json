@@ -150,7 +150,7 @@
 
         "auto_next": "dream1_008",
 
-        "anxiety_change": 1,
+        "anxiety_change": 2,
 
         "fragment_reward": null,
 
@@ -283,7 +283,7 @@
           {
             "text": "Menutup laptop.",
             "next_node": "dream1_015",
-            "anxiety_change": 1,
+            "anxiety_change": 0,
             "fragment_reward": null
           }
         ],
@@ -322,7 +322,7 @@
 
         "auto_next": "dream1_016",
 
-        "anxiety_change": 5,
+        "anxiety_change": 3,
 
         "fragment_reward": null,
 
@@ -358,7 +358,7 @@
 
         "auto_next": "dream1_018",
 
-        "anxiety_change": 0,
+        "anxiety_change": 3,
 
         "fragment_reward": null,
 
@@ -436,7 +436,7 @@
 
         "auto_next": "dream1_022",
 
-        "anxiety_change": 0,
+        "anxiety_change": -3,
 
         "fragment_reward": null,
 
@@ -680,7 +680,7 @@
       "dream1_034": {
         "node_id": "dream1_034",
 
-        "speaker": "Chery",
+        "speaker": "Cherry",
 
         "text": [
           "Aku gak nyangka dia bakal nyuri projek Serena."
@@ -758,7 +758,7 @@
 
         "auto_next": "dream1_bad_002",
 
-        "anxiety_change": 5,
+        "anxiety_change": 10,
 
         "fragment_reward": null,
 
@@ -921,7 +921,7 @@
 
         "auto_next": "dream1_042",
 
-        "anxiety_change": 4,
+        "anxiety_change": 3,
 
         "fragment_reward": null,
 
@@ -1184,14 +1184,7 @@
         "choices": [
           {
             "text": "Menghadapi Serena.",
-            "next_node": "dream1_true_001",
-            "anxiety_change": 0,
-            "fragment_reward": null
-          },
-
-          {
-            "text": "Tetap diam.",
-            "next_node": "dream1_neutral_001",
+            "next_node": "dream1_057",
             "anxiety_change": 0,
             "fragment_reward": null
           }
@@ -1215,7 +1208,7 @@
 
      "auto_next": "dream1_058",
 
-     "anxiety_change": -5,
+     "anxiety_change": -7,
 
     "fragment_reward": null,
 
@@ -1251,7 +1244,7 @@
 
     "auto_next": "dream1_060",
 
-    "anxiety_change": 1,
+    "anxiety_change": 2,
 
     "fragment_reward": null,
 
@@ -1269,7 +1262,7 @@
 
     "auto_next": "dream1_061",
 
-    "anxiety_change": 0,
+    "anxiety_change": -3,
 
     "fragment_reward": null,
 

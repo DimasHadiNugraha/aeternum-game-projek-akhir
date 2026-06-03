@@ -7,21 +7,21 @@ class HashNode:
 class HashTable:
     def __init__(self, size=10):
         self.size = size
-        self.table = [[] for _ in range(self.size)]  # List of lists (chaining)
+        self.table = [[] for _ in range(self.size)]  # List of lists (untuk chaining)
         self.total_items = 0
  
-    def hash_function(self, key):
+    def hash_function(self, key): # menggubah key string menjadi index
         return sum(ord(c) for c in key) % self.size
  
-    def insert(self, key, value):
+    def insert(self, key, value): #mengitung indeks untuk key, lalu menyimpan value didalam bucket
 
         index = self.hash_function(key)
         bucket = self.table[index]
  
-        # Cek apakah key sudah ada — kalau ada update valuenya
+        # Cek apakah key sudah ada
         for i, (k, v) in enumerate(bucket):
             if k == key:
-                bucket[i] = (key, value)
+                bucket[i] = (key, value) #jika sudah ada, update value-nya
                 print(f"  [~] Memory Key '{key}' diupdate.")
                 return
  
@@ -30,7 +30,7 @@ class HashTable:
         self.total_items += 1
         print(f"  [+] Memory Key '{key}' berhasil disimpan.")
  
-    def get(self, key):
+    def get(self, key):  #cari value berdasakan key
         index = self.hash_function(key)
         bucket = self.table[index]
  
@@ -40,7 +40,7 @@ class HashTable:
  
         return None
  
-    def delete(self, key):
+    def delete(self, key): #untuk menghapus key dari hash table
         index = self.hash_function(key)
         bucket = self.table[index]
  
@@ -54,7 +54,7 @@ class HashTable:
         print(f"  [!] Memory Key '{key}' tidak ditemukan.")
         return False
  
-    def unlock_secret(self, key):
+    def unlock_secret(self, key): #ambil rahasia dan tampilkan
         secret = self.get(key)
  
         if secret:
@@ -68,8 +68,7 @@ class HashTable:
             print(f"\n  [!] Kunci '{key}' tidak membuka apapun.\n")
             return None
  
-    def display(self):
-        """Tampilkan seluruh isi hash table."""
+    def display(self): #Tampilkan seluruh isi hash table
         print("\n" + "=" * 40)
         print("     ✦ HASH TABLE ✦")
         print(f"     Total Keys: {self.total_items}")
@@ -90,15 +89,13 @@ class HashTable:
                 result[k] = v
         return result
  
-    def load_from_dict(self, data):
-        """Load hash table dari dict saat load_game dipanggil."""
+    def load_from_dict(self, data):  #Load hash table dari dict saat load_game dipanggil
         self.table = [[] for _ in range(self.size)]
         self.total_items = 0
         for key, value in data.items():
             self.insert(key, value)
 
-def init_secrets(hash_table):
-    """Isi hash table dengan semua rahasia karakter."""
+def init_secrets(hash_table): #isi hash table dengan memory karakter dan rahasianya saat mulai game baru
     secrets = {
         "Memory Key #1": "Kamu pernah melihat seseorang jatuh. Kamu diam saja.",
         "Memory Key #2": "Nama yang selalu kamu hindari tertulis di batu nisan itu.",

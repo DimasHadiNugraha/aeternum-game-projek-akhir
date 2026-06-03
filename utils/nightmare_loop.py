@@ -11,18 +11,6 @@ class DreamNode:
 
 
 class NightmareLoop:
-    """
-    Circular Linked List untuk siklus lokasi dalam satu mimpi.
-    Setelah lokasi terakhir, otomatis kembali ke awal — loop tidak pernah berhenti.
-
-    Digunakan untuk:
-    - Siklus normal lokasi dalam satu dream
-    - Fake awakening: MC pikir sudah bangun tapi loop kembali ke awal
-    - Anxiety event: node mulai corrupt saat anxiety >= 20
-
-    Struktur:
-    [Kamar] -> [Lorong] -> [Kelas] -> [Rumah Sakit] -> (kembali ke Kamar)
-    """
 
     def __init__(self):
         self.head = None

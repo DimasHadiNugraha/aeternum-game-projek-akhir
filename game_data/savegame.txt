@@ -1,12 +1,43 @@
 {
     "player": {
-        "name": "Aeterie",
+        "name": "win",
         "anxiety_level": 0,
         "fragment_count": 0
     },
     "dream_vault": {
-        "total_items": 0,
-        "items": []
+        "total_items": 5,
+        "items": [
+            {
+                "item_name": "The Same Headline",
+                "item_type": "emotion_fragment",
+                "description": "Siaran televisi yang berulang-ulang, memuakkan.",
+                "value": 7
+            },
+            {
+                "item_name": "Obscured Visage",
+                "item_type": "emotion_fragment",
+                "description": "Wajahnya tidak kelihatan, tapi terasa familiar.",
+                "value": 5
+            },
+            {
+                "item_name": "Burning Glaze",
+                "item_type": "emotion_fragment",
+                "description": "Tatapan mereka sangat tajam dan menyeramkan, aku ingi pergi dari sini.",
+                "value": 3
+            },
+            {
+                "item_name": "The Written Walls",
+                "item_type": "emotion_fragment",
+                "description": "Coretan penuh makian, apa ini ditujukan kepadaku?",
+                "value": 3
+            },
+            {
+                "item_name": "Unforgotten Name",
+                "item_type": "emotion_fragment",
+                "description": "Namanya terasa tidak asing, seolah aku sudah menyebutnya ribuan kali.",
+                "value": 5
+            }
+        ]
     },
     "memory_vault": {
         "total_items": 0,
@@ -14,7 +45,7 @@
     },
     "dream_info": {
         "current_dream": 2,
-        "current_node": 0
+        "current_node": null
     },
     "journal_entries": [
         {

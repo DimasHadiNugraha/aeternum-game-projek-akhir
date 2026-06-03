@@ -51,7 +51,7 @@ def draw_hud(player): #fungsi buat nampilin hud(konstan) di bagian atas layar te
     print("└" + "─" * lebar + "┘\n")
 
 def display_welcome_screen(): #nampilin splash/welcome screen
-    clear_terminal
+    clear_terminal()
     print("""
  █████╗ ███████╗████████╗███████╗██████╗ ███╗   ██╗██╗   ██╗███╗   ███╗
 ██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗████╗  ██║██║   ██║████╗ ████║
@@ -122,7 +122,7 @@ def trigger_notifications(node, player):
 #narasi
 #================
 
-def execute_narrative_loop(file_path, root_key, player, journal, memory_stack):
+def execute_narrative_loop(file_path, root_key, player, journal, start_node=None):
     """Membaca data narasi JSON dan mengeksekusi pohon keputusan dialog."""
     if not os.path.exists(file_path):
         print(f"[!] File data narasi {file_path} tidak ditemukan!")
@@ -132,10 +132,10 @@ def execute_narrative_loop(file_path, root_key, player, journal, memory_stack):
         story_data = json.load(f)
 
     scene = story_data[root_key]
-    current_node_id = scene["start_node"]
+    current_node_id = start_node if start_node is not None else scene["start_node"]
     nodes = scene["nodes"]
 
-    while current_node_id:
+    while current_node_id is not None:
         node = nodes.get(current_node_id)
         if not node:
             break
@@ -170,7 +170,7 @@ def execute_narrative_loop(file_path, root_key, player, journal, memory_stack):
                     continue  #mengulang loop kesadaran dari node masa lalu
             
             player.dream_over = True
-            return "DREAM_OVER"
+            return ("DREAM_OVER", current_node_id)
 
         speaker = node.get("speaker")
         if speaker:
@@ -189,7 +189,7 @@ def execute_narrative_loop(file_path, root_key, player, journal, memory_stack):
 
         if node.get("ending") is False and speaker == "player":
             last_text = node.get("text", [""])[0]
-            memory_stack.push(last_text)
+            player.memory_stack.push(last_text)
             journal.add_entry(last_text, player.current_dream)
 
         if node.get("input_type") == "player_name":
@@ -231,7 +231,7 @@ def execute_narrative_loop(file_path, root_key, player, journal, memory_stack):
             else:
                 break
 
-    return "SCENE_COMPLETED"
+    return ("SCENE_COMPLETED", current_node_id)
 
 #============================
 #4.GAME MAIN CONTROL CENTER
@@ -244,9 +244,6 @@ def main():
     
     #menyiapkan instansiasi struktur data
     journal = DreamJournal()
-    dream_vault = MemoryVault("Dream Vault")
-    memory_vault = MemoryVault("Memory Vault")
-    memory_stack = MemoryStack(max_size=5)
     hash_table = HashTable()
     init_secrets(hash_table)
 
@@ -254,7 +251,7 @@ def main():
 
     #menu awal Game (save / load game handling)
     current_dream = 1
-    current_node = 0
+    current_node = None
     
     #cek apakah ada save file
     save_file_path = "game_data/savegame.txt"
@@ -270,10 +267,14 @@ def main():
             pilihan = input("Pilih langkah awalmu (1/2): ")
             if pilihan == "1":
                 #load game dari file
-                result = journal.load_game(player, dream_vault, memory_vault)
-                if result[0]:  #result = (current_dream, current_node)
+                result = journal.load_game(
+                    player,
+                    player.dream_vault,
+                    player.memory_vault
+                )
+                if result:
                     current_dream, current_node = result
-                    player.current_dream = current_dream
+                    player.current_dream = current_dream  #result = (current_dream, current_node)
                     print(f"  [✓] Game dimuat. Lanjut dari Mimpi #{current_dream}.\n")
                 break
             elif pilihan == "2":
@@ -282,7 +283,7 @@ def main():
                 journal.clear()  #hapus journal dan savegame.txt
                 time.sleep(1)
                 current_dream = 1
-                current_node = 0
+                current_node = None
                 break
             else:
                 print("  [!] Pilihan tidak valid, coba lagi.")
@@ -290,15 +291,9 @@ def main():
     else:
         #tidak ada save, mulai baru
         input("  [ Tekan ENTER Untuk Memulai Permainan... ]")
-<<<<<<< HEAD
 
     # Di dalam fungsi main() pada file main.py
     # Tambahkan parameter "target_node" yang sesuai dengan peta lokasi JSON kamu
-=======
-        current_dream = 1
-        current_node = 0
-    #alur urutan eksekusi tahapan mimpi
->>>>>>> 9788fe868ab1d1f53b0c0345946d2bbb18914eca
     dream_sequence = [
         {"file": "game_data/dialog/prologue.json", "root": "prologue", "label": "Prologue: Awakening", "target_node": None},
         {"file": "game_data/dialog/dream1.json", "root": "dream_1", "label": "Mimpi 1: The Betrayal", "target_node": "Rumah Sakit"},
@@ -310,16 +305,10 @@ def main():
         current_idx = player.current_dream - 1
         active_scene = dream_sequence[current_idx]
 
-<<<<<<< HEAD
-        # ==========================================
-        # integrasi graph & DFS (eksplorasi lokasi)
-        # ==========================================
-=======
         #==========================================
         #integrasi graph & DFS (eksplorasi lokasi)
         #==========================================
         #panggil map eksplorasi setelah prolog selesai (Sebelum Mimpi 1 & 2)
->>>>>>> 9788fe868ab1d1f53b0c0345946d2bbb18914eca
         if active_scene["root"] != "prologue":
             clear_terminal()
             print("─" * 60)
@@ -328,7 +317,6 @@ def main():
             print(f" [Narator]: Kamu harus mencari letak petunjuk menuju '{active_scene['target_node']}'...")
             time.sleep(2)
             
-<<<<<<< HEAD
             # Panggil mesin mimpi dengan target lokasi dinamis dari scene narasi saat ini
             lokasi_awal = "Ruang Kelas"
             mesin_eksplorasi = MesinMimpi(lokasi_awal, lokasi_target=active_scene["target_node"])
@@ -341,27 +329,6 @@ def main():
                 break 
 
             # JIKA BERHASIL MENCAPAI TARGET LOKASI YANG BENAR
-=======
-            if player.current_dream == 1:
-                mesin_eksplorasi = MesinMimpi("Lab Komputer")
-            elif player.current_dream == 2:
-                mesin_eksplorasi = MesinMimpi("Rumah")
-            elif player.current_dream == 3:
-                mesin_eksplorasi = MesinMimpi("Ruang Kelas") 
-            else:
-                mesin_eksplorasi = MesinMimpi()
-            
-            #mulai navigasi Graph
-            mesin_eksplorasi.mulai_mimpi()
-            
-            if mesin_eksplorasi.game_selesai and mesin_eksplorasi.level_mimpi < 5:
-                print("\n ⚠️  Eksplorasi dihentikan secara paksa oleh pemain.")
-                print(" Kesadaranmu terputus dari labirin mimpi...")
-                time.sleep(2)
-                break  
-
-            #jika berhasil mencapai level 5
->>>>>>> 9788fe868ab1d1f53b0c0345946d2bbb18914eca
             clear_terminal()
             print("─" * 60)
             print(" ✨  KUNCI MEMORI DITEMUKAN! KESADARAN TERTIKAI BERHASIL MEMBUKA GERBANG  ✨")
@@ -372,12 +339,12 @@ def main():
         time.sleep(1.5)
 
         #narasi (decision tree)
-        result = execute_narrative_loop(
+        result, current_node  = execute_narrative_loop(
             file_path=active_scene["file"],
             root_key=active_scene["root"],
             player=player,
             journal=journal,
-            memory_stack=memory_stack
+            start_node=current_node
         )
     
         #dream over
@@ -390,7 +357,7 @@ def main():
 ██   ██ ██   ██ ██      ██   ██ ██  ██  ██     ██    ██  ██  ██  ██      ██   ██ 
 ██████  ██   ██ ███████ ██   ██ ██      ██      ██████    ████   ███████ ██   ██ 
                                                                                  
-                                                                                 ]
+                                                                                 
             """
            
             print("\n" * 2)
@@ -404,7 +371,14 @@ def main():
             print("\n")
             print("═" * 80)
             
-            player.reset_dream_state() 
+            player.reset_dream_state()
+            journal.save_game(
+                player,
+                player.dream_vault,
+                player.memory_vault,
+                player.current_dream,
+                current_node
+            ) 
             print("\n")
             input("[ Tekan ENTER untuk menyusun ulang kesadaran... ]".center(80))
             continue
@@ -418,12 +392,19 @@ def main():
             print("─" * 60)
             
             #tampilkan ringkasan memory stack jangka pendek saat ini
-            memory_stack.display()
+            player.memory_stack.display()
             
             player.current_dream += 1
+            current_node = None
             player.anxiety_level = 0
             #menyimpan progress real-time ke savegame.txt
-            journal.save_game(player, dream_vault, memory_vault, player.current_dream, current_node)
+            journal.save_game(
+                player,
+                player.dream_vault,
+                player.memory_vault,
+                player.current_dream,
+                current_node
+            )
             
             if player.current_dream <= len(dream_sequence):
                 input("\n[ Tekan ENTER untuk menyelami lapisan mimpi berikutnya... ]")

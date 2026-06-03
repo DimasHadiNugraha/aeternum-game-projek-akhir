@@ -259,13 +259,13 @@ def main():
     else:
         input("  [ Tekan ENTER Untuk Memulai Permainan... ]")
 
-    # Alur Urutan Eksekusi Tahapan Mimpi Game
+    # Di dalam fungsi main() pada file main.py
+    # Tambahkan parameter "target_node" yang sesuai dengan peta lokasi JSON kamu
     dream_sequence = [
-        {"file": "game_data/dialog/prologue.json", "root": "prologue", "label": "Prologue: Awakening"},
-        {"file": "game_data/dialog/dream1.json", "root": "dream_1", "label": "Mimpi 1: The Betrayal"},
-        {"file": "game_data/dialog/dream2.json", "root": "dream_2", "label": "Mimpi 2: Requiem of Silence"},
-        {"file": "game_data/dialog/dream3.json", "root": "dream_3", "label": "Mimpi 3: His Heartbeat"}
-        
+        {"file": "game_data/dialog/prologue.json", "root": "prologue", "label": "Prologue: Awakening", "target_node": None},
+        {"file": "game_data/dialog/dream1.json", "root": "dream_1", "label": "Mimpi 1: The Betrayal", "target_node": "Rumah Sakit"},
+        {"file": "game_data/dialog/dream2.json", "root": "dream_2", "label": "Mimpi 2: Requiem of Silence", "target_node": "Lab Komputer"},
+        {"file": "game_data/dialog/dream3.json", "root": "dream_3", "label": "Mimpi 3: His Heartbeat", "target_node": "Rumah"}
     ]
 
     while player.current_dream <= len(dream_sequence):
@@ -275,31 +275,29 @@ def main():
         # ==========================================
         # integrasi graph & DFS (eksplorasi lokasi)
         # ==========================================
-        # panggil map eksplorasi HANYA setelah prolog selesai (Sebelum Mimpi 1 & 2)
         if active_scene["root"] != "prologue":
             clear_terminal()
             print("─" * 60)
             print(" 🧭  MEMASUKI LABIRIN MEMORI (GRAPH EXPLORATION)  🧭")
             print("─" * 60)
-            print(" [Narator]: Kamu harus mencari letak ingatan selanjutnya di alam bawah sadar...")
+            print(f" [Narator]: Kamu harus mencari letak petunjuk menuju '{active_scene['target_node']}'...")
             time.sleep(2)
             
-            # Memanggil class MesinMimpi dari dream.py
+            # Panggil mesin mimpi dengan target lokasi dinamis dari scene narasi saat ini
             lokasi_awal = "Ruang Kelas"
-            mesin_eksplorasi = MesinMimpi(lokasi_awal)
+            mesin_eksplorasi = MesinMimpi(lokasi_awal, lokasi_target=active_scene["target_node"])
             mesin_eksplorasi.mulai_mimpi()
             
-            # 1. CEK JIKA PEMAIN MEMILIH '0' UNTUK KELUAR PAKSA
-            if mesin_eksplorasi.game_selesai and mesin_eksplorasi.level_mimpi < 5:
-                print("\n ⚠️  Eksplorasi dihentikan secara paksa oleh pemain.")
-                print(" Kesadaranmu terputus dari labirin mimpi...")
+            # JIKA PEMAIN KELUAR PAKSA / GAGAL
+            if mesin_eksplorasi.game_selesai and mesin_eksplorasi.lokasi_sekarang != active_scene["target_node"]:
+                print("\n ⚠️  Eksplorasi gagal. Jaringan memori terputus.")
                 time.sleep(2)
-                break  # Ini akan menghentikan game sepenuhnya dan keluar ke terminal
+                break 
 
-            # 2. JIKA BERHASIL MENCAPAI LEVEL 5 (SELESAI EKSPLORASI)
+            # JIKA BERHASIL MENCAPAI TARGET LOKASI YANG BENAR
             clear_terminal()
             print("─" * 60)
-            print(" ✨  JALUR DITEMUKAN MENGGUNAKAN DFS!  ✨")
+            print(" ✨  KUNCI MEMORI DITEMUKAN! KESADARAN TERTIKAI BERHASIL MEMBUKA GERBANG  ✨")
             print("─" * 60)
             time.sleep(2)
         # ==========================================

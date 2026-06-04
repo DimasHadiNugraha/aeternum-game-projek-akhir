@@ -774,9 +774,6 @@
         "node_id": "dream3_057",
         "speaker": null,
         "text": [
-          "Dum.",
-          "Dum.",
-          "Dum.",
           "Seolah Lumiere masih ada di sana mendengarkan permainanmu."
         ],
         "auto_next": "dream3_058",
@@ -791,7 +788,7 @@
         "text": [
           "Lampu auditorium perlahan padam satu per satu.",
           "Dan sebuah pesan muncul di hadapanmu.",
-          "\"EPILOGUE UNLOCKED.\""
+          "\"Ayo bertemu lagi.\""
         ],
         "ending": true
       }

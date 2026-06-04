@@ -319,11 +319,15 @@ def main():
             time.sleep(2)
             
             #tentukan lokasi awal berdasarkan mimpi saat ini 
-            lokasi_awal = "Ruang Kelas"
+            lokasi_awal = "Rumah"
             if player.current_dream == 2:
-                lokasi_awal = "Lab Komputer"
+                lokasi_awal = "Ruang Kelas"
             elif player.current_dream == 3:
+                lokasi_awal = "Lab Komputer"
+            else:
                 lokasi_awal = "Rumah"
+
+
 
             #inisialisasi & jalankan 
             mesin_eksplorasi = MesinMimpi(lokasi_awal, lokasi_target=active_scene["target_node"])
@@ -390,21 +394,52 @@ def main():
             input("[ Tekan ENTER untuk menyusun ulang kesadaran... ]".center(80))
             continue
 
-        #jika scene berhasil diselesaikan, simpan otomatis dan lanjut tahap berikutnya
+       #jika scene berhasil diselesaikan, simpan otomatis dan lanjut tahap berikutnya
         if result == "SCENE_COMPLETED":
             clear_terminal()
-            print("─" * 60)
-            print(f" 🎉   TAHAPAN {active_scene['label'].upper()} TERSURAT   🎉")
-            print(" Kesadaranmu berhasil bertahan melampaui manifestasi trauma.")
-            print("─" * 60)
             
-            #tampilkan ringkasan memory stack jangka pendek saat ini
+            #hitung data untuk rekapan
+            total_fragments = player.dream_vault.size + player.memory_vault.size
+            sisa_anxiety = player.max_anxiety - player.anxiety_level
+            sisa_rewind = getattr(player, 'rewind_keys', 0) #mencegah error kalau rewind_keys belum di-set
+            
+            #menentukan status kondisi jiwa berdasarkan anxiety
+            if player.anxiety_level < (player.max_anxiety * 0.3):
+                kondisi_jiwa = "Sangat Stabil"
+            elif player.anxiety_level < (player.max_anxiety * 0.7):
+                kondisi_jiwa = "Sedikit Terguncang"
+            else:
+                kondisi_jiwa = "Kritis"
+
+            #ui nya
+            print("╔" + "═" * 67 + "╗")
+            print("║" + f"✧ TAHAPAN {active_scene['label'].upper()} ✧".center(67) + "║")
+            print("╚" + "═" * 67 + "╝\n")
+            
+            print('    "Satu kepingan memori kembali, menyisakan ruang hampa')
+            print('     di kepalamu yang kini perlahan mulai terisi..."\n')
+            
+            print("  ┌─ ⋆ STATUS KESADARAN ⋆ " + "─" * 42 + "┐")
+            print("  │" + " " * 67 + "│")
+            print(f"  │  ▸ Kondisi Jiwa    : {kondisi_jiwa} (Sisa Toleransi: {sisa_anxiety})".ljust(69) + "│")
+            print(f"  │  ▸ Total Fragment  : {total_fragments} Terkumpul".ljust(69) + "│")
+            print(f"  │  ▸ Sisa Rewind Key : {sisa_rewind}".ljust(69) + "│")
+            print("  │" + " " * 67 + "│")
+            print("  └" + "─" * 67 + "┘\n")
+            
+            print("  Meringkas Stack Memori Jangka Pendek...")
+            print("  [!] Terhubung ke Buku Harian (Dream Journal).\n")
+            time.sleep(1.5) 
+            
+            # Tampilkan ringkasan memory stack jangka pendek saat ini
             player.memory_stack.display()
             
+            #reset dan update state game
             player.current_dream += 1
             current_node = None
-            player.anxiety_level = 0
-            #menyimpan progress real-time ke savegame.txt
+            player.anxiety_level = 0 #anxiety direset setiap masuk mimpi baru
+            
+            #menyimpan progress real time ke savegame.txt
             journal.save_game(
                 player,
                 player.dream_vault,
@@ -416,16 +451,167 @@ def main():
             if player.current_dream <= len(dream_sequence):
                 input("\n[ Tekan ENTER untuk menyelami lapisan mimpi berikutnya... ]")
 
-    #ending Utama Permainan
+        #================
+    #5.ENDING UTAMA
+    #================
     clear_terminal()
-    print("═" * 60)
-    print(" 🌟  CONGRATULATIONS: KESADARAN TERBENTUK SEMPURNA  🌟")
-    print("═" * 60)
-    print(f" Selamat, {player.name}. Kamu telah berhasil menelusuri seluruh")
-    print(" labirin mimpi buruk dan menghadapi bayang-bayang masa lalu.")
-    print(" Jiwamu kini telah stabil dan siap untuk terbangun seutuhnya.")
-    print("═" * 60 + "\n")
+    time.sleep(1.0)
+
+    typewriter(" . . .", speed=0.3)
+    time.sleep(1.0)
+
+    typewriter(f" [ Kesadaran ]: Sinkronisasi selesai. Kamu telah terbangun dari dunia Aeternum.", speed=0.03)
+    time.sleep(0.8)
+    typewriter(f" [ Memori ]: Seluruh fragment memori telah disimpan.", speed=0.03)
+    time.sleep(0.8)
+
+    print("\n" + "─" * 40)
+    time.sleep(1.0)
+
+    narasi_silent = [
+        f"Kamu terbangun di kamarmu, dan kali ini... bukan mimpi.",
+        f"Rasa cemas yang mencekikmu sepanjang malam... kini menguap.",
+        f"Kamu melihat ke setiap sudut kamar, namun tidak dapat menemukan",
+        f"keberadaan Lumiere. Perhatianmu teralih pada brace ditanganmu.",
+        f"Tidak ada yang berubah, cederamu masih permanen. Karena semua",
+        f"mimpi itu pada akhirnya hanya rekaan ingatanmu dan tidak bisa mengubah",
+        f"kenyataan.",
+        f"Selamat, {player.name}. Kamu berhasil melawan rasa takutmu untuk",
+        f"menghadapi trauma yang sudah dikubur."
+    ]
+
+    for baris in narasi_silent:
+        typewriter(baris, speed=0.04)
+        time.sleep(0.8)
+
+    print("\n" + "─" * 40 + "\n")
+    input("[ Tekan ENTER untuk membaca sisa ingatanmu ]")
+
+    #================
+    # DREAM JOURNAL
+    #================
+    clear_terminal()
+
+    print("✦ A E T E R N U M  |  D R E A M   J O U R N A L")
+    print(f"Subjek: {player.name}  |  Status: Terbangun Seutuhnya")
+    print("=" * 60)
+    print(" Catatan yang berhasil diselamatkan dari alam bawah sadar:\n")
+
     journal.display()
+
+    print("\n" + "=" * 60)
+
+    #================
+    # TRUE ENDING
+    #================
+
+    time.sleep(1)
+
+    print("""
+════════════════════════════════════════════════════════════
+
+                    ✦ TRUE ENDING ✦
+
+                  ☾ Fragment Recovered ☽
+                          COMPLETE
+
+                   ✦ Anxiety Conquered ✦
+                          SUCCESS
+
+════════════════════════════════════════════════════════════
+
+        "Every dream must end,
+         so that a new day can begin."
+
+════════════════════════════════════════════════════════════
+""")
+
+    input("[ Tekan ENTER untuk melanjutkan ]")
+
+    #================
+    # THANK YOU SCREEN
+    #================
+
+    clear_terminal()
+
+    print(r"""
+╔══════════════════════════════════════════════════════════╗
+║                                                          ║
+║                     A E T E R N U M                      ║
+║                                                          ║
+║              The dream has finally ended.               ║
+║                                                          ║
+║                  Thank you for playing.                 ║
+║                                                          ║
+║                        ☾ ✦ ☾                            ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+""")
+
+    time.sleep(1)
+
+    #================
+    # ULASAN PEMAIN
+    #================
+
+    print("\n" + "═" * 60)
+    print("                    🌙 U L A S A N 🌙")
+    print("═" * 60)
+
+    print("\nTerima kasih telah memainkan Aeternum!")
+    print("Beri penilaianmu terhadap pengalaman bermain.\n")
+
+    while True:
+        try:
+            rating = int(input("⭐ Rating (1 - 10): "))
+
+            if 1 <= rating <= 10:
+                break
+
+            print("Masukkan angka antara 1 sampai 10.")
+
+        except ValueError:
+            print("Masukkan angka yang valid.")
+
+    print()
+
+    komentar = input("💭 Komentar : ")
+
+    #================
+    # SIMPAN ULASAN
+    #================
+
+    with open("ulasan_game.txt", "a", encoding="utf-8") as file:
+
+        file.write("\n")
+        file.write("═" * 60 + "\n")
+        file.write(f"Pemain   : {player.name}\n")
+        file.write(f"Rating   : {rating}/10\n")
+        file.write(f"Komentar : {komentar}\n")
+        file.write("═" * 60 + "\n")
+
+    print("\n")
+
+    typewriter("✦ Menyimpan ulasan ke Memory Archive...", speed=0.03)
+
+    time.sleep(1)
+
+    print("✓ Rating berhasil disimpan")
+    print("✓ Komentar berhasil disimpan")
+
+    time.sleep(1)
+
+    print("""
+════════════════════════════════════════════════════════════
+
+              Terima kasih atas perjalananmu.
+
+                        ☾ ✦ ☾
+
+════════════════════════════════════════════════════════════
+""")
+
+    input("[ Tekan ENTER untuk keluar dari Aeternum ]")
 
 if __name__ == "__main__":
     main()

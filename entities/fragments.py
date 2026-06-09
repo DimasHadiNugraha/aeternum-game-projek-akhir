@@ -22,10 +22,6 @@ class MemoryFragment(Fragment):
         self.fragment_type = "memory"
         self.value = value
 
-    def display(self):
-        print(f"\n[{self.fragment_type.upper()} FRAGMENT]")
-        print(f"Nama : {self.name}")
-        print(f"Deskripsi : {self.description}")
 
 MEMORY_FRAGMENTS = {
     "memory_fragment_001": MemoryFragment(

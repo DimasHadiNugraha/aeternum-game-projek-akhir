@@ -61,7 +61,7 @@ class MemoryVault:
         print(f"  [!] '{item_name}' tidak ditemukan di {self.name}.")
         return False
     
-    #fungsimengurutkan item di vault 
+    #fungsi mengurutkan item di vault 
     def sort_by_value(self):
         #kalau vault kosong atau cuma ada 1 item, tidak perlu diurutkan
         if not self.head or not self.head.next:

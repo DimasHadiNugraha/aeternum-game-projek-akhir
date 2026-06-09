@@ -1,4 +1,3 @@
-
 import json
 import os
 
@@ -6,22 +5,21 @@ import os
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SAVEGAME_FILE = os.path.join(PROJECT_ROOT, "game_data", "savegame.txt")
 
-
+#class untuk node di dalam journal, menyimpan teks catatan dan nomor mimpi terkait (jika ada)
 class JournalNode:
     def __init__(self, text, dream_number=None):
         self.text = text                  # Isi catatan
         self.dream_number = dream_number  # Dari mimpi ke-berapa
         self.next = None                  # Pointer ke entry berikutnya
 
-
+#class untuk mengelola seluruh journal, menyimpan catatan dalam linked list dan menyediakan fungsi untuk menambah, menampilkan, dan mengelola catatan
 class DreamJournal:
     def __init__(self):
         self.head = None
         self.tail = None        # ← Cache pointer ke entry terakhir
         self.total_entries = 0
-
+    #fungsi untuk menambahkan entry baru kedalam journal
     def add_entry(self, text, dream_number=None):
-        """Tambah entry baru di akhir journal. O(1) performance dengan tail pointer."""
         new_node = JournalNode(text, dream_number)
         if not self.head:
             self.head = new_node
@@ -48,17 +46,15 @@ class DreamJournal:
             index += 1
         print("=" * 40 + "\n")
 
-    def get_last_entry(self):
-        """Ambil entry paling baru. O(1) dengan tail pointer."""
+    def get_last_entry(self): #fungsi untuk mengambil entry paling baru dari journal
         if not self.tail:
             return None
         return self.tail.text
 
-    def count(self):
-        """Kembalikan jumlah total entry."""
+    def count(self): #fungsi untuk menghitung jumlah total entry dalam journal
         return self.total_entries
 
-    def clear(self):  #menghapus isi dari savegame.txt dan mengosongkan journal
+    def clear(self):#fungsi menghapus isi dari savegame.txt dan mengosongkan journal
         self.head = None
         self.tail = None
         self.total_entries = 0
@@ -69,87 +65,7 @@ class DreamJournal:
         
         print("  [~] Journal dan savegame berhasil dikosongkan.\n")
 
-    def save_game(self, player, dream_vault, memory_vault, current_dream, current_node):
-        data = {
-            # Data player
-            "player": {
-                "name": getattr(player, 'name', 'MC'),
-                "anxiety_level": getattr(player, 'anxiety_level', 0),
-                "fragment_count": getattr(player, 'fragment_count', 0),
-            },
-            
-            # Data vault
-            "dream_vault": {
-                "total_items": dream_vault.size if hasattr(dream_vault, 'size') else 0,
-                "items": dream_vault.to_list() if hasattr(dream_vault, 'to_list') else []
-            },
-            "memory_vault": {
-                "total_items": memory_vault.size if hasattr(memory_vault, 'size') else 0,
-                "items": memory_vault.to_list() if hasattr(memory_vault, 'to_list') else []
-            },
-            
-            # Info mimpi/dialog
-            "dream_info": {
-                "current_dream": current_dream,
-                "current_node": current_node
-            },
-            
-            # Journal entries
-            "journal_entries": self.to_list()
-        }
-        
-        # Buat folder game_data kalau belum ada
-        os.makedirs(os.path.dirname(SAVEGAME_FILE), exist_ok=True)
-        
-        # Tulis ke file JSON
-        with open(SAVEGAME_FILE, "w") as f:
-            json.dump(data, f, indent=4)
-        
-        print("  [✓] Game berhasil disimpan.\n")
-
-    def load_game(self, player, dream_vault, memory_vault):
-        """
-        Load semua data game dari savegame.txt.
-        """
-        if not os.path.exists(SAVEGAME_FILE):
-            print("  [!] File save tidak ditemukan. Mulai dari awal.\n")
-            return None, None
-        
-        try:
-            with open(SAVEGAME_FILE, "r") as f:
-                data = json.load(f)
-            
-            # Restore data player
-            if hasattr(player, 'name'):
-                player.name = data["player"].get("name", "MC")
-            if hasattr(player, 'anxiety_level'):
-                player.anxiety_level = data["player"].get("anxiety_level", 0)
-            if hasattr(player, 'fragment_count'):
-                player.fragment_count = data["player"].get("fragment_count", 0)
-            
-            # Restore vault items
-            if hasattr(dream_vault, 'load_from_list'):
-                dream_vault.load_from_list(data["dream_vault"].get("items", []))
-            if hasattr(memory_vault, 'load_from_list'):
-                memory_vault.load_from_list(data["memory_vault"].get("items", []))
-            
-            # Restore journal
-            self.load_from_list(data.get("journal_entries", []))
-            
-            # Ambil info mimpi/dialog
-            current_dream = data["dream_info"].get("current_dream", 1)
-            current_node = data["dream_info"].get("current_node", 0)
-            
-            print(f"  [✓] Game dimuat. Lanjut dari Mimpi #{current_dream}.\n")
-            return current_dream, current_node
-            
-        except (json.JSONDecodeError, KeyError) as e:
-            print(f"  [!] Error membaca file save: {e}\n")
-            return None, None
-
-    def clear_dream_entries(self, dream_number):
-
-        # Traverse dan hapus entry dengan dream_number yang sama
+    def clear_dream_entries(self, dream_number): # Traverse dan hapus entry dengan dream_number yang sama
         current = self.head
         prev = None
         
@@ -170,7 +86,7 @@ class DreamJournal:
                 prev = current
                 current = current.next
 
-    def to_list(self):
+    def to_list(self): #fungsi untuk mengonversi journal ke dalam bentuk list
         result = []
         current = self.head
         while current:
@@ -181,7 +97,7 @@ class DreamJournal:
             current = current.next
         return result
 
-    def load_from_list(self, data):
+    def load_from_list(self, data): #fungsi untuk memuat data journal dari list saat load_game dipanggil
         self.head = None
         self.tail = None
         self.total_entries = 0

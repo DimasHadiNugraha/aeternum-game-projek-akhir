@@ -2,7 +2,6 @@ import random
 
 
 class DreamNode:
-    """Satu lokasi dalam nightmare loop."""
     def __init__(self, location, description=""):
         self.location = location        # Nama lokasi
         self.description = description  # Deskripsi singkat lokasi
@@ -17,8 +16,8 @@ class NightmareLoop:
         self.current = None  # Posisi player saat ini
         self.size = 0
 
+    #fungsi untuk menambahkan lokasi baru ke dalam nightmare loop. Dipanggil saat memulai mimpi baru untuk mengisi loop dengan lokasi-lokasi yang akan dilalui player.
     def add_location(self, location, description=""):
-        """Tambah lokasi baru ke dalam loop."""
         new_node = DreamNode(location, description)
 
         if not self.head:
@@ -34,11 +33,9 @@ class NightmareLoop:
 
         self.size += 1
 
+    #fungsi untuk pindah ke lokasi berikutnya dalam nightmare loop. Dipanggil saat player memilih opsi dialog yang mengarahkan mereka ke lokasi baru.
     def move_next(self, anxiety_level=0):
-        """
-        Pindah ke lokasi berikutnya.
-        Jika anxiety >= 20, ada kemungkinan 30% node menjadi corrupt.
-        """
+
         if not self.current:
             return None
 
@@ -50,11 +47,8 @@ class NightmareLoop:
 
         return self.get_current_location()
 
+    #fungsi untuk melihat lokasi saat ini
     def get_current_location(self):
-        """
-        Kembalikan info lokasi saat ini.
-        Jika corrupt, tampilkan versi glitchy.
-        """
         if not self.current:
             return None
 
@@ -71,6 +65,7 @@ class NightmareLoop:
             "corrupted": False
         }
 
+    #fungsi untuk memulai ulang mimpi saat anxiety mencapai 30. Posisi player di-reset ke awal loop, dan journal dikosongkan.
     def trigger_fake_awakening(self):
         """
         Reset posisi ke head (awal loop).
@@ -82,8 +77,8 @@ class NightmareLoop:
         print("  Tapi langit-langitnya... sama persis.\n")
         return self.get_current_location()
 
+    #fungsi untuk meriset saat dream over terjadi (anxiety >= 30). 
     def reset_corruption(self):
-        """Reset semua node corrupt saat mimpi selesai."""
         if not self.head:
             return
         temp = self.head
@@ -93,8 +88,8 @@ class NightmareLoop:
             if temp == self.head:
                 break
 
+    #menampilkan seluruh isi loop
     def display_loop(self):
-        """Tampilkan seluruh isi loop."""
         if not self.head:
             print("[Loop kosong]\n")
             return
@@ -115,8 +110,8 @@ class NightmareLoop:
         print("  ↻ (kembali ke awal)")
         print("=" * 40 + "\n")
 
+    #fungsi untuk mengonversi nightmare loop ke dalam bentuk list
     def to_list(self):
-        """Konversi loop ke list Python untuk save/load."""
         result = []
         if not self.head:
             return result
@@ -132,8 +127,8 @@ class NightmareLoop:
                 break
         return result
 
+    #fungsi untuk memuat data nightmare loop dari list saat load_game dipanggil
     def load_from_list(self, data):
-        """Load loop dari list saat load_game dipanggil."""
         self.head = None
         self.current = None
         self.size = 0

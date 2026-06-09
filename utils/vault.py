@@ -1,5 +1,4 @@
 class VaultNode:
-    """Satu item dalam vault."""
     def __init__(self, item_name, item_type, description="", value=0):
         self.item_name = item_name      # Nama item
         self.item_type = item_type      # Tipe item (lihat referensi di atas)
@@ -9,8 +8,10 @@ class VaultNode:
         self.next = None               # Pointer ke item berikutnya
 
 
+#class untuk menyimpan item-item yang dikumpulkan pemain selama permainan. Item ini bisa berupa memory fragment, emotion fragment, atau rewind key yang bisa digunakan untuk mengurangi anxiety.
+#Vault ini menggunakan struktur data linked list untuk menyimpan item-item tersebut, dengan pointer ke item pertama (head), terakhir (tail),
+#dan item yang sedang di-highlight (current). Vault juga menyediakan fungsi untuk menambah, menghapus, menggunakan item, serta menampilkan seluruh isi vault dengan format yang menarik.
 class MemoryVault:
-
     def __init__(self, name="Vault"):
         self.name = name
         self.head = None
@@ -18,8 +19,8 @@ class MemoryVault:
         self.current = None  # Item yang sedang di-highlight
         self.size = 0
 
+    #fungsi untuk menambahkan item baru ke vault
     def add_item(self, item_name, item_type, description="", value=0):
-        """Tambah item baru di akhir vault."""
         new_node = VaultNode(item_name, item_type, description, value)
 
         if not self.head:
@@ -34,8 +35,8 @@ class MemoryVault:
         self.size += 1
         print(f"  [+] '{item_name}' ditambahkan ke {self.name}.")
 
+    #fungsi untuk menghapus item dari vault berdasarkan nama item
     def remove_item(self, item_name):
-        """Hapus item berdasarkan nama."""
         current = self.head
         while current:
             if current.item_name == item_name:
@@ -60,11 +61,8 @@ class MemoryVault:
         print(f"  [!] '{item_name}' tidak ditemukan di {self.name}.")
         return False
     
+    #fungsimengurutkan item di vault 
     def sort_by_value(self):
-        """
-        Mengurutkan item di dalam vault berdasarkan 'value' dari besar ke kecil (Descending).
-        Menggunakan algoritma Bubble Sort yang diadaptasi untuk Double Linked List.
-        """
         #kalau vault kosong atau cuma ada 1 item, tidak perlu diurutkan
         if not self.head or not self.head.next:
             return
@@ -88,12 +86,8 @@ class MemoryVault:
                 
         print(f"\n  [~] Fragment di {self.name} telah diurutkan berdasarkan nilainya.")
 
+    #fungsi untuk menggunakan item dari vault
     def use_item(self, item_name, player):
-        """
-        Pakai item dari vault.
-        Rewind key langsung dihapus setelah dipakai (sekali pakai).
-        Parameter player harus punya attribute anxiety_level.
-        """
         node = self.find_item(item_name)
         if not node:
             print(f"  [!] Item '{item_name}' tidak ada di {self.name}.")
@@ -126,8 +120,8 @@ class MemoryVault:
             print(f"  [!] Tipe item '{node.item_type}' tidak dikenali.")
             return False
 
+    #fungsi untuk mencari item di vault berdasarkan nama item
     def find_item(self, item_name):
-        """Cari item berdasarkan nama. Kembalikan node jika ketemu."""
         current = self.head
         while current:
             if current.item_name.lower() == item_name.lower():
@@ -135,24 +129,24 @@ class MemoryVault:
             current = current.next
         return None
 
+    #fungsi untuk menavigasi keitem berikutnya di vault
     def navigate_next(self):
-        """Geser highlight ke item berikutnya."""
         if self.current and self.current.next:
             self.current = self.current.next
             return self.current
         print("  [!] Sudah di item terakhir.")
         return self.current
 
+    #fungsi untuk menavigasi ke item sebelumnya di vault
     def navigate_prev(self):
-        """Geser highlight ke item sebelumnya."""
         if self.current and self.current.prev:
             self.current = self.current.prev
             return self.current
         print("  [!] Sudah di item pertama.")
         return self.current
 
+    #fungsi untuk melihat item yang sedang di-highlight di vault
     def get_selected(self):
-        """Kembalikan item yang sedang dipilih."""
         if self.current:
             return {
                 "name": self.current.item_name,
@@ -162,8 +156,8 @@ class MemoryVault:
             }
         return None
 
+    #fungsi untuk menghitung total nilai fragment yang ada di vault
     def get_total_value(self):
-        """Hitung total nilai semua fragment dalam vault."""
         total = 0
         current = self.head
         while current:
@@ -171,8 +165,8 @@ class MemoryVault:
             current = current.next
         return total
 
+    #fungsi untuk menampilkan seluruh isi vault
     def display(self):
-        """Tampilkan seluruh isi vault dengan highlight pada item aktif."""
         if not self.head:
             print(f"\n[{self.name} kosong]\n")
             return
@@ -192,8 +186,8 @@ class MemoryVault:
             index += 1
         print("=" * 40 + "\n")
 
+    #fungsi untuk menampilkan seluruh isi vault secara terbalik (dari item terakhir ke pertama)
     def display_reverse(self):
-        """Tampilkan vault dari tail ke head (traversal mundur)."""
         if not self.tail:
             print(f"\n[{self.name} kosong]\n")
             return
@@ -209,8 +203,8 @@ class MemoryVault:
             index -= 1
         print("=" * 40 + "\n")
 
+    #fungsi untuk mengonversi vault ke dalam bentuk list
     def to_list(self):
-        """Konversi vault ke list Python untuk save/load."""
         result = []
         current = self.head
         while current:
@@ -223,8 +217,8 @@ class MemoryVault:
             current = current.next
         return result
 
+    #fungsi untuk memuat data vault dari list saat load_game dipanggil
     def load_from_list(self, data):
-        """Load vault dari list saat load_game dipanggil."""
         self.head = None
         self.tail = None
         self.current = None

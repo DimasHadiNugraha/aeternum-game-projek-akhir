@@ -1,20 +1,24 @@
+#class untuk hash table yang menyimpan memory key dan rahasia/narasi yang terkunci. Digunakan untuk menyimpan ingatan karakter yang bisa dibuka dengan memory key tertentu. Hash table ini menggunakan chaining untuk menangani collision, dan memiliki fungsi untuk insert, get, delete, serta menampilkan seluruh isi hash table. Juga ada fungsi khusus untuk membuka rahasia berdasarkan memory key yang dimasukkan pemain.
 class HashNode:
     def __init__(self, key, value):
         self.key = key      # Memory key (e.g. "Memory Key #1")
         self.value = value  # Rahasia/narasi yang terkunci
  
- 
+#class untuk hash table yang menyimpan memory key dan rahasia/narasi yang terkunci. Digunakan untuk menyimpan ingatan karakter yang bisa dibuka dengan memory key tertentu.
+# Hash table ini menggunakan chaining untuk menangani collision, dan memiliki fungsi untuk insert, get, delete, serta menampilkan seluruh isi hash table. 
+#Juga ada fungsi khusus untuk membuka rahasia berdasarkan memory key yang dimasukkan pemain.
 class HashTable:
     def __init__(self, size=10):
         self.size = size
         self.table = [[] for _ in range(self.size)]  # List of lists (untuk chaining)
         self.total_items = 0
- 
+    #fungsi untuk menggubah key string menjadi index
     def hash_function(self, key): # menggubah key string menjadi index
         return sum(ord(c) for c in key) % self.size
- 
-    def insert(self, key, value): #mengitung indeks untuk key, lalu menyimpan value didalam bucket
 
+    #fungsi untuk menambahkan key-value pair baru ke hash table. Jika key sudah ada, update value-nya. 
+    #Dipanggil saat player mendapatkan memory key baru atau saat load game untuk mengisi hash table dengan data dari savegame.txt.
+    def insert(self, key, value): 
         index = self.hash_function(key)
         bucket = self.table[index]
  
@@ -30,7 +34,8 @@ class HashTable:
         self.total_items += 1
         print(f"  [+] Memory Key '{key}' berhasil disimpan.")
  
-    def get(self, key):  #cari value berdasakan key
+    #fungsi untuk mendapatkan value berdasarkan key
+    def get(self, key):
         index = self.hash_function(key)
         bucket = self.table[index]
  
@@ -39,8 +44,8 @@ class HashTable:
                 return v
  
         return None
- 
-    def delete(self, key): #untuk menghapus key dari hash table
+    #fungsi untuk menghapus key dari hash table
+    def delete(self, key): 
         index = self.hash_function(key)
         bucket = self.table[index]
  
@@ -53,8 +58,8 @@ class HashTable:
  
         print(f"  [!] Memory Key '{key}' tidak ditemukan.")
         return False
- 
-    def unlock_secret(self, key): #ambil rahasia dan tampilkan
+    #fungsi untuk membuka rahasia berdasarkan memory key yang dimasukkan pemain
+    def unlock_secret(self, key): 
         secret = self.get(key)
  
         if secret:
@@ -68,7 +73,8 @@ class HashTable:
             print(f"\n  [!] Kunci '{key}' tidak membuka apapun.\n")
             return None
  
-    def display(self): #Tampilkan seluruh isi hash table
+    #fungsi untuk menampilkan seluruh isi hash table
+    def display(self):
         print("\n" + "=" * 40)
         print("     ✦ HASH TABLE ✦")
         print(f"     Total Keys: {self.total_items}")
@@ -81,21 +87,21 @@ class HashTable:
                     print(f"           └─ {v[:50]}...")
  
         print("=" * 40 + "\n")
- 
+    #fungsi untuk mengubah seluruh isi hash table menjadi dict saat save_game dipanggil
     def to_dict(self):
         result = {}
         for bucket in self.table:
             for k, v in bucket:
                 result[k] = v
         return result
- 
-    def load_from_dict(self, data):  #Load hash table dari dict saat load_game dipanggil
+    #fungsi untuk memuat hash table dari dict saat load_game dipanggil
+    def load_from_dict(self, data): 
         self.table = [[] for _ in range(self.size)]
         self.total_items = 0
         for key, value in data.items():
             self.insert(key, value)
-
-def init_secrets(hash_table): #isi hash table dengan memory karakter dan rahasianya saat mulai game baru
+#fungsi untuk mengisi hash table dengan rahasia yang bisa dibuka dengan memory key tertentu. Dipanggil saat inisialisasi game untuk mengisi hash table dengan data rahasia yang sudah ditentukan.
+def init_secrets(hash_table): 
     secrets = {
         "Memory Key #1": "Kamu pernah melihat seseorang jatuh. Kamu diam saja.",
         "Memory Key #2": "Nama yang selalu kamu hindari tertulis di batu nisan itu.",

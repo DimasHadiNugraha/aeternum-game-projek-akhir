@@ -15,7 +15,7 @@ from utils.vault import MemoryVault
 from utils.memory_stack import MemoryStack
 from utils.hashing import HashTable, init_secrets
 from system.dream import MesinMimpi
-from system.state_manager import check_dream_over  
+from system.state_manager import save_game, load_game,check_dream_over, delete_save, save_exists,reset_dream
 
 #======================
 #1. utility & fungsi ui
@@ -74,9 +74,62 @@ def display_welcome_screen(): #nampilin splash/welcome screen
 #====================
 #2.notifikasi
 #====================
+#Menu untuk lihat dan pakai item dari inventory
+def show_inventory_menu(dream_vault, memory_vault, player):
+    while True:
+        clear_terminal()
+        print("\n" + "=" * 60)
+        print("                    🎒 INVENTORY                    ")
+        print("=" * 60)
+        
+        if dream_vault.size > 0 or memory_vault.size > 0:
+            print("\n  📦 Dream Vault (Emotion Fragments):")
+            dream_vault.display()
+            
+            print("\n  🔑 Memory Vault (Memory Keys):")
+            memory_vault.display()
+        else:
+            print("\n  [~] Inventory kosong.")
+        
+        print("\n" + "─" * 60)
+        print("  1. Gunakan Rewind Key")
+        print("  2. Kembali")
+        print("─" * 60)
+        
+        choice = input("  Pilih (1/2): ").strip()
+        
+        if choice == "1":
+            rewind_key = None
+            current = dream_vault.head
+            while current:
+                if current.item_name == "Rewind Key":
+                    rewind_key = current
+                    break
+                current = current.next
+            
+            if rewind_key:
+                confirm = input("\n   Gunakan Rewind Key sekarang? (y/n): ").lower()
+                if confirm == "y":
+                    dream_vault.use_item("Rewind Key", player)
+                    print(f"\n  [✓] Anxiety berkurang 10. Sekarang: {player.anxiety_level}\n")
+                    input("  [ Tekan ENTER untuk melanjutkan ]")
+            else:
+                print("\n  [!] Kamu tidak memiliki Rewind Key.\n")
+                input("  [ Tekan ENTER untuk melanjutkan ]")
+        
+        elif choice == "2":
+            print(f"DEBUG: choice = '{choice}' (length: {len(choice)})")
+            break
+        else:
+            print("\n  [!] Pilihan tidak valid.\n")
 
-def trigger_notifications(node, player):
-    """Mengecek perubahan stat atau reward fragment dari pilihan dialog."""
+#Tampilkan ingatan terbaru dari memory stack
+def check_memory_status(memory_stack):
+    last = memory_stack.peek()
+    if last:
+        print(f"\n  [~] Ingatan terbaru: \"{last}\"\n")
+#Mengecek perubahan stat atau reward fragment dari pilihan dialog
+def trigger_notifications(node, player,hash_table):
     lebar_notif = 75 
 
     #logika perubahan tingkat anxiety
@@ -117,13 +170,32 @@ def trigger_notifications(node, player):
             print("│ " + f"Desc: {frag_obj.description}".ljust(lebar_notif - 1) + "│")
             print("└" + "─" * lebar_notif + "┘\n")
             time.sleep(1.5)
+    
+    
+    if fragment_id and fragment_id != "lucid_key":
+        frag_obj = EMOTION_FRAGMENTS.get(fragment_id) or MEMORY_FRAGMENTS.get(fragment_id)
+        if frag_obj:
+            # Cek kalau memory key (untuk trigger unlock_secret)
+            if frag_obj.fragment_type.lower() == "memory_key":
+                print("\n" + "=" * 60)
+                print("            INGATAN TERKUNCI TERBUKA            ")
+                print("=" * 60)
+                
+                # Get secret dari hash table
+                secret = hash_table.get(frag_obj.name)
+                if secret:
+                    print(f"\n  {secret}\n")
+                
+                print("=" * 60 + "\n")
+    
+    return True
             
 #================
 #narasi
 #================
 
-def execute_narrative_loop(file_path, root_key, player, journal, start_node=None):
-    """Membaca data narasi JSON dan mengeksekusi pohon keputusan dialog."""
+def execute_narrative_loop(file_path, root_key, player, journal, hash_table,dream_vault, memory_vault, start_node=None):
+    #Membaca data narasi JSON dan mengeksekusi pohon keputusan dialog.
     if not os.path.exists(file_path):
         print(f"[!] File data narasi {file_path} tidak ditemukan!")
         return False
@@ -142,7 +214,7 @@ def execute_narrative_loop(file_path, root_key, player, journal, start_node=None
 
         clear_terminal()
         draw_hud(player)
-        trigger_notifications(node, player)
+        trigger_notifications(node, player, hash_table)
 
         #===========================================
         #penggunaan rewind key pas anxiety level max
@@ -201,6 +273,7 @@ def execute_narrative_loop(file_path, root_key, player, journal, start_node=None
 
         choices = node.get("choices", [])
         if choices:
+            print("[💡 TIP: Ketik 'i' untuk buka inventory]\n")
             print("Pilih respon tindakan kesadaranmu:")
             for idx, choice in enumerate(choices, start=1):
                 print(f"  {idx}. {choice['text']}")
@@ -208,6 +281,9 @@ def execute_narrative_loop(file_path, root_key, player, journal, start_node=None
 
             while True:
                 pilihan = input("Masukkan angka pilihanmu: ")
+                if pilihan.lower() == 'i':
+                    show_inventory_menu(dream_vault, memory_vault, player)
+                    continue
                 if pilihan.isdigit() and 1 <= int(pilihan) <= len(choices):
                     chosen_choice = choices[int(pilihan) - 1]
                     
@@ -244,6 +320,7 @@ def main():
     
     #menyiapkan instansiasi struktur data
     journal = DreamJournal()
+    memory_stack = MemoryStack()
     hash_table = HashTable()
     init_secrets(hash_table)
 
@@ -267,10 +344,13 @@ def main():
             pilihan = input("Pilih langkah awalmu (1/2): ")
             if pilihan == "1":
                 #load game dari file
-                result = journal.load_game(
+                result = load_game(
+                    journal,
                     player,
                     player.dream_vault,
-                    player.memory_vault
+                    player.memory_vault,
+                    player.memory_stack,
+                    hash_table
                 )
                 if result:
                     current_dream, current_node = result
@@ -280,6 +360,7 @@ def main():
             elif pilihan == "2":
                 #new game, hapus save lama
                 print("\nMengubur trauma lama...")
+                delete_save()  #hapus file savegame.txt
                 journal.clear()  #hapus journal dan savegame.txt
                 time.sleep(1)
                 current_dream = 1
@@ -355,6 +436,9 @@ def main():
             root_key=active_scene["root"],
             player=player,
             journal=journal,
+            hash_table=hash_table,
+            dream_vault=player.dream_vault,
+            memory_vault=player.memory_vault,
             start_node=current_node
         )
     
@@ -383,10 +467,12 @@ def main():
             print("═" * 80)
             
             player.reset_dream_state()
-            journal.save_game(
+            save_game(
+                journal,
                 player,
                 player.dream_vault,
                 player.memory_vault,
+                player.memory_stack,
                 player.current_dream,
                 current_node
             ) 
@@ -440,10 +526,12 @@ def main():
             player.anxiety_level = 0 #anxiety direset setiap masuk mimpi baru
             
             #menyimpan progress real time ke savegame.txt
-            journal.save_game(
+            save_game(
+                journal,
                 player,
                 player.dream_vault,
                 player.memory_vault,
+                player.memory_stack,
                 player.current_dream,
                 current_node
             )
@@ -496,10 +584,6 @@ def main():
     print(f"Subjek: {player.name}  |  Status: Terbangun Seutuhnya")
     print("=" * 60)
     print(" Catatan yang berhasil diselamatkan dari alam bawah sadar:\n")
-
-    journal.display()
-
-    print("\n" + "=" * 60)
 
     #================
     # TRUE ENDING

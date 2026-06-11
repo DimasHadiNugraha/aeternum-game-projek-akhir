@@ -3,29 +3,7 @@ import os
 
 SAVE_FILE = "game_data/savegame.txt"
 
-#fungsi untuk mereset mimpi saat anxiety mencapai 30 (DREAM OVER).
-#Hanya mereset anxiety dan nightmare loop — item vault tetap ada.
-def reset_dream(player, nightmare_loop, journal):
-    print("\n" + "=" * 40)
-    print("        ✦ DREAM OVER ✦")
-    print("  Anxiety terlalu tinggi.")
-    print("  Kamu terbangun dari mimpi...")
-    print("  Mimpi ini akan dimulai ulang.")
-    print("=" * 40 + "\n")
 
-    player.anxiety_level = 0
-    nightmare_loop.reset_corruption()
-    nightmare_loop.current = nightmare_loop.head
-    journal.clear()  # ← Reset journal saat dream over
-
-
-
-#fungsi untuk mengecek apakah anxiety sudah mencapai 30 atau belum. Dipanggil setiap kali player membuat pilihan dialog yang meningkatkan anxiety.  
-def check_dream_over(player, nightmare_loop, journal):
-    if player.anxiety_level >= 30:
-        reset_dream(player, nightmare_loop, journal)
-        return True
-    return False
 
 
 def delete_save():
@@ -35,9 +13,6 @@ def delete_save():
     else:
         print("\n  [!] Tidak ada file save yang ditemukan.\n")
 
-#fungsi untuk mengecek apakah file savegame.txt ada atau tidak. Dipanggil saat game pertama kali dijalankan untuk menentukan apakah akan load game atau mulai baru.
-def save_exists():
-    return os.path.exists(SAVE_FILE)
 
 #fungsi untuk meyimpan semua data game ke dalam file savegame.txt dalam format JSON. Dipanggil saat player memilih opsi "Save Game" di menu.
 def save_game(journal, player, dream_vault, memory_vault,memory_stack, current_dream, current_node):

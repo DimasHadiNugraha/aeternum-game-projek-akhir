@@ -58,10 +58,10 @@ def save_game(journal, player, dream_vault, memory_vault,memory_stack, current_d
             "total_items": memory_vault.size if hasattr(memory_vault, 'size') else 0,
             "items": memory_vault.to_list() if hasattr(memory_vault, 'to_list') else []
         },
+
         "memory_stack": {
             "items": memory_stack.to_list() if hasattr(memory_stack, 'to_list') else []
         },
-        # Info mimpi/dialog
         "dream_info": {
             "current_dream": current_dream,
             "current_node": current_node

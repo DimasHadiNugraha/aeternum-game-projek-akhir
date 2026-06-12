@@ -7,15 +7,14 @@ import sys
 import time
 import json
 
-# Import modul-modul game
+#import modul-modul game(
 from entities.player import Player
-from entities.fragments import MemoryFragment, EmotionFragment, EMOTION_FRAGMENTS, MEMORY_FRAGMENTS
+from entities.fragments import EMOTION_FRAGMENTS, MEMORY_FRAGMENTS
 from utils.journal import DreamJournal          
-from utils.vault import MemoryVault
 from utils.memory_stack import MemoryStack
 from utils.hashing import HashTable, init_secrets
 from system.dream import MesinMimpi
-from system.state_manager import save_game, load_game,check_dream_over, delete_save, save_exists,reset_dream
+from system.state_manager import save_game, load_game, delete_save
 
 #======================
 #1. utility & fungsi ui

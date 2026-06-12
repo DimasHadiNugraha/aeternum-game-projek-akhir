@@ -55,10 +55,6 @@ class Player:
         if self.anxiety_level < 0:
             self.anxiety_level = 0
 
-    #simpan memory ke stack
-    def remember(self, memory):
-
-        self.memory_stack.push(memory)
 
     #tambah fragment ke vault
     def add_fragment(self, fragment):
@@ -83,15 +79,8 @@ class Player:
                 fragment.value
             )
 
-    #tambah statistik pilihan benar
-    def add_correct_choice(self):
+   
 
-        self.correct_choices += 1
-
-    #tambah statistik pilihan salah
-    def add_wrong_choice(self):
-
-        self.wrong_choices += 1
 
     #reset state mimpi
     def reset_dream_state(self):
@@ -99,22 +88,4 @@ class Player:
         self.anxiety_level = 0
         self.dream_over = False
 
-    #cek apakah player overwhelm
-    def is_overwhelmed(self):
-
-        return self.anxiety_level >= self.max_anxiety
-
-    #tampilkan status player
-    def display_status(self):
-
-        print("\n" + "=" * 40)
-        print("        ✦ PLAYER STATUS ✦")
-        print("=" * 40)
-
-        print(f"Nama              : {self.name}")
-        print(f"Dream Saat Ini    : {self.current_dream}")
-        print(f"Anxiety Level     : {self.anxiety_level}/{self.max_anxiety}")
-        print(f"Pilihan Benar     : {self.correct_choices}")
-        print(f"Pilihan Salah     : {self.wrong_choices}")
-
-        print("=" * 40 + "\n")
+    
